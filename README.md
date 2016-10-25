@@ -12,6 +12,7 @@ This gets a json-encoded trail object by the trail's id in the database. Typical
 `{url}/rest/public/api.php/GetTrailById/{id}`
 
 **WriteTrailToDB**
+
 This writes a new trail to the database
 
 `{url}/rest/public/api.php/GetTrailById/?lat={lat}&lng={lng}&trailObj={trailObj}`

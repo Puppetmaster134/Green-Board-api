@@ -26,14 +26,27 @@ $container['db'] = function ($c) {
     return $pdo;
 };
 
-$app->get('/GetTrailById/{id}', function (Request $request, Response $response) {
-    $id = $request->getAttribute('id');
-    $sql = "SELECT * FROM trail WHERE id=:id LIMIT 1";
+$app->get('/GetTrailById/{id}', function (Request $request, Response $response) 
+{
+    $params = $request->getQueryParams();
+    $sql = "SELECT COUNT(*) count FROM user WHERE api_key=:key LIMIT 1";
     $stmt = $this->db->prepare($sql);
-    $stmt->execute(array(':id'=>$id));
+    $stmt->execute(array(':key'=>$params['key']));
     $result = $stmt->fetch();
-    $response->getBody()->write($result['trailInfo']);
+
+    if($result['count'] > 0)
+    {
+       $id = $request->getAttribute('id');
+       $sql = "SELECT * FROM trail WHERE id=:id LIMIT 1";
+       $stmt = $this->db->prepare($sql);
+       $stmt->execute(array(':id'=>$id));
+       $result = $stmt->fetch();
+       $response->getBody()->write($result['trailInfo']);
+       return $response;
+    }
+    $response->getBody()->write("Invalid API key");
     return $response;
+
 });
 $app->run();
 ?>

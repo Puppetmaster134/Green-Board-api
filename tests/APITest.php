@@ -9,15 +9,15 @@ class APITest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->client = new GuzzleHttp\Client([
-            'base_uri' => 'localhost'
+            'base_uri' => 'http://localhost'
         ]);
     }
 
-    public function testGet_ValidInput_BookObject()
+    public function testGet_ValidInput_TrailObject()
     {
-        $response = $this->client->get('/books', [
+        $response = $this->client->get('/rest/public/api.php/GetTrailById/25', [
             'query' => [
-                'bookId' => 'hitchhikers-guide-to-the-galaxy'
+                'key' => 'abc123'
             ]
         ]);
 
@@ -25,9 +25,9 @@ class APITest extends PHPUnit_Framework_TestCase
 
         $data = json_decode($response->getBody(), true);
 
-        $this->assertArrayHasKey('bookId', $data);
-        $this->assertArrayHasKey('title', $data);
-        $this->assertArrayHasKey('author', $data);
-        $this->assertEquals(42, $data['price']);
+        $this->assertArrayHasKey('trail', $data);
+        //$this->assertArrayHasKey('title', $data);
+        //$this->assertArrayHasKey('author', $data);
+        //$this->assertEquals(42, $data['price']);
     }
 }

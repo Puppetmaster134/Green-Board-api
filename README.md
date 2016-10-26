@@ -19,3 +19,5 @@ This writes a new trail to the database
 
 ### Endpoints In Development:
 **GetTrailByArea**
+
+Test

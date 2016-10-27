@@ -17,6 +17,18 @@ This writes a new trail to the database
 
 `{url}/rest/public/api.php/GetTrailById/?lat={lat}&lng={lng}&trailObj={trailObj}`
 
+**Register User**
+
+This registers a new user through greenboard registration
+
+`{url}/rest/public/api.php/RegisterUser/?username={username}&password={password}&email={email}`
+
+**Login**
+
+This logs a user in and returns their api key
+
+`{url}/rest/public/api.php/GetTrailById/?username={username}&password={password}`
+
 ### Endpoints In Development:
 **GetTrailByArea**
 

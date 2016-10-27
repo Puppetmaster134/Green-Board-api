@@ -16,7 +16,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	/**
 	* @test
 	*/
-	public function Get_ValidInput_CreateAccount()
+	public function Get_ValidInput_RegisterUser()
 	{
 		$uniqueId = "test_" . substr(uniqid(),0,-5);
 		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
@@ -53,7 +53,43 @@ class APITest extends PHPUnit_Framework_TestCase
 	/**
 	* @test
 	*/
-    public function Get_ValidInput_TrailObject()
+	public function Get_ValidInput_RegisterUserWithFB()
+	{
+		$uniqueId = "test_" . substr(uniqid(),0,-5);
+		$response = $this->client->get('/rest/public/api.php/RegisterUserWithFB/', [
+            'query' => [
+                'username' => $uniqueId,
+				'email' => $uniqueId . '@greenboard.com',
+				'fbid' => '1234567890'
+            ]
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+		$this->assertEquals("Registered Successfully", $response->getBody());
+
+        
+	}
+	
+	/**
+	* @test
+	*/
+	public function Get_ValidInput_LoginWithFB()
+	{
+		$response = $this->client->get('/rest/public/api.php/LoginWithFB/', [
+            'query' => [
+                'fbid' => '1234567890'
+            ]
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+		$this->assertNotEquals("Invalid login credentials", $response->getBody());
+		
+	}
+	
+	/**
+	* @test
+	*/
+    public function Get_ValidInput_GetTrailById()
     {
         $response = $this->client->get('/rest/public/api.php/GetTrailById/25', [
             'query' => [

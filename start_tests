@@ -1,2 +1,2 @@
-./vendor/bin/phpunit ./tests
+./vendor/bin/phpunit --verbose ./tests
 

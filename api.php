@@ -121,7 +121,7 @@ $app->get('/RegisterUser/', function (Request $request, Response $response)
 	
 	$sql = "INSERT INTO user (username, password, email, api_key) VALUES(:username, :password, :email, :api_key)";
 	$stmt = $this->db->prepare($sql);
-	$stmt->execute(array(':username'=>$params['username'], ':password'=>$params['password'], ':email'=>$params['email'], ':api_key'=>md5($params['password'])));
+	$stmt->execute(array(':username'=>$params['username'], ':password'=>$params['password'], ':email'=>$params['email'], ':api_key'=>md5($params['email'])));
 	/*
 	$json = array('username'=>$username, 'password'=>$password, 'email'=>$email, 'image'=>"Not implemented");
 	$sql2 = "INSERT INTO UserInfo (email, userData) VALUES(:email, :userData)";

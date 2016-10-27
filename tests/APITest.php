@@ -13,14 +13,17 @@ class APITest extends PHPUnit_Framework_TestCase
         ]);
     }
 	
-	public function testGet_CreateAccount()
+	/**
+	* @test
+	*/
+	public function Get_ValidInput_CreateAccount()
 	{
-		$uniqueId = "test_" . uniqid();
+		$uniqueId = "test_" . substr(uniqid(),0,-5);
 		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
             'query' => [
                 'username' => $uniqueId,
 				'password' => 'securepassword',
-				'email' => $uniqueId .'@greenboard.com'
+				'email' => $uniqueId . '@greenboard.com'
             ]
         ]);
 
@@ -30,7 +33,27 @@ class APITest extends PHPUnit_Framework_TestCase
         
 	}
 	
-    public function testGet_ValidInput_TrailObject()
+	/**
+	* @test
+	*/
+	public function Get_ValidInput_Login()
+	{
+		$response = $this->client->get('/rest/public/api.php/Login/', [
+            'query' => [
+                'username' => 'beezy',
+				'password' => 'securepass'
+            ]
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+		$this->assertNotEquals("Invalid login credentials", $response->getBody());
+		
+	}
+	
+	/**
+	* @test
+	*/
+    public function Get_ValidInput_TrailObject()
     {
         $response = $this->client->get('/rest/public/api.php/GetTrailById/25', [
             'query' => [
@@ -39,12 +62,29 @@ class APITest extends PHPUnit_Framework_TestCase
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());
-
         $data = json_decode($response->getBody(), true);
-
         $this->assertArrayHasKey('trail', $data);
-        //$this->assertArrayHasKey('title', $data);
-        //$this->assertArrayHasKey('author', $data);
-        //$this->assertEquals(42, $data['price']);
+    }
+	
+	/**
+	* @test
+	*/
+    public function Get_ValidInput_CreateTrail()
+    {
+        $response = $this->client->get('/rest/public/api.php/WriteTrailToDB/', [
+            'query' => [
+				'key' => 'abc123',
+                'trailInfo' => 'A really cool test trail',
+				'lat' => 29.1234567,
+				'lng' => 42.4567890,
+				'trailObj' => "{'trail':[{'beaconName':'BIT Building', 'latitude':36.6523321,'longitude':-121.7969833}]}"
+            ]
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+		$this->assertNotEquals("Invalid parameters", $response->getBody());
+		$this->assertNotEquals("Invalid API key", $response->getBody());
+        //$data = json_decode($response->getBody(), true);
+        //$this->assertArrayHasKey('trail', $data);
     }
 }

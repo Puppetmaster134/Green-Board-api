@@ -60,7 +60,7 @@ class APITest extends PHPUnit_Framework_TestCase
             'query' => [
                 'username' => $uniqueId,
 				'email' => $uniqueId . '@greenboard.com',
-				'fbid' => '1234567890'
+				'fbid' => rand(0,1000000)
             ]
         ]);
 

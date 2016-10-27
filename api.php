@@ -108,14 +108,14 @@ $app->get('/RegisterUser/', function (Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
 	
-	$sql = "SELECT COUNT(*) count FROM user WHERE email=:email LIMIT 1";
+	$sql = "SELECT COUNT(*) count FROM user WHERE username=:username LIMIT 1";
 	$stmt = $this->db->prepare($sql);
-    $stmt->execute(array(':email'=>$params['email']));
+    $stmt->execute(array(':username'=>$params['username']));
     $result = $stmt->fetch();
 
     if($result['count'] > 0)
 	{
-		$response->getBody()->write("Email is already registered");
+		$response->getBody()->write("Username is already registered");
 		return $response;
 	}
 	

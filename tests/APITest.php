@@ -12,7 +12,24 @@ class APITest extends PHPUnit_Framework_TestCase
             'base_uri' => 'http://bzimmerman.me'
         ]);
     }
+	
+	public function testGet_CreateAccount()
+	{
+		$uniqueId = "test_" . uniqid();
+		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
+            'query' => [
+                'username' => $uniqueId,
+				'password' => 'securepassword',
+				'email' => $uniqueId .'@greenboard.com'
+            ]
+        ]);
 
+        $this->assertEquals(200, $response->getStatusCode());
+		$this->assertEquals("Registered Successfully", $response->getBody());
+
+        
+	}
+	
     public function testGet_ValidInput_TrailObject()
     {
         $response = $this->client->get('/rest/public/api.php/GetTrailById/25', [

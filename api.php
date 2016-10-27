@@ -103,5 +103,57 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
     $response->getBody()->write("Invalid API key");
     return $response;
 });
+
+$app->get('/RegisterUser/', function (Request $request, Response $response)
+{
+	$params = $request->getQueryParams();
+	
+	$sql = "SELECT COUNT(*) count FROM user WHERE email=:email LIMIT 1";
+	$stmt = $this->db->prepare($sql);
+    $stmt->execute(array(':email'=>$params['email']));
+    $result = $stmt->fetch();
+
+    if($result['count'] > 0)
+	{
+		$response->getBody()->write("Email is already registered");
+		return $response;
+	}
+	
+	$sql = "INSERT INTO user (username, password, email, api_key) VALUES(:username, :password, :email, :api_key)";
+	$stmt = $this->db->prepare($sql);
+	$stmt->execute(array(':username'=>$params['username'], ':password'=>$params['password'], ':email'=>$params['email'], ':api_key'=>md5($params['password'])));
+	/*
+	$json = array('username'=>$username, 'password'=>$password, 'email'=>$email, 'image'=>"Not implemented");
+	$sql2 = "INSERT INTO UserInfo (email, userData) VALUES(:email, :userData)";
+	$stmt2 = $this->db->prepare($sql2);
+	$stmt2->execute(array(':email'=>$email, ':userData'=>json_encode($json)));
+	*/
+	$response->getBody()->write("Registered Successfully");
+	return $response;
+});
+
+$app->get('/Login/', function(Request $request, Response $response)
+{
+	$params = $request->getQueryParams();
+
+	$sql = "SELECT api_key FROM user WHERE username=:username AND password=:password LIMIT 1";
+	$stmt = $this->db->prepare($sql);
+	$stmt->execute(array(':username'=>$params['username'],':password'=>$params['password']));
+	$result = $stmt->fetch();
+	
+	if(!isset($result['api_key']))
+	{
+		$response->getBody()->write("Invalid login credentials");
+	}
+	else
+	{
+		$response->getBody()->write($result['api_key']);
+	}
+	
+	return $response;
+	
+});
+
+
 $app->run();
 ?>

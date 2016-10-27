@@ -8,15 +8,17 @@ require 'db_params.php';
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
 
+//create connection for database
 $config['db']['host']   = $host;
 $config['db']['user']   = $user;
 $config['db']['pass']   = $pass;
 $config['db']['dbname'] = $dbName;
 
-
+//start a new slim application
 $app = new \Slim\App(["settings" => $config]);
 $container = $app->getContainer();
 
+//setup the PDO
 $container['db'] = function ($c) {
     $db = $c['settings']['db'];
     $pdo = new PDO("mysql:host=" . $db['host'] . ";dbname=" . $db['dbname'],
@@ -26,16 +28,19 @@ $container['db'] = function ($c) {
     return $pdo;
 };
 
-$app->get('/GetTrailById/{id}', function (Request $request, Response $response) 
+//get a trail by it's ID
+//returns the trail object if it is found
+$app->get('/GetTrailById/{id}', function (Request $request, Response $response)
 {
     $params = $request->getQueryParams();
     $sql = "SELECT COUNT(*) count FROM user WHERE api_key=:key LIMIT 1";
     $stmt = $this->db->prepare($sql);
     $stmt->execute(array(':key'=>$params['key']));
     $result = $stmt->fetch();
-
+   //check if the API key is correct
     if($result['count'] > 0)
     {
+      //if it is get the trail and return it
        $id = $request->getAttribute('id');
        $sql = "SELECT * FROM trail WHERE id=:id LIMIT 1";
        $stmt = $this->db->prepare($sql);
@@ -57,10 +62,12 @@ $app->get('/WriteTrailToDB/', function (Request $request, Response $response)
     $stmt->execute(array(':key'=>$params['key']));
     $result = $stmt->fetch();
 
+ //makes sure that the API key is correct and that all the parameters are passed to it
     if($result['count'] > 0)
     {
 		if(isset($params['lat']) && isset($params['lng']) && isset($params['trailObj']))
 		{
+      //insert the new trail in
 			$sql = "INSERT INTO trail (trailInfo,lat,lng,trailObj) VALUES('Empty description',:lat,:lng,:trailObj)";
 			$stmt = $this->db->prepare($sql);
 			$stmt->execute(array(':lat'=>$params['lat'],':lng'=>$params['lng'],':trailObj'=>$params['trailObj']));
@@ -84,14 +91,14 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
 
     if($result['count'] > 0 && isset($params['minLat']) && isset($params['minLng']) && isset($params['maxLat']) && isset($params['maxLng']))
     {
-	
+
 	   $maxResults = 10;
 	   if(isset($params['maxResults']))
 	   {
 		   $maxResults = $params['maxResults'];
 	   }
-	   
-	   
+
+
 	   /*
        $sql = "SELECT * FROM trail WHERE (lat > :minLat) AND (lat < :maxLat) AND (lng > :minLng) AND (lng < :maxLng)  LIMIT :maxResults";
        $stmt = $this->db->prepare($sql);
@@ -107,18 +114,18 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
 $app->get('/RegisterUser/', function (Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
-	
+
 	$sql = "SELECT COUNT(*) count FROM user WHERE username=:username LIMIT 1";
 	$stmt = $this->db->prepare($sql);
-    $stmt->execute(array(':username'=>$params['username']));
-    $result = $stmt->fetch();
+  $stmt->execute(array(':username'=>$params['username']));
+  $result = $stmt->fetch();
 
-    if($result['count'] > 0)
+  if($result['count'] > 0)
 	{
 		$response->getBody()->write("Username is already registered");
 		return $response;
 	}
-	
+
 	$sql = "INSERT INTO user (username, password, email, api_key) VALUES(:username, :password, :email, :api_key)";
 	$stmt = $this->db->prepare($sql);
 	$stmt->execute(array(':username'=>$params['username'], ':password'=>$params['password'], ':email'=>$params['email'], ':api_key'=>md5($params['email'])));
@@ -140,7 +147,7 @@ $app->get('/Login/', function(Request $request, Response $response)
 	$stmt = $this->db->prepare($sql);
 	$stmt->execute(array(':username'=>$params['username'],':password'=>$params['password']));
 	$result = $stmt->fetch();
-	
+
 	if(!isset($result['api_key']))
 	{
 		$response->getBody()->write("Invalid login credentials");
@@ -149,15 +156,15 @@ $app->get('/Login/', function(Request $request, Response $response)
 	{
 		$response->getBody()->write($result['api_key']);
 	}
-	
+
 	return $response;
-	
+
 });
 
 $app->get('/RegisterUserWithFB/', function (Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
-	
+
 	$sql = "SELECT COUNT(*) count FROM user WHERE facebookId=:fbid LIMIT 1";
 	$stmt = $this->db->prepare($sql);
     $stmt->execute(array(':fbid'=>$params['fbid']));
@@ -168,7 +175,7 @@ $app->get('/RegisterUserWithFB/', function (Request $request, Response $response
 		$response->getBody()->write("Facebook ID already in use.");
 		return $response;
 	}
-	
+
 	$sql = "INSERT INTO user (username, email, facebookId, api_key) VALUES(:username, :email, :fbid, :api_key)";
 	$stmt = $this->db->prepare($sql);
 	$stmt->execute(array(':username'=>$params['username'],':email'=>$params['email'], ':fbid'=>$params['fbid'], ':api_key'=>md5($params['email'])));
@@ -190,7 +197,7 @@ $app->get('/LoginWithFB/', function(Request $request, Response $response)
 	$stmt = $this->db->prepare($sql);
 	$stmt->execute(array(':fbid'=>$params['fbid']));
 	$result = $stmt->fetch();
-	
+
 	if(!isset($result['api_key']))
 	{
 		$response->getBody()->write("Invalid login credentials");
@@ -199,9 +206,9 @@ $app->get('/LoginWithFB/', function(Request $request, Response $response)
 	{
 		$response->getBody()->write($result['api_key']);
 	}
-	
+
 	return $response;
-	
+
 });
 
 $app->run();

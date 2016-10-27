@@ -24,7 +24,7 @@ This registers a new user through greenboard registration
 
 `{url}/rest/public/api.php/RegisterUser/?username={username}&password={password}&email={email}`
 
-**Login**
+**Login**(Brock)
 
 This logs a user in and returns their api key
 

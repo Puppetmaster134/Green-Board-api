@@ -117,24 +117,30 @@ $app->get('/RegisterUser/', function (Request $request, Response $response)
 
 	$sql = "SELECT COUNT(*) count FROM user WHERE username=:username LIMIT 1";
 	$stmt = $this->db->prepare($sql);
-  $stmt->execute(array(':username'=>$params['username']));
-  $result = $stmt->fetch();
+	$stmt->execute(array(':username'=>$params['username']));
+	$result = $stmt->fetch();
 
-  if($result['count'] > 0)
+	if($result['count'] > 0)
 	{
-		$response->getBody()->write("Username is already registered");
+		$response->getBody()->write("Username is already registered.");
 		return $response;
 	}
+	
+	$sql = "SELECT COUNT(*) count FROM user WHERE email=:email LIMIT 1";
+	$stmt = $this->db->prepare($sql);
+	$stmt->execute(array(':email'=>$params['email']));
+	$result = $stmt->fetch();
 
+	if($result['count'] > 0)
+	{
+		$response->getBody()->write("Email is already registered.");
+		return $response;
+	}
+	
 	$sql = "INSERT INTO user (username, password, email, api_key) VALUES(:username, :password, :email, :api_key)";
 	$stmt = $this->db->prepare($sql);
 	$stmt->execute(array(':username'=>$params['username'], ':password'=>$params['password'], ':email'=>$params['email'], ':api_key'=>md5($params['email'])));
-	/*
-	$json = array('username'=>$username, 'password'=>$password, 'email'=>$email, 'image'=>"Not implemented");
-	$sql2 = "INSERT INTO UserInfo (email, userData) VALUES(:email, :userData)";
-	$stmt2 = $this->db->prepare($sql2);
-	$stmt2->execute(array(':email'=>$email, ':userData'=>json_encode($json)));
-	*/
+
 	$response->getBody()->write("Registered Successfully");
 	return $response;
 });

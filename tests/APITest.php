@@ -36,6 +36,25 @@ class APITest extends PHPUnit_Framework_TestCase
 	/**
 	* @test
 	*/
+	public function Get_ValidInput_RegisterUserWithExistingEmail()
+	{
+		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
+            'query' => [
+                'username' => 'NeverGoingToRegister',
+				'password' => 'securepassword',
+				'email' => 'tester@gmail.com'
+            ]
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+		$this->assertEquals("Email is already registered.", $response->getBody());
+
+        
+	}
+	
+	/**
+	* @test
+	*/
 	public function Get_ValidInput_Login()
 	{
 		$response = $this->client->get('/rest/public/api.php/Login/', [

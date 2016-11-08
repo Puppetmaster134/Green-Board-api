@@ -142,4 +142,28 @@ class APITest extends PHPUnit_Framework_TestCase
         //$data = json_decode($response->getBody(), true);
         //$this->assertArrayHasKey('trail', $data);
     }
+	
+	/**
+	* @test
+	*/
+	public function Get_ValidInput_GetTrailInArea()
+	{
+		$response = $this->client->get('/rest/public/api.php/GetTrailInArea/', [
+            'query' => [
+                'key' => 'abc123',
+				'minLat' => 0,
+				'maxLat' => 40,
+				'minLng' => 30,
+				'maxLng' => 40
+            ]
+        ]);
+		
+		$data = json_decode($response->getBody(),true);
+        $this->assertEquals(200, $response->getStatusCode());
+		$this->assertNotEquals("Invalid parameters", $response->getBody());
+		$this->assertNotEquals("Invalid API key", $response->getBody());
+		//$this->assertEquals("Registered Successfully", $response->getBody());
+
+        
+	}
 }

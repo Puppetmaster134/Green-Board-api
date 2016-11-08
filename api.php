@@ -89,25 +89,32 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
     $stmt->execute(array(':key'=>$params['key']));
     $result = $stmt->fetch();
 
-    if($result['count'] > 0 && isset($params['minLat']) && isset($params['minLng']) && isset($params['maxLat']) && isset($params['maxLng']))
+    if($result['count'] > 0)
     {
-
-	   $maxResults = 10;
-	   if(isset($params['maxResults']))
-	   {
-		   $maxResults = $params['maxResults'];
-	   }
-
-
-	   /*
-       $sql = "SELECT * FROM trail WHERE (lat > :minLat) AND (lat < :maxLat) AND (lng > :minLng) AND (lng < :maxLng)  LIMIT :maxResults";
-       $stmt = $this->db->prepare($sql);
-       $stmt->execute(array(':minLat'=>$params['minLat'],':maxLat'=>$params['maxLat'],':minLng'=>$params['minLng'],':maxLng'=>$params['maxLng'],':maxResults'=>$maxResults));
-       */
-	   $response->getBody()->write("Endpoint is not developed yet");
-       return $response;
+		if(isset($params['minLat']) && isset($params['minLng']) && isset($params['maxLat']) && isset($params['maxLng']))
+		{
+			$maxResults = 10;
+			if(isset($params['maxResults']))
+			{
+				$maxResults = $params['maxResults'];
+			}
+			$sql = "SELECT * FROM trail WHERE lat > :minLat AND lat < :maxLat AND lng > :minLng AND lng < :maxLng";
+			$stmt = $this->db->prepare($sql);
+			$stmt->execute(array(':minLat'=>$params['minLat'],':maxLat'=>$params['maxLat'],':minLng'=>$params['minLng'],':maxLng'=>$params['maxLng']));
+			$result = $stmt->fetchAll();
+			$response->getBody()->write(json_encode($result));
+		}
+		else
+		{
+			$response->getBody()->write("Invalid parameters");
+		}
+	   
     }
-    $response->getBody()->write("Invalid API key");
+	else
+	{
+		$response->getBody()->write("Invalid API key");	
+	}
+    
     return $response;
 });
 

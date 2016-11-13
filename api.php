@@ -28,19 +28,31 @@ $container['db'] = function ($c) {
     return $pdo;
 };
 
+
+function isKeyValid($pdo,$key)
+{
+    $sql = "SELECT COUNT(*) count FROM user WHERE api_key=:key LIMIT 1";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array(':key'=>$key));
+    $result = $stmt->fetch();
+	//check if the API key is correct
+    if($result['count'] > 0)
+	{
+		return true;
+	}
+	/**/
+	return false;
+}
+
+
 //get a trail by it's ID
 //returns the trail object if it is found
 $app->get('/GetTrailById/{id}', function (Request $request, Response $response)
 {
     $params = $request->getQueryParams();
-    $sql = "SELECT COUNT(*) count FROM user WHERE api_key=:key LIMIT 1";
-    $stmt = $this->db->prepare($sql);
-    $stmt->execute(array(':key'=>$params['key']));
-    $result = $stmt->fetch();
-   //check if the API key is correct
-    if($result['count'] > 0)
-    {
-      //if it is get the trail and return it
+
+	if(isKeyValid($this->db,$params['key']))
+	{
        $id = $request->getAttribute('id');
        $sql = "SELECT * FROM trail WHERE id=:id LIMIT 1";
        $stmt = $this->db->prepare($sql);
@@ -48,7 +60,7 @@ $app->get('/GetTrailById/{id}', function (Request $request, Response $response)
        $result = $stmt->fetch();
        $response->getBody()->write($result['trailObj']);
        return $response;
-    }
+	}
     $response->getBody()->write("Invalid API key");
     return $response;
 
@@ -57,17 +69,10 @@ $app->get('/GetTrailById/{id}', function (Request $request, Response $response)
 $app->get('/WriteTrailToDB/', function (Request $request, Response $response)
 {
     $params = $request->getQueryParams();
-    $sql = "SELECT COUNT(*) count FROM user WHERE api_key=:key LIMIT 1";
-    $stmt = $this->db->prepare($sql);
-    $stmt->execute(array(':key'=>$params['key']));
-    $result = $stmt->fetch();
-
- //makes sure that the API key is correct and that all the parameters are passed to it
-    if($result['count'] > 0)
+    if(isKeyValid($this->db,$params['key']))
     {
 		if(isset($params['lat']) && isset($params['lng']) && isset($params['trailObj']))
 		{
-      //insert the new trail in
 			$sql = "INSERT INTO trail (trailInfo,lat,lng,trailObj) VALUES('Empty description',:lat,:lng,:trailObj)";
 			$stmt = $this->db->prepare($sql);
 			$stmt->execute(array(':lat'=>$params['lat'],':lng'=>$params['lng'],':trailObj'=>$params['trailObj']));
@@ -84,12 +89,7 @@ $app->get('/WriteTrailToDB/', function (Request $request, Response $response)
 $app->get('/GetTrailInArea/', function (Request $request, Response $response)
 {
     $params = $request->getQueryParams();
-    $sql = "SELECT COUNT(*) count FROM user WHERE api_key=:key LIMIT 1";
-    $stmt = $this->db->prepare($sql);
-    $stmt->execute(array(':key'=>$params['key']));
-    $result = $stmt->fetch();
-
-    if($result['count'] > 0)
+    if(isKeyValid($this->db,$params['key']))
     {
 		if(isset($params['minLat']) && isset($params['minLng']) && isset($params['maxLat']) && isset($params['maxLng']))
 		{
@@ -192,12 +192,6 @@ $app->get('/RegisterUserWithFB/', function (Request $request, Response $response
 	$sql = "INSERT INTO user (username, email, facebookId, api_key) VALUES(:username, :email, :fbid, :api_key)";
 	$stmt = $this->db->prepare($sql);
 	$stmt->execute(array(':username'=>$params['username'],':email'=>$params['email'], ':fbid'=>$params['fbid'], ':api_key'=>md5($params['email'])));
-	/*
-	$json = array('username'=>$username, 'password'=>$password, 'email'=>$email, 'image'=>"Not implemented");
-	$sql2 = "INSERT INTO UserInfo (email, userData) VALUES(:email, :userData)";
-	$stmt2 = $this->db->prepare($sql2);
-	$stmt2->execute(array(':email'=>$email, ':userData'=>json_encode($json)));
-	*/
 	$response->getBody()->write("Registered Successfully");
 	return $response;
 });
@@ -225,4 +219,6 @@ $app->get('/LoginWithFB/', function(Request $request, Response $response)
 });
 
 $app->run();
+
+
 ?>

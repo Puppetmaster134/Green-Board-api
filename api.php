@@ -43,14 +43,17 @@ function isKeyValid($pdo,$key)
 	return false;
 }
 
-function accountExists($pdo, &$response, $username, $email)
+function accountExists($pdo, &$response, $fields)
 {
 	$responseObj = array();
 	$args = array();
 
+	/*****
+		Check username
+	*****/
 	$sql = "SELECT COUNT(*) count FROM user WHERE username=:username LIMIT 1";
 	$stmt = $pdo->prepare($sql);
-	$stmt->execute(array(':username'=>$username));
+	$stmt->execute(array(':username'=>$fields['username']));
 	$result = $stmt->fetch();
 	
 	if($result['count'] > 0)
@@ -58,14 +61,35 @@ function accountExists($pdo, &$response, $username, $email)
 		$args["username"] = "Username is already registered.";
 	}
 	
+	
+	/*****
+		Check email
+	*****/
+	
 	$sql = "SELECT COUNT(*) count FROM user WHERE email=:email LIMIT 1";
 	$stmt = $pdo->prepare($sql);
-	$stmt->execute(array(':email'=>$email));
+	$stmt->execute(array(':email'=>$fields['email']));
 	$result = $stmt->fetch();
 
 	if($result['count'] > 0)
 	{
 		$args["email"] = "Email is already registered.";
+	}
+	
+	/******
+		Check Facebook ID
+	******/
+	if(isset($fields['fbid']))
+	{
+		$sql = "SELECT COUNT(*) count FROM user WHERE facebookId=:fbid LIMIT 1";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute(array(':fbid'=>$fields['fbid']));
+		$result = $stmt->fetch();
+		
+		if($result['count'] > 0)
+		{
+			$args["fbid"] = "FacebookID is already registered.";
+		}
 	}
 	
 	if(sizeof($args) > 0)
@@ -76,11 +100,8 @@ function accountExists($pdo, &$response, $username, $email)
 	}
 	
 	return false;
-	
 }
 
-//get a trail by it's ID
-//returns the trail object if it is found
 $app->get('/GetTrailById/{id}', function (Request $request, Response $response)
 {
     $params = $request->getQueryParams();
@@ -111,12 +132,17 @@ $app->get('/WriteTrailToDB/', function (Request $request, Response $response)
 			$stmt = $this->db->prepare($sql);
 			$stmt->execute(array(':lat'=>$params['lat'],':lng'=>$params['lng'],':trailObj'=>$params['trailObj']));
 			$response->getBody()->write("Trail added successfully" . " " . $params['lat'] . " " . $params['lng'] . " " . $params['trailObj']);
-			return $response;
 		}
-		$response->getBody()->write("Invalid parameters");
-		return $response;
+		else
+		{
+			$response->getBody()->write("Invalid parameters");
+		}
     }
-    $response->getBody()->write("Invalid API key");
+	else
+	{
+		$response->getBody()->write("Invalid API key");	
+	}
+    
     return $response;
 });
 
@@ -142,16 +168,20 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
 		{
 			$response->getBody()->write("Invalid parameters");
 		}
-		return $response;
     }
-	$response->getBody()->write("Invalid API key");
+	else
+	{
+		$response->getBody()->write("Invalid API key");	
+	}
+	
     return $response;
 });
 
 $app->get('/RegisterUser/', function (Request $request, Response $response)
 {
-	$params = $request->getQueryParams();	
-	if(!accountExists($this->db,$response,$params['username'],$params['email']))
+	$params = $request->getQueryParams();
+	$fields = array("username"=>$params['username'],"email"=>$params['email']);
+	if(!accountExists($this->db,$response,$fields))
 	{
 		$sql = "INSERT INTO user (username, password, email, api_key) VALUES(:username, :password, :email, :api_key)";
 		$stmt = $this->db->prepare($sql);

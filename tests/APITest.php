@@ -17,8 +17,8 @@ class APITest extends PHPUnit_Framework_TestCase
 	* @test
 	*/
 	public function Get_ValidInput_RegisterUser()
-	{
-		$uniqueId = "test_" . substr(uniqid(),0,-5);
+	{	
+		$uniqueId = "test_" . rand(0,9999999);
 		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
             'query' => [
                 'username' => $uniqueId,
@@ -120,6 +120,7 @@ class APITest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(200, $response->getStatusCode());
 		$this->assertEquals("Invalid login credentials", $response->getBody());
 	}
+	
 	/**
 	* @test
 	*/
@@ -142,17 +143,22 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_ValidInput_RegisterUserWithFB()
 	{
-		$uniqueId = "test_" . substr(uniqid(),0,-5);
+		$uniqueId = "test_" . rand(0,9999999);
 		$response = $this->client->get('/rest/public/api.php/RegisterUserWithFB/', [
             'query' => [
                 'username' => $uniqueId,
 				'email' => $uniqueId . '@greenboard.com',
-				'fbid' => rand(0,1000000)
+				'fbid' => rand(0,9999999)
             ]
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());
-		$this->assertEquals("Registered Successfully", $response->getBody());
+        $data = json_decode($response->getBody(), true);
+		
+		//$this->expectOutputString('');
+		//print_r($data);
+        $this->assertArrayHasKey('success', $data['args']);
+        $this->assertEquals("Registered Successfully", $data['args']['success']);
 
 
 	}

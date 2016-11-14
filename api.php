@@ -111,12 +111,17 @@ $app->get('/WriteTrailToDB/', function (Request $request, Response $response)
 			$stmt = $this->db->prepare($sql);
 			$stmt->execute(array(':lat'=>$params['lat'],':lng'=>$params['lng'],':trailObj'=>$params['trailObj']));
 			$response->getBody()->write("Trail added successfully" . " " . $params['lat'] . " " . $params['lng'] . " " . $params['trailObj']);
-			return $response;
 		}
-		$response->getBody()->write("Invalid parameters");
-		return $response;
+		else
+		{
+			$response->getBody()->write("Invalid parameters");
+		}
     }
-    $response->getBody()->write("Invalid API key");
+	else
+	{
+		$response->getBody()->write("Invalid API key");	
+	}
+    
     return $response;
 });
 
@@ -142,9 +147,12 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
 		{
 			$response->getBody()->write("Invalid parameters");
 		}
-		return $response;
     }
-	$response->getBody()->write("Invalid API key");
+	else
+	{
+		$response->getBody()->write("Invalid API key");	
+	}
+	
     return $response;
 });
 

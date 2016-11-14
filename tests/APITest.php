@@ -28,27 +28,12 @@ class APITest extends PHPUnit_Framework_TestCase
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());
-		$this->assertEquals("Registered Successfully", $response->getBody());
-
-
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('success', $data['args']);
+        $this->assertEquals("Registered Successfully", $data['args']['success']);
 	}
 
-  public function Get_AlreadyRegistered_User()
-  {
-    $uniqueId = "test_" . substr(uniqid(),0,-5);
-    $response = $this->client->get('/rest/public/api.php/RegisterUser/', [
-            'query' => [
-                'username' => $uniqueId,
-        'password' => 'securepassword',
-        'email' => $uniqueId . '@greenboard.com'
-            ]
-        ]);
 
-        $this->assertEquals(200, $response->getStatusCode());
-    $this->assertEquals("Registered Successfully", $response->getBody());
-
-
-  }
 	/**
 	* @test
 	*/
@@ -58,67 +43,83 @@ class APITest extends PHPUnit_Framework_TestCase
             'query' => [
                 'username' => 'NeverGoingToRegister',
 				'password' => 'securepassword',
-				'email' => 'tester@gmail.com'
+				'email' => 'test@greenboard.com'
             ]
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());
-		$this->assertEquals("Email is already registered.", $response->getBody());
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('email', $data['args']);
+        $this->assertEquals("Email is already registered.", $data['args']['email']);
 
 	}
 
-  public function Get_AlreadyRegistered_Username()
-  {
-    $response = $this->client->get('/rest/public/api.php/RegisterUser/', [
-            'query' => [
-                'username' => 'testerr',
-        'password' => 'dddddddd',
-        'email' => 'bdamico33@gmail.com'
-            ]
-        ]);
+	/**
+	* @test
+	*/
+	public function Get_AlreadyRegistered_Username()
+	{
+		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
+				'query' => [
+					'username' => 'Brian',
+					'password' => 'dddddddd',
+					'email' => 'bdamico33@gmail.com'
+				]
+			]);
 
-    $this->assertEquals(200, $response->getStatusCode());
-    $this->assertEquals("Username is already registered.", $response->getBody());
-  }
+		$this->assertEquals(200, $response->getStatusCode());
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('username', $data['args']);
+        $this->assertEquals("Username is already registered.", $data['args']['username']);
+	}
 
-  public function Get_Login_Successfully()
-  {
-    $response = $this->client->get('/rest/public/api.php/Login/', [
-            'query' => [
-                'username' => 'testerr',
-                'password' => 'dddddddd',
-            ]
-        ]);
+	/**
+	* @test
+	*/
+	public function Get_Login_Successfully()
+	{
+		$response = $this->client->get('/rest/public/api.php/Login/', [
+				'query' => [
+					'username' => 'Brian',
+					'password' => 'securepass',
+				]
+			]);
 
-    $this->assertEquals(200, $response->getStatusCode());
-    $this->assertEquals("U4c2f2b8759b49c28e6f32d9fe41d81a4", $response->getBody());
-  }
+		$this->assertEquals(200, $response->getStatusCode());
+		$this->assertEquals("abc123", $response->getBody());
+	}
 
-  public function Get_Login_Password_Empty()
-  {
-    $response = $this->client->get('/rest/public/api.php/Login/', [
-            'query' => [
-                'username' => 'testerr',
-                'password' => '',
-            ]
-        ]);
+	/**
+	* @test
+	*/
+	public function Get_Login_Password_Empty()
+	{
+		$response = $this->client->get('/rest/public/api.php/Login/', [
+				'query' => [
+					'username' => 'testerr',
+					'password' => '',
+				]
+			]);
 
-    $this->assertEquals(200, $response->getStatusCode());
-    $this->assertEquals("Invalid login credentials", $response->getBody());
-  }
+		$this->assertEquals(200, $response->getStatusCode());
+		$this->assertEquals("Invalid login credentials", $response->getBody());
+	}
 
-  public function Get_Login_Empty_Username()
-  {
-    $response = $this->client->get('/rest/public/api.php/Login/', [
-            'query' => [
-                'username' => '',
-                'password' => 'dddddddd',
-            ]
-        ]);
+	/**
+	* @test
+	*/
+	public function Get_Login_Empty_Username()
+	{
+		$response = $this->client->get('/rest/public/api.php/Login/', [
+				'query' => [
+					'username' => '',
+					'password' => 'dddddddd',
+				]
+			]);
 
-    $this->assertEquals(200, $response->getStatusCode());
-    $this->assertEquals("Invalid login credentials", $response->getBody());
-  }
+		$this->assertEquals(200, $response->getStatusCode());
+		$this->assertEquals("Invalid login credentials", $response->getBody());
+	}
 	/**
 	* @test
 	*/
@@ -126,7 +127,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	{
 		$response = $this->client->get('/rest/public/api.php/Login/', [
             'query' => [
-                'username' => 'beezy',
+                'username' => 'Brian',
 				'password' => 'securepass'
             ]
         ]);

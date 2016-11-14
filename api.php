@@ -19,7 +19,8 @@ $app = new \Slim\App(["settings" => $config]);
 $container = $app->getContainer();
 
 //setup the PDO
-$container['db'] = function ($c) {
+$container['db'] = function ($c) 
+{
     $db = $c['settings']['db'];
     $pdo = new PDO("mysql:host=" . $db['host'] . ";dbname=" . $db['dbname'],
         $db['user'], $db['pass']);
@@ -35,15 +36,48 @@ function isKeyValid($pdo,$key)
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array(':key'=>$key));
     $result = $stmt->fetch();
-	//check if the API key is correct
     if($result['count'] > 0)
 	{
 		return true;
 	}
-	/**/
 	return false;
 }
 
+function accountExists($pdo, &$response, $username, $email)
+{
+	$responseObj = array();
+	$args = array();
+
+	$sql = "SELECT COUNT(*) count FROM user WHERE username=:username LIMIT 1";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute(array(':username'=>$username));
+	$result = $stmt->fetch();
+	
+	if($result['count'] > 0)
+	{
+		$args["username"] = "Username is already registered.";
+	}
+	
+	$sql = "SELECT COUNT(*) count FROM user WHERE email=:email LIMIT 1";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute(array(':email'=>$email));
+	$result = $stmt->fetch();
+
+	if($result['count'] > 0)
+	{
+		$args["email"] = "Email is already registered.";
+	}
+	
+	if(sizeof($args) > 0)
+	{
+		$responseObj['args'] = $args;
+		$response->getBody()->write(json_encode($responseObj));
+		return true;
+	}
+	
+	return false;
+	
+}
 
 //get a trail by it's ID
 //returns the trail object if it is found
@@ -108,47 +142,23 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
 		{
 			$response->getBody()->write("Invalid parameters");
 		}
-	   
+		return $response;
     }
-	else
-	{
-		$response->getBody()->write("Invalid API key");	
-	}
-    
+	$response->getBody()->write("Invalid API key");
     return $response;
 });
 
 $app->get('/RegisterUser/', function (Request $request, Response $response)
 {
-	$params = $request->getQueryParams();
-
-	$sql = "SELECT COUNT(*) count FROM user WHERE username=:username LIMIT 1";
-	$stmt = $this->db->prepare($sql);
-	$stmt->execute(array(':username'=>$params['username']));
-	$result = $stmt->fetch();
-
-	if($result['count'] > 0)
+	$params = $request->getQueryParams();	
+	if(!accountExists($this->db,$response,$params['username'],$params['email']))
 	{
-		$response->getBody()->write("Username is already registered.");
-		return $response;
+		$sql = "INSERT INTO user (username, password, email, api_key) VALUES(:username, :password, :email, :api_key)";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute(array(':username'=>$params['username'], ':password'=>$params['password'], ':email'=>$params['email'], ':api_key'=>md5($params['email'])));
+		$responseObj = array("args"=>array("success"=>"Registered Successfully"));
+		$response->getBody()->write(json_encode($responseObj));
 	}
-	
-	$sql = "SELECT COUNT(*) count FROM user WHERE email=:email LIMIT 1";
-	$stmt = $this->db->prepare($sql);
-	$stmt->execute(array(':email'=>$params['email']));
-	$result = $stmt->fetch();
-
-	if($result['count'] > 0)
-	{
-		$response->getBody()->write("Email is already registered.");
-		return $response;
-	}
-	
-	$sql = "INSERT INTO user (username, password, email, api_key) VALUES(:username, :password, :email, :api_key)";
-	$stmt = $this->db->prepare($sql);
-	$stmt->execute(array(':username'=>$params['username'], ':password'=>$params['password'], ':email'=>$params['email'], ':api_key'=>md5($params['email'])));
-
-	$response->getBody()->write("Registered Successfully");
 	return $response;
 });
 

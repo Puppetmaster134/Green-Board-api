@@ -79,10 +79,11 @@ function accountExists($pdo, &$response, $fields)
 	/******
 		Check Facebook ID
 	******/
+	
 	if(isset($fields['fbid']))
 	{
 		$sql = "SELECT COUNT(*) count FROM user WHERE facebookId=:fbid LIMIT 1";
-		$stmt = $this->db->prepare($sql);
+		$stmt = $pdo->prepare($sql);
 		$stmt->execute(array(':fbid'=>$fields['fbid']));
 		$result = $stmt->fetch();
 		
@@ -91,7 +92,7 @@ function accountExists($pdo, &$response, $fields)
 			$args["fbid"] = "FacebookID is already registered.";
 		}
 	}
-	
+	/**/
 	if(sizeof($args) > 0)
 	{
 		$responseObj['args'] = $args;
@@ -180,8 +181,7 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
 $app->get('/RegisterUser/', function (Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
-	$fields = array("username"=>$params['username'],"email"=>$params['email']);
-	if(!accountExists($this->db,$response,$fields))
+	if(!accountExists($this->db,$response,array("username"=>$params['username'],"email"=>$params['email'])))
 	{
 		$sql = "INSERT INTO user (username, password, email, api_key) VALUES(:username, :password, :email, :api_key)";
 		$stmt = $this->db->prepare($sql);
@@ -217,23 +217,19 @@ $app->get('/Login/', function(Request $request, Response $response)
 $app->get('/RegisterUserWithFB/', function (Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
+	$fields = array("username"=>$params['username'],"email"=>$params['email'],"fbid"=>$params['fbid']);
 
-	$sql = "SELECT COUNT(*) count FROM user WHERE facebookId=:fbid LIMIT 1";
-	$stmt = $this->db->prepare($sql);
-    $stmt->execute(array(':fbid'=>$params['fbid']));
-    $result = $stmt->fetch();
-
-    if($result['count'] > 0)
+	if(!accountExists($this->db,$response,array("username"=>$params['username'],"email"=>$params['email'],"fbid"=>$params['fbid'])))
 	{
-		$response->getBody()->write("Facebook ID already in use.");
-		return $response;
+		$sql = "INSERT INTO user (username, email, facebookId, api_key) VALUES(:username, :email, :fbid, :api_key)";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute(array(':username'=>$params['username'],':email'=>$params['email'], ':fbid'=>$params['fbid'], ':api_key'=>md5($params['email'])));
+		$responseObj = array("args"=>array("success"=>"Registered Successfully"));
+		$response->getBody()->write(json_encode($responseObj));
 	}
 
-	$sql = "INSERT INTO user (username, email, facebookId, api_key) VALUES(:username, :email, :fbid, :api_key)";
-	$stmt = $this->db->prepare($sql);
-	$stmt->execute(array(':username'=>$params['username'],':email'=>$params['email'], ':fbid'=>$params['fbid'], ':api_key'=>md5($params['email'])));
-	$response->getBody()->write("Registered Successfully");
 	return $response;
+	
 });
 
 $app->get('/LoginWithFB/', function(Request $request, Response $response)

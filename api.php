@@ -19,7 +19,7 @@ $app = new \Slim\App(["settings" => $config]);
 $container = $app->getContainer();
 
 //setup the PDO
-$container['db'] = function ($c) 
+$container['db'] = function ($c)
 {
     $db = $c['settings']['db'];
     $pdo = new PDO("mysql:host=" . $db['host'] . ";dbname=" . $db['dbname'],
@@ -55,17 +55,17 @@ function accountExists($pdo, &$response, $fields)
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute(array(':username'=>$fields['username']));
 	$result = $stmt->fetch();
-	
+
 	if($result['count'] > 0)
 	{
 		$args["username"] = "Username is already registered.";
 	}
-	
-	
+
+
 	/*****
 		Check email
 	*****/
-	
+
 	$sql = "SELECT COUNT(*) count FROM user WHERE email=:email LIMIT 1";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute(array(':email'=>$fields['email']));
@@ -75,18 +75,18 @@ function accountExists($pdo, &$response, $fields)
 	{
 		$args["email"] = "Email is already registered.";
 	}
-	
+
 	/******
 		Check Facebook ID
 	******/
-	
+
 	if(isset($fields['fbid']))
 	{
 		$sql = "SELECT COUNT(*) count FROM user WHERE facebookId=:fbid LIMIT 1";
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute(array(':fbid'=>$fields['fbid']));
 		$result = $stmt->fetch();
-		
+
 		if($result['count'] > 0)
 		{
 			$args["fbid"] = "FacebookID is already registered.";
@@ -99,13 +99,13 @@ function accountExists($pdo, &$response, $fields)
 		$response->getBody()->write(json_encode($responseObj));
 		return true;
 	}
-	
+
 	return false;
 }
 
 $app->get('/GetTrailById/{id}', function (Request $request, Response $response)
 {
-    $params = $request->getQueryParams();
+  $params = $request->getQueryParams();
 
 	if(isKeyValid($this->db,$params['key']))
 	{
@@ -141,9 +141,9 @@ $app->get('/WriteTrailToDB/', function (Request $request, Response $response)
     }
 	else
 	{
-		$response->getBody()->write("Invalid API key");	
+		$response->getBody()->write("Invalid API key");
 	}
-    
+
     return $response;
 });
 
@@ -172,9 +172,9 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
     }
 	else
 	{
-		$response->getBody()->write("Invalid API key");	
+		$response->getBody()->write("Invalid API key");
 	}
-	
+
     return $response;
 });
 
@@ -196,12 +196,7 @@ $app->get('/Login/', function(Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
 
-	$sql = "SELECT api_key FROM user WHERE username=:username AND password=:password LIMIT 1";
-	$stmt = $this->db->prepare($sql);
-	$stmt->execute(array(':username'=>$params['username'],':password'=>$params['password']));
-	$result = $stmt->fetch();
-
-	if(!isset($result['api_key']))
+	if(getApiKey($this->db, false, $params == "no"))
 	{
 		$response->getBody()->write("Invalid login credentials");
 	}
@@ -229,19 +224,13 @@ $app->get('/RegisterUserWithFB/', function (Request $request, Response $response
 	}
 
 	return $response;
-	
+
 });
 
 $app->get('/LoginWithFB/', function(Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
-
-	$sql = "SELECT api_key FROM user WHERE facebookId = :fbid LIMIT 1";
-	$stmt = $this->db->prepare($sql);
-	$stmt->execute(array(':fbid'=>$params['fbid']));
-	$result = $stmt->fetch();
-
-	if(!isset($result['api_key']))
+	if(getApiKey($this->db, false, $params) == "no")
 	{
 		$response->getBody()->write("Invalid login credentials");
 	}
@@ -251,8 +240,31 @@ $app->get('/LoginWithFB/', function(Request $request, Response $response)
 	}
 
 	return $response;
-
 });
+
+function getApiKey($pdo, $facebook, $params)
+{
+  $result = null;
+  if($facebook == true)
+  {
+    $sql = "SELECT api_key FROM user WHERE facebookId = :fbid LIMIT 1";
+    $stmt = $pdo->db->prepare($sql);
+    $stmt->execute(array(':fbid'=>$params['fbid']));
+    $result = $stmt->fetch();
+  } else {
+    $sql = "SELECT api_key FROM user WHERE username=:username AND password=:password LIMIT 1";
+  	$stmt = $pdo->db->prepare($sql);
+  	$stmt->execute(array(':username'=>$params['username'],':password'=>$params['password']));
+  	$result = $stmt->fetch();
+  }
+  if($result['api_key'] != null)
+  {
+    return $result['api_key'];
+  } else {
+    return "no";
+  }
+}
+
 
 $app->run();
 

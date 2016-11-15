@@ -17,7 +17,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	* @test
 	*/
 	public function Get_ValidInput_RegisterUser()
-	{	
+	{
 		$uniqueId = "test_" . rand(0,9999999);
 		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
             'query' => [
@@ -120,7 +120,7 @@ class APITest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(200, $response->getStatusCode());
 		$this->assertEquals("Invalid login credentials", $response->getBody());
 	}
-	
+
 	/**
 	* @test
 	*/
@@ -133,7 +133,7 @@ class APITest extends PHPUnit_Framework_TestCase
             ]
         ]);
 
-        $this->assertEquals(200, $response->getStatusCode());
+    $this->assertEquals(200, $response->getStatusCode());
 		$this->assertNotEquals("Invalid login credentials", $response->getBody());
 
 	}
@@ -154,7 +154,7 @@ class APITest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(200, $response->getStatusCode());
         $data = json_decode($response->getBody(), true);
-		
+
 		//$this->expectOutputString('');
 		//print_r($data);
         $this->assertArrayHasKey('success', $data['args']);
@@ -191,7 +191,7 @@ class APITest extends PHPUnit_Framework_TestCase
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());
-        
+
 		$this->assertNotEquals("Invalid API key", $response->getBody());
 		//$data = json_decode($response->getBody(), true);
         //$this->assertArrayHasKey('trail', $data);
@@ -219,7 +219,7 @@ class APITest extends PHPUnit_Framework_TestCase
         //$this->assertArrayHasKey('trail', $data);
     }
 
-	
+
 	/**
 	* @test
 	*/
@@ -234,15 +234,14 @@ class APITest extends PHPUnit_Framework_TestCase
 				'maxLng' => 40
             ]
         ]);
-		
+
 		$data = json_decode($response->getBody(),true);
         $this->assertEquals(200, $response->getStatusCode());
 		$this->assertNotEquals("Invalid parameters", $response->getBody());
 		$this->assertNotEquals("Invalid API key", $response->getBody());
 		//$this->assertEquals("Registered Successfully", $response->getBody());
 
-        
-	}
-	
-}
 
+	}
+
+}

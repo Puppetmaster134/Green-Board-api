@@ -43,6 +43,4 @@ This logs a user in and returns their api key
 `{url}/rest/public/api.php/LoginWithFB/?fbid={fbid}`
 
 ### Endpoints In Development:
-**GetTrailByArea**
 
-Significant addition

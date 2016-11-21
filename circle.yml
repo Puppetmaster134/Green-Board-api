@@ -1,6 +1,20 @@
+general:
+  artifacts:
+    - "builds/staged.zip"
+dependencies:
+  pre:
+    - sudo apt-get install python-dev
+    - sudo pip install awsebcli
 test:
   override:
     - vendor/bin/phpunit ./tests --coverage-clover coverage.xml --whitelist ./public
+
+deployment:
+    production:
+        branch: master
+        commands:
+        - git archive --format=zip HEAD > ./builds/staged.zip
+        - eb deploy --staged
 notify:
    webhooks:
        - url: http://csumbse.net/harbormaster/hook/circleci/

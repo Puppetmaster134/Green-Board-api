@@ -195,8 +195,14 @@ $app->get('/RegisterUser/', function (Request $request, Response $response)
 $app->get('/Login/', function(Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
-
-	if(getApiKey($this->db, false, $params == "no"))
+	 
+	$sql = "SELECT api_key FROM user WHERE username=:username AND password=:password LIMIT 1";
+	$stmt = $this->db->prepare($sql);
+	$stmt->execute(array(':username'=>$params['username'],':password'=>$params['password']));
+	$result = $stmt->fetch();
+	
+	
+	if(!isset($result['api_key']))
 	{
 		$response->getBody()->write("Invalid login credentials");
 	}
@@ -230,7 +236,13 @@ $app->get('/RegisterUserWithFB/', function (Request $request, Response $response
 $app->get('/LoginWithFB/', function(Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
-	if(getApiKey($this->db, false, $params) == "no")
+	
+	$sql = "SELECT api_key FROM user WHERE facebookId = :fbid LIMIT 1";
+	$stmt = $this->db->prepare($sql);
+	$stmt->execute(array(':fbid'=>$params['fbid']));
+	$result = $stmt->fetch();
+
+	if(!isset($result['api_key']))
 	{
 		$response->getBody()->write("Invalid login credentials");
 	}
@@ -241,30 +253,6 @@ $app->get('/LoginWithFB/', function(Request $request, Response $response)
 
 	return $response;
 });
-
-function getApiKey($pdo, $facebook, $params)
-{
-  $result = null;
-  if($facebook == true)
-  {
-    $sql = "SELECT api_key FROM user WHERE facebookId = :fbid LIMIT 1";
-    $stmt = $pdo->db->prepare($sql);
-    $stmt->execute(array(':fbid'=>$params['fbid']));
-    $result = $stmt->fetch();
-  } else {
-    $sql = "SELECT api_key FROM user WHERE username=:username AND password=:password LIMIT 1";
-  	$stmt = $pdo->db->prepare($sql);
-  	$stmt->execute(array(':username'=>$params['username'],':password'=>$params['password']));
-  	$result = $stmt->fetch();
-  }
-  if($result['api_key'] != null)
-  {
-    return $result['api_key'];
-  } else {
-    return "no";
-  }
-}
-
 
 $app->run();
 

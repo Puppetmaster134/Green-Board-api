@@ -1,9 +1,9 @@
 branch-defaults:
   master:
-    environment: greenboardAPI
+    environment: greenboard-env
 deploy:
   artifact: builds/staged.zip
 global:
-  application_name: greenboardAPI
+  application_name: greenboard-env
   default_region: us-west-2
   sc: git

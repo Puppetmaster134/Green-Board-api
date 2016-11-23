@@ -9,10 +9,11 @@ $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
 
 //create connection for database
-$config['db']['host']   = $host;
-$config['db']['user']   = $user;
-$config['db']['pass']   = $pass;
-$config['db']['dbname'] = $dbName;
+$config['db']['host']   = $_SERVER['host'];
+$config['db']['user']   = $_SERVER['db_user'];
+$config['db']['pass']   = $_SERVER['db_pass'];
+$config['db']['dbname'] = $_SERVER['db_name'];
+$config['db']['port'] = $port;
 
 //start a new slim application
 $app = new \Slim\App(["settings" => $config]);

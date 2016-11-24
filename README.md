@@ -42,5 +42,7 @@ This logs a user in and returns their api key
 
 `{url}/rest/public/api.php/LoginWithFB/?fbid={fbid}`
 
-### Endpoints In Development:
+**Get Trail In Area**
+This returns a list of trails in a square-shaped region between (minLng,minLat) and (maxLng,maxLat)
+`{url}/rest/public/api.php/GetTrailInArea/?minLat={minimum_latitude}&minLng={minimum_longitude}&maxLat={maximum_latitude}&maxLng={maximum_longitude}&key={api_key}`
 

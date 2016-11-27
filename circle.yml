@@ -4,7 +4,7 @@ general:
 dependencies:
   pre:
     - sudo apt-get update
-    - sudo apt-get install python2.7
+    - sudo apt-get install python-dev
     - sudo pip install awsebcli
 test:
   override:

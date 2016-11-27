@@ -94,6 +94,7 @@ function accountExists($pdo, &$response, $fields)
 	/**/
 	if(sizeof($args) > 0)
 	{
+		$args['error'] = "Could not register account.";
 		$responseObj['args'] = $args;
 		$response->getBody()->write(json_encode($responseObj));
 		return true;
@@ -101,81 +102,6 @@ function accountExists($pdo, &$response, $fields)
 
 	return false;
 }
-
-$app->get('/GetTrailById/{id}', function (Request $request, Response $response)
-{
-  $params = $request->getQueryParams();
-
-	if(isKeyValid($this->db,$params['key']))
-	{
-       $id = $request->getAttribute('id');
-       $sql = "SELECT * FROM trail WHERE id=:id LIMIT 1";
-       $stmt = $this->db->prepare($sql);
-       $stmt->execute(array(':id'=>$id));
-       $result = $stmt->fetch();
-       $response->getBody()->write($result['trailObj']);
-       return $response;
-	}
-    $response->getBody()->write("Invalid API key");
-    return $response;
-
-});
-
-$app->get('/WriteTrailToDB/', function (Request $request, Response $response)
-{
-    $params = $request->getQueryParams();
-    if(isKeyValid($this->db,$params['key']))
-    {
-		if(isset($params['lat']) && isset($params['lng']) && isset($params['trailObj']))
-		{
-			$sql = "INSERT INTO trail (trailInfo,lat,lng,trailObj) VALUES('Empty description',:lat,:lng,:trailObj)";
-			$stmt = $this->db->prepare($sql);
-			$stmt->execute(array(':lat'=>$params['lat'],':lng'=>$params['lng'],':trailObj'=>$params['trailObj']));
-			$response->getBody()->write("Trail added successfully" . " " . $params['lat'] . " " . $params['lng'] . " " . $params['trailObj']);
-		}
-		else
-		{
-			$response->getBody()->write("Invalid parameters");
-		}
-    }
-	else
-	{
-		$response->getBody()->write("Invalid API key");
-	}
-
-    return $response;
-});
-
-$app->get('/GetTrailInArea/', function (Request $request, Response $response)
-{
-    $params = $request->getQueryParams();
-    if(isKeyValid($this->db,$params['key']))
-    {
-		if(isset($params['minLat']) && isset($params['minLng']) && isset($params['maxLat']) && isset($params['maxLng']))
-		{
-			$maxResults = 10;
-			if(isset($params['maxResults']))
-			{
-				$maxResults = $params['maxResults'];
-			}
-			$sql = "SELECT * FROM trail WHERE lat > :minLat AND lat < :maxLat AND lng > :minLng AND lng < :maxLng";
-			$stmt = $this->db->prepare($sql);
-			$stmt->execute(array(':minLat'=>$params['minLat'],':maxLat'=>$params['maxLat'],':minLng'=>$params['minLng'],':maxLng'=>$params['maxLng']));
-			$result = $stmt->fetchAll();
-			$response->getBody()->write(json_encode($result));
-		}
-		else
-		{
-			$response->getBody()->write("Invalid parameters");
-		}
-    }
-	else
-	{
-		$response->getBody()->write("Invalid API key");
-	}
-
-    return $response;
-});
 
 $app->get('/RegisterUser/', function (Request $request, Response $response)
 {
@@ -189,29 +115,6 @@ $app->get('/RegisterUser/', function (Request $request, Response $response)
 		$response->getBody()->write(json_encode($responseObj));
 	}
 	return $response;
-});
-
-$app->get('/Login/', function(Request $request, Response $response)
-{
-	$params = $request->getQueryParams();
-	 
-	$sql = "SELECT api_key FROM user WHERE username=:username AND password=:password LIMIT 1";
-	$stmt = $this->db->prepare($sql);
-	$stmt->execute(array(':username'=>$params['username'],':password'=>$params['password']));
-	$result = $stmt->fetch();
-	
-	
-	if(!isset($result['api_key']))
-	{
-		$response->getBody()->write("Invalid login credentials");
-	}
-	else
-	{
-		$response->getBody()->write($result['api_key']);
-	}
-
-	return $response;
-
 });
 
 $app->get('/RegisterUserWithFB/', function (Request $request, Response $response)
@@ -232,26 +135,159 @@ $app->get('/RegisterUserWithFB/', function (Request $request, Response $response
 
 });
 
+$app->get('/Login/', function(Request $request, Response $response)
+{
+	$params = $request->getQueryParams();
+	 
+	$sql = "SELECT username,api_key FROM user WHERE username=:username AND password=:password LIMIT 1";
+	$stmt = $this->db->prepare($sql);
+	$stmt->execute(array(':username'=>$params['username'],':password'=>$params['password']));
+	$result = $stmt->fetch();
+	$responseObj = array();
+	
+	if(!isset($result['api_key']))
+	{
+		$responseObj['args'] = array("error"=>"Invalid login credentials.");
+	}
+	else
+	{
+		$responseObj['args'] = array("success"=>"Login successful.");
+		$responseObj['result'] = $result;
+	}
+
+	$response->getBody()->write(json_encode($responseObj));
+	return $response;
+
+});
+
+
 $app->get('/LoginWithFB/', function(Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
 	
-	$sql = "SELECT api_key FROM user WHERE facebookId = :fbid LIMIT 1";
+	$sql = "SELECT username,api_key FROM user WHERE facebookId = :fbid LIMIT 1";
 	$stmt = $this->db->prepare($sql);
 	$stmt->execute(array(':fbid'=>$params['fbid']));
 	$result = $stmt->fetch();
-
+	$responseObj = array();
+	
 	if(!isset($result['api_key']))
 	{
-		$response->getBody()->write("Invalid login credentials");
+		$responseObj['args'] = array("error"=>"Invalid login credentials.");
 	}
 	else
 	{
-		$response->getBody()->write($result['api_key']);
+		$responseObj['args'] = array("success"=>"Login successful.");
+		$responseObj['result'] = $result;
 	}
 
+	$response->getBody()->write(json_encode($responseObj));
 	return $response;
 });
+
+
+$app->get('/GetTrailById/{id}', function (Request $request, Response $response)
+{
+	$params = $request->getQueryParams();
+	$responseObj = array();
+	
+	if(isKeyValid($this->db,$params['key']))
+	{
+		$id = $request->getAttribute('id');
+		$sql = "SELECT * FROM trail WHERE id=:id LIMIT 1";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute(array(':id'=>$id));
+		$result = $stmt->fetch();
+
+		if(!empty($result))
+		{
+			$responseObj['args'] = array("success"=>"Trail retrieved successfully.");
+			$responseObj['result'] = $result;
+		}
+		else
+		{
+			$responseObj['args'] = array("error"=>"Trail " . $id . " does not exist.");
+		}
+	}
+	else
+	{
+		$responseObj['args'] = array("error"=>"Invalid API key.");
+	}
+	
+	$response->getBody()->write(json_encode($responseObj));
+    return $response;
+
+});
+
+$app->get('/WriteTrailToDB/', function (Request $request, Response $response)
+{
+    $params = $request->getQueryParams();
+	$responseObj = array();
+    if(isKeyValid($this->db,$params['key']))
+    {
+		if(isset($params['lat']) && isset($params['lng']) && isset($params['trailObj']))
+		{
+			$sql = "INSERT INTO trail (trailInfo,lat,lng,trailObj) VALUES('Empty description',:lat,:lng,:trailObj)";
+			$stmt = $this->db->prepare($sql);
+			$stmt->execute(array(':lat'=>$params['lat'],':lng'=>$params['lng'],':trailObj'=>$params['trailObj']));
+			$responseObj['args'] = array("success"=>"Trail added successfully" . " " . $params['lat'] . " " . $params['lng'] . " " . $params['trailObj']);
+		}
+		else
+		{
+			$responseObj['args'] = array("error"=>"Invalid parameters.");
+		}
+    }
+	else
+	{
+		$responseObj['args'] = array("error"=>"Invalid API key.");
+	}
+
+	$response->getBody()->write(json_encode($responseObj));
+    return $response;
+});
+
+$app->get('/GetTrailInArea/', function (Request $request, Response $response)
+{
+    $params = $request->getQueryParams();
+	$responseObj = array();
+    if(isKeyValid($this->db,$params['key']))
+    {
+		if(isset($params['minLat']) && isset($params['minLng']) && isset($params['maxLat']) && isset($params['maxLng']))
+		{
+			$maxResults = 10;
+			if(isset($params['maxResults']))
+			{
+				$maxResults = $params['maxResults'];
+			}
+			$sql = "SELECT * FROM trail WHERE lat > :minLat AND lat < :maxLat AND lng > :minLng AND lng < :maxLng";
+			$stmt = $this->db->prepare($sql);
+			$stmt->execute(array(':minLat'=>$params['minLat'],':maxLat'=>$params['maxLat'],':minLng'=>$params['minLng'],':maxLng'=>$params['maxLng']));
+			$result = $stmt->fetchAll();
+			
+			if(!empty($result))
+			{
+				$responseObj['args'] = array("success"=>"Trails retrieved successfully.");
+				$responseObj['result'] = $result;	
+			}
+			else
+			{
+				$responseObj['args'] = array("error"=>"No trails in the given area exist.");
+			}
+		}
+		else
+		{
+			$responseObj['args'] = array("error"=>"Invalid parameters");
+		}
+    }
+	else
+	{
+		$responseObj['args'] = array("error"=>"Invalid API key");
+	}
+
+	$response->getBody()->write(json_encode($responseObj));
+    return $response;
+});
+
 
 $app->run();
 

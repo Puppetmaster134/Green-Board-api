@@ -16,7 +16,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	/**
 	* @test
 	*/
-	public function Get_ValidInput_RegisterUser()
+	public function Get_SuccessfullyRegisterUser()
 	{
 		$uniqueId = "test_" . rand(0,9999999);
 		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
@@ -37,7 +37,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	/**
 	* @test
 	*/
-	public function Get_ValidInput_RegisterUserWithExistingEmail()
+	public function Get_SuccessfullyRegisterUserWithExistingEmail()
 	{
 		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
             'query' => [
@@ -49,6 +49,7 @@ class APITest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(200, $response->getStatusCode());
         $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('error', $data['args']);
         $this->assertArrayHasKey('email', $data['args']);
         $this->assertEquals("Email is already registered.", $data['args']['email']);
 
@@ -57,7 +58,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	/**
 	* @test
 	*/
-	public function Get_AlreadyRegistered_Username()
+	public function Get_FailToRegisterExistingUsername()
 	{
 		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
 				'query' => [
@@ -69,6 +70,7 @@ class APITest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals(200, $response->getStatusCode());
         $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('error', $data['args']);
         $this->assertArrayHasKey('username', $data['args']);
         $this->assertEquals("Username is already registered.", $data['args']['username']);
 	}
@@ -76,7 +78,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	/**
 	* @test
 	*/
-	public function Get_Login_Successfully()
+	public function Get_SuccessfullyLogin()
 	{
 		$response = $this->client->get('/rest/public/api.php/Login/', [
 				'query' => [
@@ -86,13 +88,14 @@ class APITest extends PHPUnit_Framework_TestCase
 			]);
 
 		$this->assertEquals(200, $response->getStatusCode());
-		$this->assertEquals("abc123", $response->getBody());
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('success', $data['args']);
 	}
 
 	/**
 	* @test
 	*/
-	public function Get_Login_Password_Empty()
+	public function Get_FailToLoginWithEmptyPassword()
 	{
 		$response = $this->client->get('/rest/public/api.php/Login/', [
 				'query' => [
@@ -102,13 +105,14 @@ class APITest extends PHPUnit_Framework_TestCase
 			]);
 
 		$this->assertEquals(200, $response->getStatusCode());
-		$this->assertEquals("Invalid login credentials", $response->getBody());
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('error', $data['args']);
 	}
 
 	/**
 	* @test
 	*/
-	public function Get_Login_Empty_Username()
+	public function Get_FailToLoginWithEmptyUsername()
 	{
 		$response = $this->client->get('/rest/public/api.php/Login/', [
 				'query' => [
@@ -118,30 +122,15 @@ class APITest extends PHPUnit_Framework_TestCase
 			]);
 
 		$this->assertEquals(200, $response->getStatusCode());
-		$this->assertEquals("Invalid login credentials", $response->getBody());
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('error', $data['args']);
 	}
+
 
 	/**
 	* @test
 	*/
-	public function Get_ValidInput_Login()
-	{
-		$response = $this->client->get('/rest/public/api.php/Login/', [
-            'query' => [
-                'username' => 'Brian',
-				'password' => 'securepass'
-            ]
-        ]);
-
-    $this->assertEquals(200, $response->getStatusCode());
-		$this->assertNotEquals("Invalid login credentials", $response->getBody());
-
-	}
-
-	/**
-	* @test
-	*/
-	public function Get_ValidInput_RegisterUserWithFB()
+	public function Get_SuccessfullyRegisterWithFB()
 	{
 		$uniqueId = "test_" . rand(0,9999999);
 		$response = $this->client->get('/rest/public/api.php/RegisterUserWithFB/', [
@@ -155,10 +144,7 @@ class APITest extends PHPUnit_Framework_TestCase
         $this->assertEquals(200, $response->getStatusCode());
         $data = json_decode($response->getBody(), true);
 
-		//$this->expectOutputString('');
-		//print_r($data);
         $this->assertArrayHasKey('success', $data['args']);
-        $this->assertEquals("Registered Successfully", $data['args']['success']);
 
 
 	}
@@ -166,7 +152,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	/**
 	* @test
 	*/
-	public function Get_ValidInput_LoginWithFB()
+	public function Get_SuccessfullyLoginWithFB()
 	{
 		$response = $this->client->get('/rest/public/api.php/LoginWithFB/', [
             'query' => [
@@ -175,32 +161,15 @@ class APITest extends PHPUnit_Framework_TestCase
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());
-		$this->assertNotEquals("Invalid login credentials", $response->getBody());
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('success', $data['args']);
 
 	}
 
 	/**
 	* @test
 	*/
-    public function Get_ValidInput_GetTrailById()
-    {
-        $response = $this->client->get('/rest/public/api.php/GetTrailById/25', [
-            'query' => [
-                'key' => 'abc123'
-            ]
-        ]);
-
-        $this->assertEquals(200, $response->getStatusCode());
-
-		$this->assertNotEquals("Invalid API key", $response->getBody());
-		//$data = json_decode($response->getBody(), true);
-        //$this->assertArrayHasKey('trail', $data);
-    }
-
-	/**
-	* @test
-	*/
-    public function Get_ValidInput_CreateTrail()
+    public function Get_SuccessfullyCreateTrail()
     {
         $response = $this->client->get('/rest/public/api.php/WriteTrailToDB/', [
             'query' => [
@@ -213,17 +182,50 @@ class APITest extends PHPUnit_Framework_TestCase
         ]);
 
         $this->assertEquals(200, $response->getStatusCode());
-		$this->assertNotEquals("Invalid parameters", $response->getBody());
-		$this->assertNotEquals("Invalid API key", $response->getBody());
-        //$data = json_decode($response->getBody(), true);
-        //$this->assertArrayHasKey('trail', $data);
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('success', $data['args']);
+    }
+
+	/**
+	* @test
+	*/
+    public function Get_SuccessfullyGetTrailById()
+    {
+        $response = $this->client->get('/rest/public/api.php/GetTrailById/25', [
+            'query' => [
+                'key' => 'abc123'
+            ]
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('success', $data['args']);
+    }
+
+	
+	/**
+	* @test
+	*/
+    public function Get_FailToGetTrailById()
+    {
+        $response = $this->client->get('/rest/public/api.php/GetTrailById/0', [
+            'query' => [
+                'key' => 'abc123'
+            ]
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('error', $data['args']);
     }
 
 
 	/**
 	* @test
 	*/
-	public function Get_ValidInput_GetTrailInArea()
+	public function Get_SuccessfullyGetTrailInArea()
 	{
 		$response = $this->client->get('/rest/public/api.php/GetTrailInArea/', [
             'query' => [
@@ -235,13 +237,32 @@ class APITest extends PHPUnit_Framework_TestCase
             ]
         ]);
 
-		$data = json_decode($response->getBody(),true);
         $this->assertEquals(200, $response->getStatusCode());
-		$this->assertNotEquals("Invalid parameters", $response->getBody());
-		$this->assertNotEquals("Invalid API key", $response->getBody());
-		//$this->assertEquals("Registered Successfully", $response->getBody());
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('success', $data['args']);
 
 
 	}
 
+	/**
+	* @test
+	*/
+	public function Get_FailToFindTrailsInArea()
+	{
+		$response = $this->client->get('/rest/public/api.php/GetTrailInArea/', [
+            'query' => [
+                'key' => 'abc123',
+				'minLat' => 0,
+				'maxLat' => 10,
+				'minLng' => 0,
+				'maxLng' => 10
+            ]
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('error', $data['args']);
+
+
+	}
 }

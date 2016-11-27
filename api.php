@@ -108,6 +108,18 @@ function accountExists($pdo, &$response, $fields)
 	return false;
 }
 
+$app->get('/Dump/', function (Request $request, Response $response)
+{
+	$sql = "SELECT * FROM user";
+	$stmt = $this->db->prepare($sql);
+	$stmt->execute();
+	$result = $stmt->fetch();
+    $response->getBody()->write(json_encode($result));
+    return $response;
+
+});
+
+
 $app->get('/GetTrailById/{id}', function (Request $request, Response $response)
 {
   $params = $request->getQueryParams();

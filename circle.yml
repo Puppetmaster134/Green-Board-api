@@ -14,7 +14,7 @@ deployment:
     production:
         branch: master
         commands:
-        - git archive --format=zip --output ./builds/staged.zip
+        - git archive -o ./builds/staged.zip HEAD
         - eb deploy --staged
 notify:
    webhooks:

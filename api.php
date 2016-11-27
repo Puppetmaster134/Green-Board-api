@@ -108,6 +108,13 @@ function accountExists($pdo, &$response, $fields)
 	return false;
 }
 
+$app->get('/Slim/', function (Request $request, Response $response)
+{
+    $response->getBody()->write("Hello");
+    return $response;
+
+});
+
 $app->get('/Dump/', function (Request $request, Response $response)
 {
 	$sql = "SELECT * FROM user";

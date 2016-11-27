@@ -3,6 +3,7 @@ general:
     - "builds/staged.zip"
 dependencies:
   pre:
+    - sudo apt-get update
     - sudo apt-get install python2.7
     - sudo pip install awsebcli
 test:

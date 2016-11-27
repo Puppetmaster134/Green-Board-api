@@ -3,22 +3,21 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
-require 'db_params.php';
 
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
 
 //create connection for database
-/*
-$config['db']['host']   = $host;
-$config['db']['user']   = $user;
-$config['db']['pass']   = $pass;
-$config['db']['dbname'] = $dbName;
-*/
-$config['db']['host']   = $_SERVER['RDS_HOSTNAME'];
-$config['db']['user']   = $_SERVER['RDS_USERNAME'];
-$config['db']['pass']   = $_SERVER['RDS_PASSWORD'];
-$config['db']['dbname'] = $_SERVER['RDS_DB_NAME'];
+
+//$config['db']['host']   = $_ENV['RDS_HOSTNAME'];
+//$config['db']['user']   = $_ENV['RDS_USERNAME'];
+//$config['db']['pass']   = $_ENV['RDS_PASSWORD'];
+//$config['db']['dbname'] = $_ENV['RDS_DB_NAME'];
+
+$config['db']['host']   = getenv("RDS_HOSTNAME");
+$config['db']['user']   = getenv("RDS_USERNAME");
+$config['db']['pass']   = getenv("RDS_PASSWORD");
+$config['db']['dbname'] = getenv("RDS_DB_NAME");
 
 //start a new slim application
 $app = new \Slim\App(["settings" => $config]);

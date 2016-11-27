@@ -8,12 +8,6 @@ $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
 
 //create connection for database
-
-//$config['db']['host']   = $_ENV['RDS_HOSTNAME'];
-//$config['db']['user']   = $_ENV['RDS_USERNAME'];
-//$config['db']['pass']   = $_ENV['RDS_PASSWORD'];
-//$config['db']['dbname'] = $_ENV['RDS_DB_NAME'];
-
 $config['db']['host']   = getenv("RDS_HOSTNAME");
 $config['db']['user']   = getenv("RDS_USERNAME");
 $config['db']['pass']   = getenv("RDS_PASSWORD");
@@ -107,25 +101,6 @@ function accountExists($pdo, &$response, $fields)
 
 	return false;
 }
-
-$app->get('/Slim/', function (Request $request, Response $response)
-{
-    $response->getBody()->write("Hello");
-    return $response;
-
-});
-
-$app->get('/Dump/', function (Request $request, Response $response)
-{
-	$sql = "SELECT * FROM user";
-	$stmt = $this->db->prepare($sql);
-	$stmt->execute();
-	$result = $stmt->fetch();
-    $response->getBody()->write(json_encode($result));
-    return $response;
-
-});
-
 
 $app->get('/GetTrailById/{id}', function (Request $request, Response $response)
 {

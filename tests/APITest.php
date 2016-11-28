@@ -192,9 +192,10 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
     public function Get_SuccessfullyGetTrailById()
     {
-        $response = $this->client->get('/rest/public/api.php/GetTrailById/25', [
+        $response = $this->client->get('/rest/public/api.php/GetTrailById/', [
             'query' => [
-                'key' => 'abc123'
+                'key' => 'abc123',
+				'id' => 25
             ]
         ]);
 
@@ -210,9 +211,10 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
     public function Get_FailToGetTrailById()
     {
-        $response = $this->client->get('/rest/public/api.php/GetTrailById/0', [
+        $response = $this->client->get('/rest/public/api.php/GetTrailById/', [
             'query' => [
-                'key' => 'abc123'
+                'key' => 'abc123',
+				'id' => 0
             ]
         ]);
 

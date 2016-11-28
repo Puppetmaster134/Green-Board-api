@@ -225,17 +225,28 @@ $app->get('/WriteTrailToDB/', function (Request $request, Response $response)
 	$responseObj = array();
     if(isKeyValid($this->db,$params['key']))
     {
-		if(isset($params['lat']) && isset($params['lng']) && isset($params['trailObj']))
+		
+		if(isset($params['trailName']) && isset($params['lat']) && isset($params['lng']) && isset($params['trailObj']))
 		{
-			$sql = "INSERT INTO trail (trailInfo,lat,lng,trailObj) VALUES('Empty description',:lat,:lng,:trailObj)";
+			
+			$namedParameters = array(
+				':trailName'=>$params['trailName'],
+				':trailInfo'=>(isset($params['trailInfo'])) ? $params['trailInfo'] : "Empty description.",
+				':lat'=>$params['lat'],
+				':lng'=>$params['lng'],
+				':trailObj'=>$params['trailObj']
+			);
+			$sql = "INSERT INTO trail (trailName,trailInfo,lat,lng,trailObj) VALUES(:trailName,:trailInfo,:lat,:lng,:trailObj)";
 			$stmt = $this->db->prepare($sql);
-			$stmt->execute(array(':lat'=>$params['lat'],':lng'=>$params['lng'],':trailObj'=>$params['trailObj']));
-			$responseObj['args'] = array("success"=>"Trail added successfully" . " " . $params['lat'] . " " . $params['lng'] . " " . $params['trailObj']);
+			$stmt->execute($namedParameters);
+			$responseObj['args'] = array("success"=>$params['trailName'] . " added successfully. (" . $params['lat'] . "," . $params['lng'] . "): " . $params['trailObj']);
+			
 		}
 		else
 		{
 			$responseObj['args'] = array("error"=>"Invalid parameters.");
 		}
+		
     }
 	else
 	{
@@ -245,6 +256,7 @@ $app->get('/WriteTrailToDB/', function (Request $request, Response $response)
 	$response->getBody()->write(json_encode($responseObj));
     return $response;
 });
+
 
 $app->get('/GetTrailInArea/', function (Request $request, Response $response)
 {

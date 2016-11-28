@@ -174,6 +174,7 @@ class APITest extends PHPUnit_Framework_TestCase
         $response = $this->client->get('/rest/public/api.php/WriteTrailToDB/', [
             'query' => [
 				'key' => 'abc123',
+				'trailName' => 'MadeUp Trail',
                 'trailInfo' => 'A really cool test trail',
 				'lat' => 29.1234567,
 				'lng' => 42.4567890,

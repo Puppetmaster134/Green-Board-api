@@ -3,48 +3,50 @@
 
 Endpoints containing {api_key} must have a valid api key appended to the url as a GET parameter
 
-example: `{server-url}/rest/public/api.php/{endpoint}/{endpoint-params}?key=abc123`
+example: `http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/{endpoint}/?{endpoint-params}`
 
 ### Endpoints Currently Available:
 **GetTrailById**
 
 This gets a json-encoded trail object by the trail's id in the database. Typically used for debugging.
 
-`{url}/rest/public/api.php/GetTrailById/{id}&key={api_key}`
+`http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/GetTrailById/?id={id}&key={api_key}`
 
 **WriteTrailToDB**
 
 This writes a new trail to the database
 
-`{url}/rest/public/api.php/GetTrailById/?lat={lat}&lng={lng}&trailObj={trailObj}&key={api_key}`
+`http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/WriteTrailToDB/?lat={lat}&lng={lng}&trailObj={trailObj}&key={api_key}`
 
 **Register User**
 
 This registers a new user through greenboard registration
 
-`{url}/rest/public/api.php/RegisterUser/?username={username}&password={password}&email={email}`
+`http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/RegisterUser/?username={username}&password={password}&email={email}`
 
 **Login**(Brock)
 
 This logs a user in and returns their api key
 
-`{url}/rest/public/api.php/Login/?username={username}&password={password}`
+`http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/Login/?username={username}&password={password}`
+
+Example: http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/Login/?username=Brian&password=securepass
 
 **Register User With Facebook**
 
 This registers a new user through greenboard registration
 
-`{url}/rest/public/api.php/RegisterUserWithFB/?username={username}&email={email}&fbid={fbid}`
+`http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/RegisterUserWithFB/?username={username}&email={email}&fbid={fbid}`
 
 **Login With Facebook**
 
 This logs a user in and returns their api key
 
-`{url}/rest/public/api.php/LoginWithFB/?fbid={fbid}`
+`http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/LoginWithFB/?fbid={fbid}`
 
 **Get Trail In Area**
 
 This returns a list of trails in a square-shaped region between (minLng,minLat) and (maxLng,maxLat)
 
-`{url}/rest/public/api.php/GetTrailInArea/?minLat={minimum_latitude}&minLng={minimum_longitude}&maxLat={maximum_latitude}&maxLng={maximum_longitude}&key={api_key}`
+`http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/GetTrailInArea/?minLat={minimum_latitude}&minLng={minimum_longitude}&maxLat={maximum_latitude}&maxLng={maximum_longitude}&key={api_key}`
 

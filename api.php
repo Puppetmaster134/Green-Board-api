@@ -186,17 +186,16 @@ $app->get('/LoginWithFB/', function(Request $request, Response $response)
 });
 
 
-$app->get('/GetTrailById/{id}', function (Request $request, Response $response)
+$app->get('/GetTrailById/', function (Request $request, Response $response)
 {
 	$params = $request->getQueryParams();
 	$responseObj = array();
 	
 	if(isKeyValid($this->db,$params['key']))
 	{
-		$id = $request->getAttribute('id');
 		$sql = "SELECT * FROM trail WHERE id=:id LIMIT 1";
 		$stmt = $this->db->prepare($sql);
-		$stmt->execute(array(':id'=>$id));
+		$stmt->execute(array(':id'=>$params['id']));
 		$result = $stmt->fetch();
 
 		if(!empty($result))

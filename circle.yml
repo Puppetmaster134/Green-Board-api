@@ -8,7 +8,7 @@ dependencies:
     - sudo pip install awsebcli
 test:
   override:
-    - ./vendor/bin/phpunit ./tests --coverage-html coverage.html --whitelist ./tests
+    - vendor/bin/phpunit ./tests --coverage-clover coverage.xml --whitelist ./tests
   post:
     - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
 

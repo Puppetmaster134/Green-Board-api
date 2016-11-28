@@ -9,6 +9,8 @@ dependencies:
 test:
   override:
     - vendor/bin/phpunit ./tests --coverage-clover coverage.xml --whitelist ./public
+  post:
+    - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
 
 deployment:
     production:

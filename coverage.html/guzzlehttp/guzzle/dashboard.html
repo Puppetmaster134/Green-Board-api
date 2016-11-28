@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/rest/public/vendor/guzzlehttp/guzzle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../../js/html5shiv.min.js"></script>
+  <script src="../../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../../index.html">/var/www/html/rest/public/vendor</a></li>
+        <li><a href="../index.html">guzzlehttp</a></li>
+        <li><a href="index.html">guzzle</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/TransferStats.php.html#12">TransferStats</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#14">RetryMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#14">MockHandler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#18">StreamHandler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Pool.php.html#19">Pool</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/MessageFormatter.php.html#36">MessageFormatter</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/SeekException.php.html#9">SeekException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#9">UriTemplate</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/FileCookieJar.php.html#7">FileCookieJar</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#10">CookieJar</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#7">SetCookie</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SessionCookieJar.php.html#7">SessionCookieJar</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#12">RequestException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/ConnectException.php.html#11">ConnectException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#18">CurlMultiHandler</a></td><td class="text-right">5%</td></tr>
+       <tr><td><a href="src/PrepareBodyMiddleware.php.html#12">PrepareBodyMiddleware</a></td><td class="text-right">13%</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#18">RedirectMiddleware</a></td><td class="text-right">17%</td></tr>
+       <tr><td><a href="src/Middleware.php.html#15">Middleware</a></td><td class="text-right">21%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#10">HandlerStack</a></td><td class="text-right">27%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#16">CurlFactory</a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="src/Handler/EasyHandle.php.html#14">EasyHandle</a></td><td class="text-right">46%</td></tr>
+       <tr><td><a href="src/Client.php.html#25">Client</a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="src/Handler/CurlHandler.php.html#14">CurlHandler</a></td><td class="text-right">81%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#18">StreamHandler</a></td><td class="text-right">6320</td></tr>
+       <tr><td><a href="src/MessageFormatter.php.html#36">MessageFormatter</a></td><td class="text-right">4970</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#7">SetCookie</a></td><td class="text-right">3660</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#10">CookieJar</a></td><td class="text-right">2862</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#16">CurlFactory</a></td><td class="text-right">2509</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#9">UriTemplate</a></td><td class="text-right">1406</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#18">CurlMultiHandler</a></td><td class="text-right">838</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#14">MockHandler</a></td><td class="text-right">756</td></tr>
+       <tr><td><a href="src/Client.php.html#25">Client</a></td><td class="text-right">682</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#10">HandlerStack</a></td><td class="text-right">429</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#12">RequestException</a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#18">RedirectMiddleware</a></td><td class="text-right">409</td></tr>
+       <tr><td><a href="src/PrepareBodyMiddleware.php.html#12">PrepareBodyMiddleware</a></td><td class="text-right">305</td></tr>
+       <tr><td><a href="src/Middleware.php.html#15">Middleware</a></td><td class="text-right">216</td></tr>
+       <tr><td><a href="src/Cookie/FileCookieJar.php.html#7">FileCookieJar</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="src/Pool.php.html#19">Pool</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#14">RetryMiddleware</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="src/Cookie/SessionCookieJar.php.html#7">SessionCookieJar</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#12">TransferStats</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="src/Handler/EasyHandle.php.html#14">EasyHandle</a></td><td class="text-right">21</td></tr>
+       <tr><td><a href="src/Exception/SeekException.php.html#9">SeekException</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Handler/CurlHandler.php.html#14">CurlHandler</a></td><td class="text-right">4</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#353"><abbr title="StreamHandler::add_proxy">add_proxy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#372"><abbr title="StreamHandler::add_timeout">add_timeout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#379"><abbr title="StreamHandler::add_verify">add_verify</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#405"><abbr title="StreamHandler::add_cert">add_cert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#319"><abbr title="StreamHandler::getDefaultContext">getDefaultContext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#258"><abbr title="StreamHandler::createStream">createStream</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#201"><abbr title="StreamHandler::drain">drain</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#230"><abbr title="StreamHandler::createResource">createResource</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#483"><abbr title="StreamHandler::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#419"><abbr title="StreamHandler::add_progress">add_progress</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#431"><abbr title="StreamHandler::add_debug">add_debug</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#164"><abbr title="HandlerStack::after">after</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#174"><abbr title="HandlerStack::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#180"><abbr title="HandlerStack::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#231"><abbr title="HandlerStack::splice">splice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#152"><abbr title="HandlerStack::before">before</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#127"><abbr title="HandlerStack::unshift">unshift</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#468"><abbr title="StreamHandler::addNotification">addNotification</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#75"><abbr title="HandlerStack::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#116"><abbr title="HandlerStack::hasHandler">hasHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#156"><abbr title="StreamHandler::checkDecode">checkDecode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#141"><abbr title="StreamHandler::createSink">createSink</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#161"><abbr title="CurlMultiHandler::processMessages">processMessages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#185"><abbr title="CurlMultiHandler::timeToNext">timeToNext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/EasyHandle.php.html#85"><abbr title="EasyHandle::__get">__get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#32"><abbr title="MockHandler::createWithMiddleware">createWithMiddleware</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#146"><abbr title="CurlMultiHandler::cancel">cancel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#127"><abbr title="CurlMultiHandler::addRequest">addRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#53"><abbr title="CurlMultiHandler::__destruct">__destruct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#61"><abbr title="CurlMultiHandler::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#79"><abbr title="CurlMultiHandler::tick">tick</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#49"><abbr title="MockHandler::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#62"><abbr title="MockHandler::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#165"><abbr title="MockHandler::invokeStats">invokeStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#30"><abbr title="StreamHandler::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#74"><abbr title="StreamHandler::invokeStats">invokeStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#93"><abbr title="StreamHandler::createResponse">createResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#160"><abbr title="MockHandler::count">count</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#150"><abbr title="MockHandler::getLastOptions">getLastOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#105"><abbr title="MockHandler::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#119"><abbr title="MockHandler::append">append</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#140"><abbr title="MockHandler::getLastRequest">getLastRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#259"><abbr title="HandlerStack::debugCallable">debugCallable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/MessageFormatter.php.html#53"><abbr title="MessageFormatter::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#106"><abbr title="RetryMiddleware::doRetry">doRetry</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#27"><abbr title="TransferStats::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#44"><abbr title="TransferStats::getRequest">getRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#54"><abbr title="TransferStats::getResponse">getResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#90"><abbr title="RetryMiddleware::onRejected">onRejected</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#92"><abbr title="RetryMiddleware::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#49"><abbr title="RetryMiddleware::exponentialDelay">exponentialDelay</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#60"><abbr title="RetryMiddleware::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#74"><abbr title="RetryMiddleware::onFulfilled">onFulfilled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#64"><abbr title="TransferStats::hasResponse">hasResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#78"><abbr title="TransferStats::getHandlerErrorData">getHandlerErrorData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#61"><abbr title="UriTemplate::parseExpression">parseExpression</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#99"><abbr title="UriTemplate::expandMatch">expandMatch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#224"><abbr title="UriTemplate::isAssoc">isAssoc</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#237"><abbr title="UriTemplate::decodeReserved">decodeReserved</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#38"><abbr title="UriTemplate::expand">expand</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#120"><abbr title="TransferStats::getHandlerStat">getHandlerStat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#88"><abbr title="TransferStats::getEffectiveUri">getEffectiveUri</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#98"><abbr title="TransferStats::getTransferTime">getTransferTime</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#108"><abbr title="TransferStats::getHandlerStats">getHandlerStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#32"><abbr title="RetryMiddleware::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#206"><abbr title="RedirectMiddleware::redirectUri">redirectUri</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Middleware.php.html#125"><abbr title="Middleware::tap">tap</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Middleware.php.html#168"><abbr title="Middleware::retry">retry</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Middleware.php.html#185"><abbr title="Middleware::log">log</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Middleware.php.html#229"><abbr title="Middleware::mapRequest">mapRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Middleware.php.html#80"><abbr title="Middleware::history">history</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Middleware.php.html#249"><abbr title="Middleware::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/MessageFormatter.php.html#67"><abbr title="MessageFormatter::format">format</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/MessageFormatter.php.html#76"><abbr title="MessageFormatter::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/MessageFormatter.php.html#173"><abbr title="MessageFormatter::headers">headers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Pool.php.html#34"><abbr title="Pool::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Pool.php.html#117"><abbr title="Pool::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#118"><abbr title="RedirectMiddleware::withTracking">withTracking</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#132"><abbr title="RedirectMiddleware::guardMax">guardMax</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#155"><abbr title="RedirectMiddleware::modifyRequest">modifyRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#121"><abbr title="RedirectMiddleware::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/PrepareBodyMiddleware.php.html#75"><abbr title="PrepareBodyMiddleware::addExpectHeader">addExpectHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Pool.php.html#72"><abbr title="Pool::promise">promise</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Pool.php.html#94"><abbr title="Pool::batch">batch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Pool.php.html#109"><abbr title="Pool::cmpCallback">cmpCallback</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#44"><abbr title="CurlMultiHandler::__get">__get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#114"><abbr title="CurlMultiHandler::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#32"><abbr title="SetCookie::fromString">fromString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#73"><abbr title="SetCookie::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#85"><abbr title="SetCookie::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#101"><abbr title="SetCookie::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SessionCookieJar.php.html#57"><abbr title="SessionCookieJar::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SessionCookieJar.php.html#41"><abbr title="SessionCookieJar::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/FileCookieJar.php.html#72"><abbr title="FileCookieJar::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SessionCookieJar.php.html#23"><abbr title="SessionCookieJar::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SessionCookieJar.php.html#33"><abbr title="SessionCookieJar::__destruct">__destruct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#111"><abbr title="SetCookie::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#121"><abbr title="SetCookie::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#181"><abbr title="SetCookie::setPath">setPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#201"><abbr title="SetCookie::setMaxAge">setMaxAge</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#211"><abbr title="SetCookie::getExpires">getExpires</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#171"><abbr title="SetCookie::getPath">getPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#161"><abbr title="SetCookie::setDomain">setDomain</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#131"><abbr title="SetCookie::getValue">getValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#141"><abbr title="SetCookie::setValue">setValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#151"><abbr title="SetCookie::getDomain">getDomain</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/FileCookieJar.php.html#48"><abbr title="FileCookieJar::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/FileCookieJar.php.html#37"><abbr title="FileCookieJar::__destruct">__destruct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#45"><abbr title="CookieJar::fromArray">fromArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#63"><abbr title="CookieJar::getCookieValue">getCookieValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#76"><abbr title="CookieJar::shouldPersist">shouldPersist</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#89"><abbr title="CookieJar::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#25"><abbr title="CookieJar::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Client.php.html#400"><abbr title="Client::invalidBody">invalidBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Client.php.html#90"><abbr title="Client::sendAsync">sendAsync</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Client.php.html#101"><abbr title="Client::send">send</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Client.php.html#132"><abbr title="Client::getConfig">getConfig</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#132"><abbr title="CookieJar::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#96"><abbr title="CookieJar::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#224"><abbr title="CookieJar::withCookieHeader">withCookieHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#254"><abbr title="CookieJar::removeCookieIfEmpty">removeCookieIfEmpty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/FileCookieJar.php.html#24"><abbr title="FileCookieJar::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#209"><abbr title="CookieJar::extractCookies">extractCookies</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#204"><abbr title="CookieJar::getIterator">getIterator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#128"><abbr title="CookieJar::clearSessionCookies">clearSessionCookies</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#138"><abbr title="CookieJar::setCookie">setCookie</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#199"><abbr title="CookieJar::count">count</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#221"><abbr title="SetCookie::setExpires">setExpires</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#191"><abbr title="SetCookie::getMaxAge">getMaxAge</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#155"><abbr title="RequestException::obfuscateUri">obfuscateUri</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#171"><abbr title="RequestException::getRequest">getRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#233"><abbr title="SetCookie::getSecure">getSecure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#123"><abbr title="RequestException::getResponseBodySummary">getResponseBodySummary</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#307"><abbr title="CurlFactory::removeHeader">removeHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#23"><abbr title="RequestException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#48"><abbr title="RequestException::wrapException">wrapException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#181"><abbr title="RequestException::getResponse">getResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#191"><abbr title="RequestException::hasResponse">hasResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#131"><abbr title="CurlFactory::finishError">finishError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#153"><abbr title="CurlFactory::createRejection">createRejection</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#246"><abbr title="CurlFactory::applyBody">applyBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#118"><abbr title="CurlFactory::invokeStats">invokeStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/SeekException.php.html#23"><abbr title="SeekException::getStream">getStream</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#206"><abbr title="RequestException::getHandlerContext">getHandlerContext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/SeekException.php.html#13"><abbr title="SeekException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/ConnectException.php.html#33"><abbr title="ConnectException::hasResponse">hasResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#65"><abbr title="RequestException::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#273"><abbr title="SetCookie::getHttpOnly">getHttpOnly</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#283"><abbr title="SetCookie::setHttpOnly">setHttpOnly</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/ConnectException.php.html#25"><abbr title="ConnectException::getResponse">getResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#459"><abbr title="CurlFactory::retryFailedRewind">retryFailedRewind</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#243"><abbr title="SetCookie::setSecure">setSecure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#253"><abbr title="SetCookie::getDiscard">getDiscard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#305"><abbr title="SetCookie::matchesPath">matchesPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#263"><abbr title="SetCookie::setDiscard">setDiscard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Exception/ConnectException.php.html#13"><abbr title="ConnectException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#360"><abbr title="SetCookie::isExpired">isExpired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#370"><abbr title="SetCookie::validate">validate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#335"><abbr title="SetCookie::matchesDomain">matchesDomain</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/PrepareBodyMiddleware.php.html#34"><abbr title="PrepareBodyMiddleware::__invoke">__invoke</abbr></a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#212"><abbr title="HandlerStack::findByName">findByName</abbr></a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#81"><abbr title="RedirectMiddleware::checkRedirect">checkRedirect</abbr></a></td><td class="text-right">19%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#317"><abbr title="CurlFactory::applyHandlerOptions">applyHandlerOptions</abbr></a></td><td class="text-right">23%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#496"><abbr title="CurlFactory::createHeaderFn">createHeaderFn</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="src/Middleware.php.html#25"><abbr title="Middleware::cookies">cookies</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#105"><abbr title="HandlerStack::setHandler">setHandler</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="src/Client.php.html#257"><abbr title="Client::transfer">transfer</abbr></a></td><td class="text-right">38%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#219"><abbr title="CurlFactory::applyMethod">applyMethod</abbr></a></td><td class="text-right">38%</td></tr>
+       <tr><td><a href="src/Client.php.html#289"><abbr title="Client::applyOptions">applyOptions</abbr></a></td><td class="text-right">40%</td></tr>
+       <tr><td><a href="src/Client.php.html#156"><abbr title="Client::configureDefaults">configureDefaults</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="src/Handler/EasyHandle.php.html#45"><abbr title="EasyHandle::createResponse">createResponse</abbr></a></td><td class="text-right">51%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#508"><abbr title="CurlFactory::anonymous function">anonymous function</abbr></a></td><td class="text-right">55%</td></tr>
+       <tr><td><a href="src/Client.php.html#211"><abbr title="Client::prepareDefaults">prepareDefaults</abbr></a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#47"><abbr title="RedirectMiddleware::__invoke">__invoke</abbr></a></td><td class="text-right">69%</td></tr>
+       <tr><td><a href="src/Handler/CurlHandler.php.html#33"><abbr title="CurlHandler::__invoke">__invoke</abbr></a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#93"><abbr title="CurlFactory::finish">finish</abbr></a></td><td class="text-right">72%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#32"><abbr title="CurlFactory::create">create</abbr></a></td><td class="text-right">76%</td></tr>
+       <tr><td><a href="src/Middleware.php.html#52"><abbr title="Middleware::httpErrors">httpErrors</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="src/Client.php.html#107"><abbr title="Client::requestAsync">requestAsync</abbr></a></td><td class="text-right">81%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#62"><abbr title="CurlFactory::release">release</abbr></a></td><td class="text-right">83%</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#192"><abbr title="CurlFactory::getDefaultConf">getDefaultConf</abbr></a></td><td class="text-right">83%</td></tr>
+       <tr><td><a href="src/Client.php.html#76"><abbr title="Client::__call">__call</abbr></a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#191"><abbr title="HandlerStack::resolve">resolve</abbr></a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/MessageFormatter.php.html#67"><abbr title="MessageFormatter::format">format</abbr></a></td><td class="text-right">1122</td></tr>
+       <tr><td><a href="src/MessageFormatter.php.html#76"><abbr title="MessageFormatter::anonymous function">anonymous function</abbr></a></td><td class="text-right">1122</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#99"><abbr title="UriTemplate::expandMatch">expandMatch</abbr></a></td><td class="text-right">756</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#317"><abbr title="CurlFactory::applyHandlerOptions">applyHandlerOptions</abbr></a></td><td class="text-right">352</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#138"><abbr title="CookieJar::setCookie">setCookie</abbr></a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#258"><abbr title="StreamHandler::createStream">createStream</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="src/Client.php.html#289"><abbr title="Client::applyOptions">applyOptions</abbr></a></td><td class="text-right">155</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#62"><abbr title="MockHandler::__invoke">__invoke</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="src/PrepareBodyMiddleware.php.html#75"><abbr title="PrepareBodyMiddleware::addExpectHeader">addExpectHeader</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#224"><abbr title="CookieJar::withCookieHeader">withCookieHeader</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#246"><abbr title="CurlFactory::applyBody">applyBody</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#30"><abbr title="StreamHandler::__invoke">__invoke</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#85"><abbr title="SetCookie::__toString">__toString</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#155"><abbr title="RedirectMiddleware::modifyRequest">modifyRequest</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#32"><abbr title="SetCookie::fromString">fromString</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#370"><abbr title="SetCookie::validate">validate</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="src/PrepareBodyMiddleware.php.html#34"><abbr title="PrepareBodyMiddleware::__invoke">__invoke</abbr></a></td><td class="text-right">69</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#156"><abbr title="StreamHandler::checkDecode">checkDecode</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#79"><abbr title="CurlMultiHandler::tick">tick</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#96"><abbr title="CookieJar::clear">clear</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="src/Pool.php.html#34"><abbr title="Pool::__construct">__construct</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#379"><abbr title="StreamHandler::add_verify">add_verify</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="src/Cookie/FileCookieJar.php.html#72"><abbr title="FileCookieJar::load">load</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#119"><abbr title="MockHandler::append">append</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#93"><abbr title="StreamHandler::createResponse">createResponse</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="src/Cookie/SessionCookieJar.php.html#57"><abbr title="SessionCookieJar::load">load</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#61"><abbr title="UriTemplate::parseExpression">parseExpression</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#353"><abbr title="StreamHandler::add_proxy">add_proxy</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#319"><abbr title="StreamHandler::getDefaultContext">getDefaultContext</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#65"><abbr title="RequestException::create">create</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#114"><abbr title="CurlMultiHandler::execute">execute</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#459"><abbr title="CurlFactory::retryFailedRewind">retryFailedRewind</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#305"><abbr title="SetCookie::matchesPath">matchesPath</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#73"><abbr title="SetCookie::__construct">__construct</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Client.php.html#156"><abbr title="Client::configureDefaults">configureDefaults</abbr></a></td><td class="text-right">22</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#496"><abbr title="CurlFactory::createHeaderFn">createHeaderFn</abbr></a></td><td class="text-right">21</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#230"><abbr title="StreamHandler::createResource">createResource</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#141"><abbr title="StreamHandler::createSink">createSink</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#131"><abbr title="CurlFactory::finishError">finishError</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#335"><abbr title="SetCookie::matchesDomain">matchesDomain</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#231"><abbr title="HandlerStack::splice">splice</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/Cookie/FileCookieJar.php.html#48"><abbr title="FileCookieJar::save">save</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#209"><abbr title="CookieJar::extractCookies">extractCookies</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#76"><abbr title="CookieJar::shouldPersist">shouldPersist</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#75"><abbr title="HandlerStack::__toString">__toString</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#259"><abbr title="HandlerStack::debugCallable">debugCallable</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#123"><abbr title="RequestException::getResponseBodySummary">getResponseBodySummary</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#81"><abbr title="RedirectMiddleware::checkRedirect">checkRedirect</abbr></a></td><td class="text-right">18</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#219"><abbr title="CurlFactory::applyMethod">applyMethod</abbr></a></td><td class="text-right">18</td></tr>
+       <tr><td><a href="src/Handler/EasyHandle.php.html#45"><abbr title="EasyHandle::createResponse">createResponse</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#431"><abbr title="StreamHandler::add_debug">add_debug</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#132"><abbr title="RedirectMiddleware::guardMax">guardMax</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Middleware.php.html#80"><abbr title="Middleware::history">history</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#405"><abbr title="StreamHandler::add_cert">add_cert</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#201"><abbr title="StreamHandler::drain">drain</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Middleware.php.html#125"><abbr title="Middleware::tap">tap</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#185"><abbr title="CurlMultiHandler::timeToNext">timeToNext</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Cookie/SessionCookieJar.php.html#41"><abbr title="SessionCookieJar::save">save</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#153"><abbr title="CurlFactory::createRejection">createRejection</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#254"><abbr title="CookieJar::removeCookieIfEmpty">removeCookieIfEmpty</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#25"><abbr title="CookieJar::__construct">__construct</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Client.php.html#132"><abbr title="Client::getConfig">getConfig</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#307"><abbr title="CurlFactory::removeHeader">removeHeader</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#23"><abbr title="RequestException::__construct">__construct</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#161"><abbr title="CurlMultiHandler::processMessages">processMessages</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Client.php.html#211"><abbr title="Client::prepareDefaults">prepareDefaults</abbr></a></td><td class="text-right">10</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#212"><abbr title="HandlerStack::findByName">findByName</abbr></a></td><td class="text-right">8</td></tr>
+       <tr><td><a href="src/Client.php.html#257"><abbr title="Client::transfer">transfer</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#508"><abbr title="CurlFactory::anonymous function">anonymous function</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="src/Middleware.php.html#185"><abbr title="Middleware::log">log</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#128"><abbr title="CookieJar::clearSessionCookies">clearSessionCookies</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Pool.php.html#109"><abbr title="Pool::cmpCallback">cmpCallback</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#49"><abbr title="MockHandler::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#132"><abbr title="CookieJar::anonymous function">anonymous function</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#38"><abbr title="UriTemplate::expand">expand</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#146"><abbr title="CurlMultiHandler::cancel">cancel</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/MessageFormatter.php.html#173"><abbr title="MessageFormatter::headers">headers</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Cookie/FileCookieJar.php.html#24"><abbr title="FileCookieJar::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Cookie/CookieJar.php.html#45"><abbr title="CookieJar::fromArray">fromArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/EasyHandle.php.html#85"><abbr title="EasyHandle::__get">__get</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#74"><abbr title="RetryMiddleware::onFulfilled">onFulfilled</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#92"><abbr title="RetryMiddleware::anonymous function">anonymous function</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#90"><abbr title="RetryMiddleware::onRejected">onRejected</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#60"><abbr title="RetryMiddleware::__invoke">__invoke</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/RetryMiddleware.php.html#32"><abbr title="RetryMiddleware::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/UriTemplate.php.html#224"><abbr title="UriTemplate::isAssoc">isAssoc</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#165"><abbr title="MockHandler::invokeStats">invokeStats</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#206"><abbr title="RedirectMiddleware::redirectUri">redirectUri</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/TransferStats.php.html#120"><abbr title="TransferStats::getHandlerStat">getHandlerStat</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#221"><abbr title="SetCookie::setExpires">setExpires</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/MockHandler.php.html#105"><abbr title="MockHandler::anonymous function">anonymous function</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#372"><abbr title="StreamHandler::add_timeout">add_timeout</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/MessageFormatter.php.html#53"><abbr title="MessageFormatter::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#483"><abbr title="StreamHandler::anonymous function">anonymous function</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#127"><abbr title="CurlMultiHandler::addRequest">addRequest</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#53"><abbr title="CurlMultiHandler::__destruct">__destruct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#74"><abbr title="StreamHandler::invokeStats">invokeStats</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/CurlMultiHandler.php.html#44"><abbr title="CurlMultiHandler::__get">__get</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#419"><abbr title="StreamHandler::add_progress">add_progress</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Exception/SeekException.php.html#13"><abbr title="SeekException::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#155"><abbr title="RequestException::obfuscateUri">obfuscateUri</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Cookie/SetCookie.php.html#360"><abbr title="SetCookie::isExpired">isExpired</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Exception/RequestException.php.html#48"><abbr title="RequestException::wrapException">wrapException</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#174"><abbr title="HandlerStack::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Handler/StreamHandler.php.html#468"><abbr title="StreamHandler::addNotification">addNotification</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/RedirectMiddleware.php.html#47"><abbr title="RedirectMiddleware::__invoke">__invoke</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="src/Middleware.php.html#25"><abbr title="Middleware::cookies">cookies</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#93"><abbr title="CurlFactory::finish">finish</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="src/Client.php.html#107"><abbr title="Client::requestAsync">requestAsync</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#32"><abbr title="CurlFactory::create">create</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#192"><abbr title="CurlFactory::getDefaultConf">getDefaultConf</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="src/Client.php.html#76"><abbr title="Client::__call">__call</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="src/HandlerStack.php.html#191"><abbr title="HandlerStack::resolve">resolve</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="src/Middleware.php.html#52"><abbr title="Middleware::httpErrors">httpErrors</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="src/Handler/CurlHandler.php.html#33"><abbr title="CurlHandler::__invoke">__invoke</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="src/Handler/CurlFactory.php.html#62"><abbr title="CurlFactory::release">release</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 4.0.1</a> using <a href="https://secure.php.net/" target="_top">PHP 5.6.28-1+deb.sury.org~trusty+1</a> with <a href="https://xdebug.org/">Xdebug 2.4.1</a> and <a href="https://phpunit.de/">PHPUnit 5.5.4</a> at Mon Nov 28 1:38:25 UTC 2016.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../js/holder.min.js" type="text/javascript"></script>
+  <script src="../../js/d3.min.js" type="text/javascript"></script>
+  <script src="../../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([14,1,2,2,1,1,1,0,0,1,0,7], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([159,0,3,1,5,1,4,1,3,6,0,21], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[50,70,"<a href=\"src\/Client.php.html#25\">Client<\/a>"],[0,53,"<a href=\"src\/Cookie\/CookieJar.php.html#10\">CookieJar<\/a>"],[0,13,"<a href=\"src\/Cookie\/FileCookieJar.php.html#7\">FileCookieJar<\/a>"],[0,10,"<a href=\"src\/Cookie\/SessionCookieJar.php.html#7\">SessionCookieJar<\/a>"],[0,60,"<a href=\"src\/Cookie\/SetCookie.php.html#7\">SetCookie<\/a>"],[100,0,"<a href=\"src\/Exception\/BadResponseException.php.html#7\">BadResponseException<\/a>"],[100,0,"<a href=\"src\/Exception\/ClientException.php.html#7\">ClientException<\/a>"],[0,3,"<a href=\"src\/Exception\/ConnectException.php.html#11\">ConnectException<\/a>"],[0,20,"<a href=\"src\/Exception\/RequestException.php.html#12\">RequestException<\/a>"],[0,3,"<a href=\"src\/Exception\/SeekException.php.html#9\">SeekException<\/a>"],[100,0,"<a href=\"src\/Exception\/ServerException.php.html#7\">ServerException<\/a>"],[100,0,"<a href=\"src\/Exception\/TooManyRedirectsException.php.html#4\">TooManyRedirectsException<\/a>"],[100,0,"<a href=\"src\/Exception\/TransferException.php.html#4\">TransferException<\/a>"],[33.656957928803,91,"<a href=\"src\/Handler\/CurlFactory.php.html#16\">CurlFactory<\/a>"],[81.818181818182,4,"<a href=\"src\/Handler\/CurlHandler.php.html#14\">CurlHandler<\/a>"],[5.6179775280899,31,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#18\">CurlMultiHandler<\/a>"],[46.875,9,"<a href=\"src\/Handler\/EasyHandle.php.html#14\">EasyHandle<\/a>"],[0,27,"<a href=\"src\/Handler\/MockHandler.php.html#14\">MockHandler<\/a>"],[100,6,"<a href=\"src\/Handler\/Proxy.php.html#10\">Proxy<\/a>"],[0,79,"<a href=\"src\/Handler\/StreamHandler.php.html#18\">StreamHandler<\/a>"],[27.058823529412,32,"<a href=\"src\/HandlerStack.php.html#10\">HandlerStack<\/a>"],[0,70,"<a href=\"src\/MessageFormatter.php.html#36\">MessageFormatter<\/a>"],[21.052631578947,20,"<a href=\"src\/Middleware.php.html#15\">Middleware<\/a>"],[0,12,"<a href=\"src\/Pool.php.html#19\">Pool<\/a>"],[13.636363636364,21,"<a href=\"src\/PrepareBodyMiddleware.php.html#12\">PrepareBodyMiddleware<\/a>"],[17.241379310345,26,"<a href=\"src\/RedirectMiddleware.php.html#18\">RedirectMiddleware<\/a>"],[100,0,"<a href=\"src\/RequestOptions.php.html#11\">RequestOptions<\/a>"],[0,12,"<a href=\"src\/RetryMiddleware.php.html#14\">RetryMiddleware<\/a>"],[0,10,"<a href=\"src\/TransferStats.php.html#12\">TransferStats<\/a>"],[0,37,"<a href=\"src\/UriTemplate.php.html#9\">UriTemplate<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,3,"<a href=\"src\/Client.php.html#62\">Client::__construct<\/a>"],[85.714285714286,4,"<a href=\"src\/Client.php.html#76\">Client::__call<\/a>"],[0,1,"<a href=\"src\/Client.php.html#90\">Client::sendAsync<\/a>"],[0,1,"<a href=\"src\/Client.php.html#101\">Client::send<\/a>"],[81.818181818182,5,"<a href=\"src\/Client.php.html#107\">Client::requestAsync<\/a>"],[100,1,"<a href=\"src\/Client.php.html#126\">Client::request<\/a>"],[0,3,"<a href=\"src\/Client.php.html#132\">Client::getConfig<\/a>"],[100,5,"<a href=\"src\/Client.php.html#139\">Client::buildUri<\/a>"],[50,10,"<a href=\"src\/Client.php.html#156\">Client::configureDefaults<\/a>"],[57.894736842105,7,"<a href=\"src\/Client.php.html#211\">Client::prepareDefaults<\/a>"],[38.461538461538,4,"<a href=\"src\/Client.php.html#257\">Client::transfer<\/a>"],[40.740740740741,25,"<a href=\"src\/Client.php.html#289\">Client::applyOptions<\/a>"],[0,1,"<a href=\"src\/Client.php.html#400\">Client::invalidBody<\/a>"],[0,3,"<a href=\"src\/Cookie\/CookieJar.php.html#25\">CookieJar::__construct<\/a>"],[0,2,"<a href=\"src\/Cookie\/CookieJar.php.html#45\">CookieJar::fromArray<\/a>"],[0,1,"<a href=\"src\/Cookie\/CookieJar.php.html#63\">CookieJar::getCookieValue<\/a>"],[0,4,"<a href=\"src\/Cookie\/CookieJar.php.html#76\">CookieJar::shouldPersist<\/a>"],[0,1,"<a href=\"src\/Cookie\/CookieJar.php.html#89\">CookieJar::toArray<\/a>"],[0,2,"<a href=\"src\/Cookie\/CookieJar.php.html#132\">CookieJar::anonymous function<\/a>"],[0,7,"<a href=\"src\/Cookie\/CookieJar.php.html#96\">CookieJar::clear<\/a>"],[0,2,"<a href=\"src\/Cookie\/CookieJar.php.html#128\">CookieJar::clearSessionCookies<\/a>"],[0,13,"<a href=\"src\/Cookie\/CookieJar.php.html#138\">CookieJar::setCookie<\/a>"],[0,1,"<a href=\"src\/Cookie\/CookieJar.php.html#199\">CookieJar::count<\/a>"],[0,1,"<a href=\"src\/Cookie\/CookieJar.php.html#204\">CookieJar::getIterator<\/a>"],[0,4,"<a href=\"src\/Cookie\/CookieJar.php.html#209\">CookieJar::extractCookies<\/a>"],[0,9,"<a href=\"src\/Cookie\/CookieJar.php.html#224\">CookieJar::withCookieHeader<\/a>"],[0,3,"<a href=\"src\/Cookie\/CookieJar.php.html#254\">CookieJar::removeCookieIfEmpty<\/a>"],[0,2,"<a href=\"src\/Cookie\/FileCookieJar.php.html#24\">FileCookieJar::__construct<\/a>"],[0,1,"<a href=\"src\/Cookie\/FileCookieJar.php.html#37\">FileCookieJar::__destruct<\/a>"],[0,4,"<a href=\"src\/Cookie\/FileCookieJar.php.html#48\">FileCookieJar::save<\/a>"],[0,6,"<a href=\"src\/Cookie\/FileCookieJar.php.html#72\">FileCookieJar::load<\/a>"],[0,1,"<a href=\"src\/Cookie\/SessionCookieJar.php.html#23\">SessionCookieJar::__construct<\/a>"],[0,1,"<a href=\"src\/Cookie\/SessionCookieJar.php.html#33\">SessionCookieJar::__destruct<\/a>"],[0,3,"<a href=\"src\/Cookie\/SessionCookieJar.php.html#41\">SessionCookieJar::save<\/a>"],[0,5,"<a href=\"src\/Cookie\/SessionCookieJar.php.html#57\">SessionCookieJar::load<\/a>"],[0,8,"<a href=\"src\/Cookie\/SetCookie.php.html#32\">SetCookie::fromString<\/a>"],[0,5,"<a href=\"src\/Cookie\/SetCookie.php.html#73\">SetCookie::__construct<\/a>"],[0,8,"<a href=\"src\/Cookie\/SetCookie.php.html#85\">SetCookie::__toString<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#101\">SetCookie::toArray<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#111\">SetCookie::getName<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#121\">SetCookie::setName<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#131\">SetCookie::getValue<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#141\">SetCookie::setValue<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#151\">SetCookie::getDomain<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#161\">SetCookie::setDomain<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#171\">SetCookie::getPath<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#181\">SetCookie::setPath<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#191\">SetCookie::getMaxAge<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#201\">SetCookie::setMaxAge<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#211\">SetCookie::getExpires<\/a>"],[0,2,"<a href=\"src\/Cookie\/SetCookie.php.html#221\">SetCookie::setExpires<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#233\">SetCookie::getSecure<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#243\">SetCookie::setSecure<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#253\">SetCookie::getDiscard<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#263\">SetCookie::setDiscard<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#273\">SetCookie::getHttpOnly<\/a>"],[0,1,"<a href=\"src\/Cookie\/SetCookie.php.html#283\">SetCookie::setHttpOnly<\/a>"],[0,5,"<a href=\"src\/Cookie\/SetCookie.php.html#305\">SetCookie::matchesPath<\/a>"],[0,4,"<a href=\"src\/Cookie\/SetCookie.php.html#335\">SetCookie::matchesDomain<\/a>"],[0,2,"<a href=\"src\/Cookie\/SetCookie.php.html#360\">SetCookie::isExpired<\/a>"],[0,8,"<a href=\"src\/Cookie\/SetCookie.php.html#370\">SetCookie::validate<\/a>"],[0,1,"<a href=\"src\/Exception\/ConnectException.php.html#13\">ConnectException::__construct<\/a>"],[0,1,"<a href=\"src\/Exception\/ConnectException.php.html#25\">ConnectException::getResponse<\/a>"],[0,1,"<a href=\"src\/Exception\/ConnectException.php.html#33\">ConnectException::hasResponse<\/a>"],[0,3,"<a href=\"src\/Exception\/RequestException.php.html#23\">RequestException::__construct<\/a>"],[0,2,"<a href=\"src\/Exception\/RequestException.php.html#48\">RequestException::wrapException<\/a>"],[0,5,"<a href=\"src\/Exception\/RequestException.php.html#65\">RequestException::create<\/a>"],[0,4,"<a href=\"src\/Exception\/RequestException.php.html#123\">RequestException::getResponseBodySummary<\/a>"],[0,2,"<a href=\"src\/Exception\/RequestException.php.html#155\">RequestException::obfuscateUri<\/a>"],[0,1,"<a href=\"src\/Exception\/RequestException.php.html#171\">RequestException::getRequest<\/a>"],[0,1,"<a href=\"src\/Exception\/RequestException.php.html#181\">RequestException::getResponse<\/a>"],[0,1,"<a href=\"src\/Exception\/RequestException.php.html#191\">RequestException::hasResponse<\/a>"],[0,1,"<a href=\"src\/Exception\/RequestException.php.html#206\">RequestException::getHandlerContext<\/a>"],[0,2,"<a href=\"src\/Exception\/SeekException.php.html#13\">SeekException::__construct<\/a>"],[0,1,"<a href=\"src\/Exception\/SeekException.php.html#23\">SeekException::getStream<\/a>"],[100,1,"<a href=\"src\/Handler\/CurlFactory.php.html#27\">CurlFactory::__construct<\/a>"],[76.190476190476,4,"<a href=\"src\/Handler\/CurlFactory.php.html#32\">CurlFactory::create<\/a>"],[83.333333333333,2,"<a href=\"src\/Handler\/CurlFactory.php.html#62\">CurlFactory::release<\/a>"],[72.727272727273,5,"<a href=\"src\/Handler\/CurlFactory.php.html#93\">CurlFactory::finish<\/a>"],[0,1,"<a href=\"src\/Handler\/CurlFactory.php.html#118\">CurlFactory::invokeStats<\/a>"],[0,4,"<a href=\"src\/Handler\/CurlFactory.php.html#131\">CurlFactory::finishError<\/a>"],[0,3,"<a href=\"src\/Handler\/CurlFactory.php.html#153\">CurlFactory::createRejection<\/a>"],[83.333333333333,4,"<a href=\"src\/Handler\/CurlFactory.php.html#192\">CurlFactory::getDefaultConf<\/a>"],[38.888888888889,7,"<a href=\"src\/Handler\/CurlFactory.php.html#219\">CurlFactory::applyMethod<\/a>"],[0,9,"<a href=\"src\/Handler\/CurlFactory.php.html#246\">CurlFactory::applyBody<\/a>"],[55,5,"<a href=\"src\/Handler\/CurlFactory.php.html#508\">CurlFactory::anonymous function<\/a>"],[100,4,"<a href=\"src\/Handler\/CurlFactory.php.html#287\">CurlFactory::applyHeaders<\/a>"],[0,3,"<a href=\"src\/Handler\/CurlFactory.php.html#307\">CurlFactory::removeHeader<\/a>"],[23.529411764706,27,"<a href=\"src\/Handler\/CurlFactory.php.html#317\">CurlFactory::applyHandlerOptions<\/a>"],[0,5,"<a href=\"src\/Handler\/CurlFactory.php.html#459\">CurlFactory::retryFailedRewind<\/a>"],[33.333333333333,7,"<a href=\"src\/Handler\/CurlFactory.php.html#496\">CurlFactory::createHeaderFn<\/a>"],[100,2,"<a href=\"src\/Handler\/CurlHandler.php.html#26\">CurlHandler::__construct<\/a>"],[71.428571428571,2,"<a href=\"src\/Handler\/CurlHandler.php.html#33\">CurlHandler::__invoke<\/a>"],[100,3,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#36\">CurlMultiHandler::__construct<\/a>"],[0,2,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#44\">CurlMultiHandler::__get<\/a>"],[0,2,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#53\">CurlMultiHandler::__destruct<\/a>"],[0,1,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#61\">CurlMultiHandler::__invoke<\/a>"],[100,1,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#68\">CurlMultiHandler::anonymous function<\/a>"],[0,7,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#79\">CurlMultiHandler::tick<\/a>"],[0,5,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#114\">CurlMultiHandler::execute<\/a>"],[0,2,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#127\">CurlMultiHandler::addRequest<\/a>"],[0,2,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#146\">CurlMultiHandler::cancel<\/a>"],[0,3,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#161\">CurlMultiHandler::processMessages<\/a>"],[0,3,"<a href=\"src\/Handler\/CurlMultiHandler.php.html#185\">CurlMultiHandler::timeToNext<\/a>"],[51.724137931034,7,"<a href=\"src\/Handler\/EasyHandle.php.html#45\">EasyHandle::createResponse<\/a>"],[0,2,"<a href=\"src\/Handler\/EasyHandle.php.html#85\">EasyHandle::__get<\/a>"],[0,1,"<a href=\"src\/Handler\/MockHandler.php.html#32\">MockHandler::createWithMiddleware<\/a>"],[0,2,"<a href=\"src\/Handler\/MockHandler.php.html#49\">MockHandler::__construct<\/a>"],[0,11,"<a href=\"src\/Handler\/MockHandler.php.html#62\">MockHandler::__invoke<\/a>"],[0,2,"<a href=\"src\/Handler\/MockHandler.php.html#105\">MockHandler::anonymous function<\/a>"],[0,6,"<a href=\"src\/Handler\/MockHandler.php.html#119\">MockHandler::append<\/a>"],[0,1,"<a href=\"src\/Handler\/MockHandler.php.html#140\">MockHandler::getLastRequest<\/a>"],[0,1,"<a href=\"src\/Handler\/MockHandler.php.html#150\">MockHandler::getLastOptions<\/a>"],[0,1,"<a href=\"src\/Handler\/MockHandler.php.html#160\">MockHandler::count<\/a>"],[0,2,"<a href=\"src\/Handler\/MockHandler.php.html#165\">MockHandler::invokeStats<\/a>"],[100,2,"<a href=\"src\/Handler\/Proxy.php.html#21\">Proxy::wrapSync<\/a>"],[100,2,"<a href=\"src\/Handler\/Proxy.php.html#49\">Proxy::anonymous function<\/a>"],[100,2,"<a href=\"src\/Handler\/Proxy.php.html#45\">Proxy::wrapStreaming<\/a>"],[0,9,"<a href=\"src\/Handler\/StreamHandler.php.html#30\">StreamHandler::__invoke<\/a>"],[0,2,"<a href=\"src\/Handler\/StreamHandler.php.html#74\">StreamHandler::invokeStats<\/a>"],[0,6,"<a href=\"src\/Handler\/StreamHandler.php.html#93\">StreamHandler::createResponse<\/a>"],[0,4,"<a href=\"src\/Handler\/StreamHandler.php.html#141\">StreamHandler::createSink<\/a>"],[0,7,"<a href=\"src\/Handler\/StreamHandler.php.html#156\">StreamHandler::checkDecode<\/a>"],[0,3,"<a href=\"src\/Handler\/StreamHandler.php.html#201\">StreamHandler::drain<\/a>"],[0,4,"<a href=\"src\/Handler\/StreamHandler.php.html#230\">StreamHandler::createResource<\/a>"],[0,2,"<a href=\"src\/Handler\/StreamHandler.php.html#483\">StreamHandler::anonymous function<\/a>"],[0,12,"<a href=\"src\/Handler\/StreamHandler.php.html#258\">StreamHandler::createStream<\/a>"],[0,5,"<a href=\"src\/Handler\/StreamHandler.php.html#319\">StreamHandler::getDefaultContext<\/a>"],[0,5,"<a href=\"src\/Handler\/StreamHandler.php.html#353\">StreamHandler::add_proxy<\/a>"],[0,2,"<a href=\"src\/Handler\/StreamHandler.php.html#372\">StreamHandler::add_timeout<\/a>"],[0,6,"<a href=\"src\/Handler\/StreamHandler.php.html#379\">StreamHandler::add_verify<\/a>"],[0,3,"<a href=\"src\/Handler\/StreamHandler.php.html#405\">StreamHandler::add_cert<\/a>"],[0,2,"<a href=\"src\/Handler\/StreamHandler.php.html#419\">StreamHandler::add_progress<\/a>"],[0,3,"<a href=\"src\/Handler\/StreamHandler.php.html#431\">StreamHandler::add_debug<\/a>"],[0,2,"<a href=\"src\/Handler\/StreamHandler.php.html#468\">StreamHandler::addNotification<\/a>"],[100,2,"<a href=\"src\/Handler\/StreamHandler.php.html#481\">StreamHandler::callArray<\/a>"],[100,2,"<a href=\"src\/HandlerStack.php.html#38\">HandlerStack::create<\/a>"],[100,1,"<a href=\"src\/HandlerStack.php.html#52\">HandlerStack::__construct<\/a>"],[100,1,"<a href=\"src\/HandlerStack.php.html#63\">HandlerStack::__invoke<\/a>"],[0,4,"<a href=\"src\/HandlerStack.php.html#75\">HandlerStack::__toString<\/a>"],[33.333333333333,1,"<a href=\"src\/HandlerStack.php.html#105\">HandlerStack::setHandler<\/a>"],[0,1,"<a href=\"src\/HandlerStack.php.html#116\">HandlerStack::hasHandler<\/a>"],[0,1,"<a href=\"src\/HandlerStack.php.html#127\">HandlerStack::unshift<\/a>"],[100,1,"<a href=\"src\/HandlerStack.php.html#139\">HandlerStack::push<\/a>"],[0,1,"<a href=\"src\/HandlerStack.php.html#152\">HandlerStack::before<\/a>"],[0,1,"<a href=\"src\/HandlerStack.php.html#164\">HandlerStack::after<\/a>"],[0,2,"<a href=\"src\/HandlerStack.php.html#174\">HandlerStack::remove<\/a>"],[0,1,"<a href=\"src\/HandlerStack.php.html#180\">HandlerStack::anonymous function<\/a>"],[88.888888888889,4,"<a href=\"src\/HandlerStack.php.html#191\">HandlerStack::resolve<\/a>"],[16.666666666667,3,"<a href=\"src\/HandlerStack.php.html#212\">HandlerStack::findByName<\/a>"],[0,4,"<a href=\"src\/HandlerStack.php.html#231\">HandlerStack::splice<\/a>"],[0,4,"<a href=\"src\/HandlerStack.php.html#259\">HandlerStack::debugCallable<\/a>"],[0,2,"<a href=\"src\/MessageFormatter.php.html#53\">MessageFormatter::__construct<\/a>"],[0,33,"<a href=\"src\/MessageFormatter.php.html#67\">MessageFormatter::format<\/a>"],[0,33,"<a href=\"src\/MessageFormatter.php.html#76\">MessageFormatter::anonymous function<\/a>"],[0,2,"<a href=\"src\/MessageFormatter.php.html#173\">MessageFormatter::headers<\/a>"],[33.333333333333,3,"<a href=\"src\/Middleware.php.html#25\">Middleware::cookies<\/a>"],[0,1,"<a href=\"src\/Middleware.php.html#249\">Middleware::anonymous function<\/a>"],[80,3,"<a href=\"src\/Middleware.php.html#52\">Middleware::httpErrors<\/a>"],[0,3,"<a href=\"src\/Middleware.php.html#80\">Middleware::history<\/a>"],[0,3,"<a href=\"src\/Middleware.php.html#125\">Middleware::tap<\/a>"],[100,1,"<a href=\"src\/Middleware.php.html#146\">Middleware::redirect<\/a>"],[0,1,"<a href=\"src\/Middleware.php.html#168\">Middleware::retry<\/a>"],[0,2,"<a href=\"src\/Middleware.php.html#185\">Middleware::log<\/a>"],[100,1,"<a href=\"src\/Middleware.php.html#214\">Middleware::prepareBody<\/a>"],[0,1,"<a href=\"src\/Middleware.php.html#229\">Middleware::mapRequest<\/a>"],[100,1,"<a href=\"src\/Middleware.php.html#246\">Middleware::mapResponse<\/a>"],[0,7,"<a href=\"src\/Pool.php.html#34\">Pool::__construct<\/a>"],[0,1,"<a href=\"src\/Pool.php.html#117\">Pool::anonymous function<\/a>"],[0,1,"<a href=\"src\/Pool.php.html#72\">Pool::promise<\/a>"],[0,1,"<a href=\"src\/Pool.php.html#94\">Pool::batch<\/a>"],[0,2,"<a href=\"src\/Pool.php.html#109\">Pool::cmpCallback<\/a>"],[100,1,"<a href=\"src\/PrepareBodyMiddleware.php.html#23\">PrepareBodyMiddleware::__construct<\/a>"],[16,10,"<a href=\"src\/PrepareBodyMiddleware.php.html#34\">PrepareBodyMiddleware::__invoke<\/a>"],[0,10,"<a href=\"src\/PrepareBodyMiddleware.php.html#75\">PrepareBodyMiddleware::addExpectHeader<\/a>"],[100,1,"<a href=\"src\/RedirectMiddleware.php.html#36\">RedirectMiddleware::__construct<\/a>"],[69.230769230769,5,"<a href=\"src\/RedirectMiddleware.php.html#47\">RedirectMiddleware::__invoke<\/a>"],[0,1,"<a href=\"src\/RedirectMiddleware.php.html#121\">RedirectMiddleware::anonymous function<\/a>"],[19.047619047619,5,"<a href=\"src\/RedirectMiddleware.php.html#81\">RedirectMiddleware::checkRedirect<\/a>"],[0,1,"<a href=\"src\/RedirectMiddleware.php.html#118\">RedirectMiddleware::withTracking<\/a>"],[0,3,"<a href=\"src\/RedirectMiddleware.php.html#132\">RedirectMiddleware::guardMax<\/a>"],[0,8,"<a href=\"src\/RedirectMiddleware.php.html#155\">RedirectMiddleware::modifyRequest<\/a>"],[0,2,"<a href=\"src\/RedirectMiddleware.php.html#206\">RedirectMiddleware::redirectUri<\/a>"],[0,2,"<a href=\"src\/RetryMiddleware.php.html#32\">RetryMiddleware::__construct<\/a>"],[0,1,"<a href=\"src\/RetryMiddleware.php.html#49\">RetryMiddleware::exponentialDelay<\/a>"],[0,2,"<a href=\"src\/RetryMiddleware.php.html#60\">RetryMiddleware::__invoke<\/a>"],[0,2,"<a href=\"src\/RetryMiddleware.php.html#74\">RetryMiddleware::onFulfilled<\/a>"],[0,2,"<a href=\"src\/RetryMiddleware.php.html#92\">RetryMiddleware::anonymous function<\/a>"],[0,2,"<a href=\"src\/RetryMiddleware.php.html#90\">RetryMiddleware::onRejected<\/a>"],[0,1,"<a href=\"src\/RetryMiddleware.php.html#106\">RetryMiddleware::doRetry<\/a>"],[0,1,"<a href=\"src\/TransferStats.php.html#27\">TransferStats::__construct<\/a>"],[0,1,"<a href=\"src\/TransferStats.php.html#44\">TransferStats::getRequest<\/a>"],[0,1,"<a href=\"src\/TransferStats.php.html#54\">TransferStats::getResponse<\/a>"],[0,1,"<a href=\"src\/TransferStats.php.html#64\">TransferStats::hasResponse<\/a>"],[0,1,"<a href=\"src\/TransferStats.php.html#78\">TransferStats::getHandlerErrorData<\/a>"],[0,1,"<a href=\"src\/TransferStats.php.html#88\">TransferStats::getEffectiveUri<\/a>"],[0,1,"<a href=\"src\/TransferStats.php.html#98\">TransferStats::getTransferTime<\/a>"],[0,1,"<a href=\"src\/TransferStats.php.html#108\">TransferStats::getHandlerStats<\/a>"],[0,2,"<a href=\"src\/TransferStats.php.html#120\">TransferStats::getHandlerStat<\/a>"],[0,2,"<a href=\"src\/UriTemplate.php.html#38\">UriTemplate::expand<\/a>"],[0,5,"<a href=\"src\/UriTemplate.php.html#61\">UriTemplate::parseExpression<\/a>"],[0,27,"<a href=\"src\/UriTemplate.php.html#99\">UriTemplate::expandMatch<\/a>"],[0,2,"<a href=\"src\/UriTemplate.php.html#224\">UriTemplate::isAssoc<\/a>"],[0,1,"<a href=\"src\/UriTemplate.php.html#237\">UriTemplate::decodeReserved<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

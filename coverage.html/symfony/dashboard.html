@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/rest/public/vendor/symfony</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../js/html5shiv.min.js"></script>
+  <script src="../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../index.html">/var/www/html/rest/public/vendor</a></li>
+        <li><a href="index.html">symfony</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#17">ParserTest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParseExceptionTest.php.html#16">ParseExceptionTest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/YamlTest.php.html#16">YamlTest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Unescaper.php.html#24">Unescaper</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Yaml.php.html#21">Yaml</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#18">InlineTest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#18">DumperTest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Escaper.php.html#22">Escaper</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#19">ParseException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#24">Inline</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#21">Parser</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Dumper.php.html#19">Dumper</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="yaml/Parser.php.html#21">Parser</a></td><td class="text-right">36672</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#24">Inline</a></td><td class="text-right">22650</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#17">ParserTest</a></td><td class="text-right">3660</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#18">InlineTest</a></td><td class="text-right">1980</td></tr>
+       <tr><td><a href="yaml/Unescaper.php.html#24">Unescaper</a></td><td class="text-right">870</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#18">DumperTest</a></td><td class="text-right">756</td></tr>
+       <tr><td><a href="yaml/Dumper.php.html#19">Dumper</a></td><td class="text-right">650</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#19">ParseException</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="yaml/Yaml.php.html#21">Yaml</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="yaml/Escaper.php.html#22">Escaper</a></td><td class="text-right">30</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#39"><abbr title="ParserTest::getDataFormSpecifications">getDataFormSpecifications</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#69"><abbr title="ParserTest::testTabsInYaml">testTabsInYaml</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#91"><abbr title="ParserTest::testEndOfTheDocumentMarker">testEndOfTheDocumentMarker</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#102"><abbr title="ParserTest::getBlockChompingTests">getBlockChompingTests</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#34"><abbr title="ParserTest::testSpecifications">testSpecifications</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#26"><abbr title="ParserTest::tearDown">tearDown</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParseExceptionTest.php.html#18"><abbr title="ParseExceptionTest::testGetMessage">testGetMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParseExceptionTest.php.html#26"><abbr title="ParseExceptionTest::testGetMessageWithUnicodeInFilename">testGetMessageWithUnicodeInFilename</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#21"><abbr title="ParserTest::setUp">setUp</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#396"><abbr title="ParserTest::testBlockChomping">testBlockChomping</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#406"><abbr title="ParserTest::testBlockLiteralWithLeadingNewlines">testBlockLiteralWithLeadingNewlines</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#475"><abbr title="ParserTest::testObjectForMapEnabledWithMappingUsingBooleanToggles">testObjectForMapEnabledWithMappingUsingBooleanToggles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#480"><abbr title="ParserTest::getObjectForMapTests">getObjectForMapTests</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#547"><abbr title="ParserTest::testObjectsSupportDisabledWithExceptions">testObjectsSupportDisabledWithExceptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#557"><abbr title="ParserTest::testObjectsSupportDisabledWithExceptionsUsingBooleanToggles">testObjectsSupportDisabledWithExceptionsUsingBooleanToggles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#466"><abbr title="ParserTest::testObjectForMap">testObjectForMap</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#458"><abbr title="ParserTest::testObjectSupportDisabledButNoExceptions">testObjectSupportDisabledButNoExceptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#422"><abbr title="ParserTest::testObjectSupportEnabled">testObjectSupportEnabled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#434"><abbr title="ParserTest::testObjectSupportEnabledPassingTrue">testObjectSupportEnabledPassingTrue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#446"><abbr title="ParserTest::testObjectSupportEnabledWithDeprecatedTag">testObjectSupportEnabledWithDeprecatedTag</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#592"><abbr title="InlineTest::getInvalidBinaryData">getInvalidBinaryData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#585"><abbr title="InlineTest::testParseInvalidBinaryData">testParseInvalidBinaryData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#261"><abbr title="InlineTest::testParseUnquotedScalarStartingWithPercentCharacter">testParseUnquotedScalarStartingWithPercentCharacter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#263"><abbr title="InlineTest::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#271"><abbr title="InlineTest::testIsHash">testIsHash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#276"><abbr title="InlineTest::getDataForIsHash">getDataForIsHash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#251"><abbr title="InlineTest::getScalarIndicators">getScalarIndicators</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#246"><abbr title="InlineTest::testParseUnquotedScalarStartingWithScalarIndicator">testParseUnquotedScalarStartingWithScalarIndicator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#221"><abbr title="InlineTest::testParseUnquotedAsteriskFollowedByAComment">testParseUnquotedAsteriskFollowedByAComment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#231"><abbr title="InlineTest::testParseUnquotedScalarStartingWithReservedIndicator">testParseUnquotedScalarStartingWithReservedIndicator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#236"><abbr title="InlineTest::getReservedIndicators">getReservedIndicators</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#286"><abbr title="InlineTest::getTestsForParse">getTestsForParse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#361"><abbr title="InlineTest::getTestsForParseWithMapObjects">getTestsForParseWithMapObjects</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#547"><abbr title="InlineTest::testDumpDateTime">testDumpDateTime</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#552"><abbr title="InlineTest::getDateTimeDumpTests">getDateTimeDumpTests</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#568"><abbr title="InlineTest::testParseBinaryData">testParseBinaryData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#573"><abbr title="InlineTest::getBinaryData">getBinaryData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#531"><abbr title="InlineTest::testParseNestedTimestampListAsDateTimeObject">testParseNestedTimestampListAsDateTimeObject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#518"><abbr title="InlineTest::getTimestampTests">getTimestampTests</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#440"><abbr title="InlineTest::getTestsForDump">getTestsForDump</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#500"><abbr title="InlineTest::testParseTimestampAsUnixTimestampByDefault">testParseTimestampAsUnixTimestampByDefault</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#508"><abbr title="InlineTest::testParseTimestampAsDateTimeObject">testParseTimestampAsDateTimeObject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#562"><abbr title="ParserTest::invalidDumpedObjectProvider">invalidDumpedObjectProvider</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#582"><abbr title="ParserTest::testNonUtf8Exception">testNonUtf8Exception</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#1204"><abbr title="ParserTest::testParseInvalidBinaryData">testParseInvalidBinaryData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#1211"><abbr title="ParserTest::getInvalidBinaryData">getInvalidBinaryData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#1253"><abbr title="ParserTest::testParseDateAsMappingValue">testParseDateAsMappingValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#1271"><abbr title="ParserTest::testParserThrowsExceptionWithCorrectLineNumber">testParserThrowsExceptionWithCorrectLineNumber</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#1180"><abbr title="ParserTest::getBinaryData">getBinaryData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#1175"><abbr title="ParserTest::testParseBinaryData">testParseBinaryData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#995"><abbr title="ParserTest::getCommentLikeStringInScalarBlockData">getCommentLikeStringInScalarBlockData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#1121"><abbr title="ParserTest::testBlankLinesAreParsedAsNewLinesInFoldedBlocks">testBlankLinesAreParsedAsNewLinesInFoldedBlocks</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#1145"><abbr title="ParserTest::testAdditionallyIndentedLinesAreParsedAsNewLinesInFoldedBlocks">testAdditionallyIndentedLinesAreParsedAsNewLinesInFoldedBlocks</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#1281"><abbr title="ParserTest::parserThrowsExceptionWithCorrectLineNumberProvider">parserThrowsExceptionWithCorrectLineNumberProvider</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/YamlTest.php.html#18"><abbr title="YamlTest::testParseAndDump">testParseAndDump</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Unescaper.php.html#67"><abbr title="Unescaper::unescapeCharacter">unescapeCharacter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Unescaper.php.html#128"><abbr title="Unescaper::utf8chr">utf8chr</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Yaml.php.html#48"><abbr title="Yaml::parse">parse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Yaml.php.html#94"><abbr title="Yaml::dump">dump</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Unescaper.php.html#52"><abbr title="Unescaper::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Unescaper.php.html#50"><abbr title="Unescaper::unescapeDoubleQuotedString">unescapeDoubleQuotedString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/YamlTest.php.html#30"><abbr title="YamlTest::testZeroIndentationThrowsException">testZeroIndentationThrowsException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/YamlTest.php.html#39"><abbr title="YamlTest::testNegativeIndentationThrowsException">testNegativeIndentationThrowsException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Unescaper.php.html#38"><abbr title="Unescaper::unescapeSingleQuotedString">unescapeSingleQuotedString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#990"><abbr title="ParserTest::testCommentLikeStringsAreNotStrippedInBlockScalars">testCommentLikeStringsAreNotStrippedInBlockScalars</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#977"><abbr title="ParserTest::testColonInMappingValueExceptionNotTriggeredByColonInComment">testColonInMappingValueExceptionNotTriggeredByColonInComment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#696"><abbr title="ParserTest::testSequenceFollowedByCommentEmbeddedInMapping">testSequenceFollowedByCommentEmbeddedInMapping</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#718"><abbr title="ParserTest::testMappingInASequence">testMappingInASequence</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#732"><abbr title="ParserTest::testScalarInSequence">testScalarInSequence</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#753"><abbr title="ParserTest::testMappingDuplicateKeyBlock">testMappingDuplicateKeyBlock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#668"><abbr title="ParserTest::testSequenceInMappingStartedBySingleDashLine">testSequenceInMappingStartedBySingleDashLine</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#658"><abbr title="ParserTest::testSequenceInAMapping">testSequenceInAMapping</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#604"><abbr title="ParserTest::testUnindentedCollectionException">testUnindentedCollectionException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#621"><abbr title="ParserTest::testShortcutKeyUnindentedCollectionException">testShortcutKeyUnindentedCollectionException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#638"><abbr title="ParserTest::testMultipleDocumentsNotSupportedException">testMultipleDocumentsNotSupportedException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#771"><abbr title="ParserTest::testMappingDuplicateKeyFlow">testMappingDuplicateKeyFlow</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#785"><abbr title="ParserTest::testEmptyValue">testEmptyValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#935"><abbr title="ParserTest::testYamlDirective">testYamlDirective</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#946"><abbr title="ParserTest::testFloatKeys">testFloatKeys</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#968"><abbr title="ParserTest::testColonInMappingValueException">testColonInMappingValueException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#909"><abbr title="ParserTest::testReferenceResolvingInInlineStrings">testReferenceResolvingInInlineStrings</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#877"><abbr title="ParserTest::testNestedFoldedStringBlockWithComments">testNestedFoldedStringBlockWithComments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#794"><abbr title="ParserTest::testCommentAtTheRootIndent">testCommentAtTheRootIndent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#820"><abbr title="ParserTest::testStringBlockWithComments">testStringBlockWithComments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#848"><abbr title="ParserTest::testFoldedStringBlockWithComments">testFoldedStringBlockWithComments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#212"><abbr title="InlineTest::testParseUnquotedAsterisk">testParseUnquotedAsterisk</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#198"><abbr title="InlineTest::testParseMapReferenceInSequenceAsFifthArgument">testParseMapReferenceInSequenceAsFifthArgument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#681"><abbr title="Inline::getHexRegex">getHexRegex</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#42"><abbr title="Parser::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#59"><abbr title="Parser::parse">parse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#329"><abbr title="Parser::parseBlock">parseBlock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#658"><abbr title="Inline::getTimestampRegex">getTimestampRegex</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#646"><abbr title="Inline::isBinaryString">isBinaryString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#433"><abbr title="Inline::parseMapping">parseMapping</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#521"><abbr title="Inline::evaluateScalar">evaluateScalar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#631"><abbr title="Inline::evaluateBinaryScalar">evaluateBinaryScalar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#352"><abbr title="Parser::getRealCurrentLineNb">getRealCurrentLineNb</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#372"><abbr title="Parser::getCurrentLineIndentation">getCurrentLineIndentation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#695"><abbr title="Parser::isNextLineIndented">isNextLineIndented</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#723"><abbr title="Parser::isCurrentLineEmpty">isCurrentLineEmpty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#733"><abbr title="Parser::isCurrentLineBlank">isCurrentLineBlank</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#743"><abbr title="Parser::isCurrentLineComment">isCurrentLineComment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#588"><abbr title="Parser::parseBlockScalar">parseBlockScalar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#535"><abbr title="Parser::parseValue">parseValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#387"><abbr title="Parser::getNextEmbedBlock">getNextEmbedBlock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#497"><abbr title="Parser::moveToNextLine">moveToNextLine</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#513"><abbr title="Parser::moveToPreviousLine">moveToPreviousLine</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#373"><abbr title="Inline::parseSequence">parseSequence</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#341"><abbr title="Inline::parseQuotedScalar">parseQuotedScalar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Escaper.php.html#95"><abbr title="Escaper::escapeWithSingleQuotes">escapeWithSingleQuotes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#35"><abbr title="ParseException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#52"><abbr title="ParseException::getSnippet">getSnippet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#62"><abbr title="ParseException::setSnippet">setSnippet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Escaper.php.html#75"><abbr title="Escaper::requiresSingleQuoting">requiresSingleQuoting</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Escaper.php.html#63"><abbr title="Escaper::escapeWithDoubleQuotes">escapeWithDoubleQuotes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Dumper.php.html#45"><abbr title="Dumper::setIndentation">setIndentation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Dumper.php.html#62"><abbr title="Dumper::dump">dump</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Escaper.php.html#51"><abbr title="Escaper::requiresDoubleQuoting">requiresDoubleQuoting</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#76"><abbr title="ParseException::getParsedFile">getParsedFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#86"><abbr title="ParseException::setParsedFile">setParsedFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#226"><abbr title="Inline::isHash">isHash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#247"><abbr title="Inline::dumpArray">dumpArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#285"><abbr title="Inline::parseScalar">parseScalar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#128"><abbr title="Inline::dump">dump</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#43"><abbr title="Inline::parse">parse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#98"><abbr title="ParseException::getParsedLine">getParsedLine</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#108"><abbr title="ParseException::setParsedLine">setParsedLine</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#115"><abbr title="ParseException::updateRepr">updateRepr</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#751"><abbr title="Parser::isCurrentLineLastLineInDocument">isCurrentLineLastLineInDocument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#763"><abbr title="Parser::cleanup">cleanup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#52"><abbr title="InlineTest::testDump">testDump</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#59"><abbr title="InlineTest::testDumpNumericValueWithLocale">testDumpNumericValueWithLocale</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#79"><abbr title="InlineTest::testHashStringsResemblingExponentialNumericsShouldNotBeChangedToINF">testHashStringsResemblingExponentialNumericsShouldNotBeChangedToINF</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#90"><abbr title="InlineTest::testParseScalarWithNonEscapedBlackslashShouldThrowException">testParseScalarWithNonEscapedBlackslashShouldThrowException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#42"><abbr title="InlineTest::testParseWithMapObjectsPassingTrue">testParseWithMapObjectsPassingTrue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#31"><abbr title="InlineTest::testParseWithMapObjects">testParseWithMapObjects</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#352"><abbr title="DumperTest::testZeroIndentationThrowsException">testZeroIndentationThrowsException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#361"><abbr title="DumperTest::testNegativeIndentationThrowsException">testNegativeIndentationThrowsException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#23"><abbr title="InlineTest::testParse">testParse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#98"><abbr title="InlineTest::testParseScalarWithNonEscapedBlackslashAtTheEndShouldThrowException">testParseScalarWithNonEscapedBlackslashAtTheEndShouldThrowException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#106"><abbr title="InlineTest::testParseScalarWithIncorrectlyQuotedStringShouldThrowException">testParseScalarWithIncorrectlyQuotedStringShouldThrowException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#157"><abbr title="InlineTest::testParseReferences">testParseReferences</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#166"><abbr title="InlineTest::testParseReferencesAsFifthArgument">testParseReferencesAsFifthArgument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#171"><abbr title="InlineTest::getDataForParseReferences">getDataForParseReferences</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#185"><abbr title="InlineTest::testParseMapReferenceInSequence">testParseMapReferenceInSequence</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#146"><abbr title="InlineTest::testParseScalarWithCorrectlyQuotedStringShouldReturnString">testParseScalarWithCorrectlyQuotedStringShouldReturnString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#141"><abbr title="InlineTest::testParseInvalidSequenceShouldThrowException">testParseInvalidSequenceShouldThrowException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#115"><abbr title="InlineTest::testParseScalarWithIncorrectlyDoubleQuotedStringShouldThrowException">testParseScalarWithIncorrectlyDoubleQuotedStringShouldThrowException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#124"><abbr title="InlineTest::testParseInvalidMappingKeyShouldThrowException">testParseInvalidMappingKeyShouldThrowException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#133"><abbr title="InlineTest::testParseInvalidMappingShouldThrowException">testParseInvalidMappingShouldThrowException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#333"><abbr title="DumperTest::testDumpMultiLineStringAsScalarBlock">testDumpMultiLineStringAsScalarBlock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#304"><abbr title="DumperTest::objectAsMapProvider">objectAsMapProvider</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#54"><abbr title="DumperTest::testIndentationInConstructor">testIndentationInConstructor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#82"><abbr title="DumperTest::testSetIndentation">testSetIndentation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#108"><abbr title="DumperTest::testSpecifications">testSpecifications</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#133"><abbr title="DumperTest::testInlineLevel">testInlineLevel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#46"><abbr title="DumperTest::tearDown">tearDown</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#39"><abbr title="DumperTest::setUp">setUp</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#799"><abbr title="Parser::isNextLineUnIndentedCollection">isNextLineUnIndentedCollection</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#831"><abbr title="Parser::isStringUnIndentedCollectionItem">isStringUnIndentedCollectionItem</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#841"><abbr title="Parser::isBlockScalarHeader">isBlockScalarHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#208"><abbr title="DumperTest::testObjectSupportEnabled">testObjectSupportEnabled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#218"><abbr title="DumperTest::testObjectSupportEnabledPassingTrue">testObjectSupportEnabledPassingTrue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#280"><abbr title="DumperTest::testBinaryDataIsDumpedBase64Encoded">testBinaryDataIsDumpedBase64Encoded</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#288"><abbr title="DumperTest::testNonUtf8DataIsDumpedBase64Encoded">testNonUtf8DataIsDumpedBase64Encoded</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#297"><abbr title="DumperTest::testDumpObjectAsMap">testDumpObjectAsMap</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#257"><abbr title="DumperTest::getEscapeSequences">getEscapeSequences</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#252"><abbr title="DumperTest::testEscapedEscapeSequencesInQuotedScalar">testEscapedEscapeSequencesInQuotedScalar</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#225"><abbr title="DumperTest::testObjectSupportDisabledButNoExceptions">testObjectSupportDisabledButNoExceptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#235"><abbr title="DumperTest::testObjectSupportDisabledWithExceptions">testObjectSupportDisabledWithExceptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#244"><abbr title="DumperTest::testObjectSupportDisabledWithExceptionsPassingTrue">testObjectSupportDisabledWithExceptionsPassingTrue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="yaml/Dumper.php.html#31"><abbr title="Dumper::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="yaml/Parser.php.html#59"><abbr title="Parser::parse">parse</abbr></a></td><td class="text-right">6480</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#521"><abbr title="Inline::evaluateScalar">evaluateScalar</abbr></a></td><td class="text-right">1806</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#128"><abbr title="Inline::dump">dump</abbr></a></td><td class="text-right">1190</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#387"><abbr title="Parser::getNextEmbedBlock">getNextEmbedBlock</abbr></a></td><td class="text-right">992</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#588"><abbr title="Parser::parseBlockScalar">parseBlockScalar</abbr></a></td><td class="text-right">812</td></tr>
+       <tr><td><a href="yaml/Unescaper.php.html#67"><abbr title="Unescaper::unescapeCharacter">unescapeCharacter</abbr></a></td><td class="text-right">506</td></tr>
+       <tr><td><a href="yaml/Dumper.php.html#62"><abbr title="Dumper::dump">dump</abbr></a></td><td class="text-right">506</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#535"><abbr title="Parser::parseValue">parseValue</abbr></a></td><td class="text-right">306</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#433"><abbr title="Inline::parseMapping">parseMapping</abbr></a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#285"><abbr title="Inline::parseScalar">parseScalar</abbr></a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#43"><abbr title="Inline::parse">parse</abbr></a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#373"><abbr title="Inline::parseSequence">parseSequence</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="yaml/Tests/DumperTest.php.html#108"><abbr title="DumperTest::testSpecifications">testSpecifications</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="yaml/Yaml.php.html#48"><abbr title="Yaml::parse">parse</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#799"><abbr title="Parser::isNextLineUnIndentedCollection">isNextLineUnIndentedCollection</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="yaml/Exception/ParseException.php.html#115"><abbr title="ParseException::updateRepr">updateRepr</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#39"><abbr title="ParserTest::getDataFormSpecifications">getDataFormSpecifications</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#247"><abbr title="Inline::dumpArray">dumpArray</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#695"><abbr title="Parser::isNextLineIndented">isNextLineIndented</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="yaml/Yaml.php.html#94"><abbr title="Yaml::dump">dump</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="yaml/Unescaper.php.html#128"><abbr title="Unescaper::utf8chr">utf8chr</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#763"><abbr title="Parser::cleanup">cleanup</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#69"><abbr title="ParserTest::testTabsInYaml">testTabsInYaml</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="yaml/Tests/ParserTest.php.html#582"><abbr title="ParserTest::testNonUtf8Exception">testNonUtf8Exception</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#329"><abbr title="Parser::parseBlock">parseBlock</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#226"><abbr title="Inline::isHash">isHash</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#341"><abbr title="Inline::parseQuotedScalar">parseQuotedScalar</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#631"><abbr title="Inline::evaluateBinaryScalar">evaluateBinaryScalar</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="yaml/Tests/InlineTest.php.html#59"><abbr title="InlineTest::testDumpNumericValueWithLocale">testDumpNumericValueWithLocale</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#352"><abbr title="Parser::getRealCurrentLineNb">getRealCurrentLineNb</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#513"><abbr title="Parser::moveToPreviousLine">moveToPreviousLine</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="yaml/Inline.php.html#646"><abbr title="Inline::isBinaryString">isBinaryString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="yaml/Escaper.php.html#75"><abbr title="Escaper::requiresSingleQuoting">requiresSingleQuoting</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="yaml/Dumper.php.html#31"><abbr title="Dumper::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#497"><abbr title="Parser::moveToNextLine">moveToNextLine</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#743"><abbr title="Parser::isCurrentLineComment">isCurrentLineComment</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#723"><abbr title="Parser::isCurrentLineEmpty">isCurrentLineEmpty</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="yaml/Parser.php.html#831"><abbr title="Parser::isStringUnIndentedCollectionItem">isStringUnIndentedCollectionItem</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 4.0.1</a> using <a href="https://secure.php.net/" target="_top">PHP 5.6.28-1+deb.sury.org~trusty+1</a> with <a href="https://xdebug.org/">Xdebug 2.4.1</a> and <a href="https://phpunit.de/">PHPUnit 5.5.4</a> at Mon Nov 28 1:38:25 UTC 2016.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../js/holder.min.js" type="text/javascript"></script>
+  <script src="../js/d3.min.js" type="text/javascript"></script>
+  <script src="../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([12,0,0,0,0,0,0,0,0,0,0,4], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([172,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,25,"<a href=\"yaml\/Dumper.php.html#19\">Dumper<\/a>"],[0,5,"<a href=\"yaml\/Escaper.php.html#22\">Escaper<\/a>"],[100,0,"<a href=\"yaml\/Exception\/DumpException.php.html#19\">DumpException<\/a>"],[0,13,"<a href=\"yaml\/Exception\/ParseException.php.html#19\">ParseException<\/a>"],[100,0,"<a href=\"yaml\/Exception\/RuntimeException.php.html#19\">RuntimeException<\/a>"],[0,150,"<a href=\"yaml\/Inline.php.html#24\">Inline<\/a>"],[0,191,"<a href=\"yaml\/Parser.php.html#21\">Parser<\/a>"],[0,27,"<a href=\"yaml\/Tests\/DumperTest.php.html#18\">DumperTest<\/a>"],[100,0,"<a href=\"yaml\/Tests\/DumperTest.php.html#367\">A<\/a>"],[0,44,"<a href=\"yaml\/Tests\/InlineTest.php.html#18\">InlineTest<\/a>"],[0,2,"<a href=\"yaml\/Tests\/ParseExceptionTest.php.html#16\">ParseExceptionTest<\/a>"],[0,60,"<a href=\"yaml\/Tests\/ParserTest.php.html#17\">ParserTest<\/a>"],[100,0,"<a href=\"yaml\/Tests\/ParserTest.php.html#1335\">B<\/a>"],[0,3,"<a href=\"yaml\/Tests\/YamlTest.php.html#16\">YamlTest<\/a>"],[0,29,"<a href=\"yaml\/Unescaper.php.html#24\">Unescaper<\/a>"],[0,12,"<a href=\"yaml\/Yaml.php.html#21\">Yaml<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,2,"<a href=\"yaml\/Dumper.php.html#31\">Dumper::__construct<\/a>"],[0,1,"<a href=\"yaml\/Dumper.php.html#45\">Dumper::setIndentation<\/a>"],[0,22,"<a href=\"yaml\/Dumper.php.html#62\">Dumper::dump<\/a>"],[0,1,"<a href=\"yaml\/Escaper.php.html#51\">Escaper::requiresDoubleQuoting<\/a>"],[0,1,"<a href=\"yaml\/Escaper.php.html#63\">Escaper::escapeWithDoubleQuotes<\/a>"],[0,2,"<a href=\"yaml\/Escaper.php.html#75\">Escaper::requiresSingleQuoting<\/a>"],[0,1,"<a href=\"yaml\/Escaper.php.html#95\">Escaper::escapeWithSingleQuotes<\/a>"],[0,1,"<a href=\"yaml\/Exception\/ParseException.php.html#35\">ParseException::__construct<\/a>"],[0,1,"<a href=\"yaml\/Exception\/ParseException.php.html#52\">ParseException::getSnippet<\/a>"],[0,1,"<a href=\"yaml\/Exception\/ParseException.php.html#62\">ParseException::setSnippet<\/a>"],[0,1,"<a href=\"yaml\/Exception\/ParseException.php.html#76\">ParseException::getParsedFile<\/a>"],[0,1,"<a href=\"yaml\/Exception\/ParseException.php.html#86\">ParseException::setParsedFile<\/a>"],[0,1,"<a href=\"yaml\/Exception\/ParseException.php.html#98\">ParseException::getParsedLine<\/a>"],[0,1,"<a href=\"yaml\/Exception\/ParseException.php.html#108\">ParseException::setParsedLine<\/a>"],[0,6,"<a href=\"yaml\/Exception\/ParseException.php.html#115\">ParseException::updateRepr<\/a>"],[0,15,"<a href=\"yaml\/Inline.php.html#43\">Inline::parse<\/a>"],[0,34,"<a href=\"yaml\/Inline.php.html#128\">Inline::dump<\/a>"],[0,3,"<a href=\"yaml\/Inline.php.html#226\">Inline::isHash<\/a>"],[0,5,"<a href=\"yaml\/Inline.php.html#247\">Inline::dumpArray<\/a>"],[0,15,"<a href=\"yaml\/Inline.php.html#285\">Inline::parseScalar<\/a>"],[0,3,"<a href=\"yaml\/Inline.php.html#341\">Inline::parseQuotedScalar<\/a>"],[0,11,"<a href=\"yaml\/Inline.php.html#373\">Inline::parseSequence<\/a>"],[0,15,"<a href=\"yaml\/Inline.php.html#433\">Inline::parseMapping<\/a>"],[0,42,"<a href=\"yaml\/Inline.php.html#521\">Inline::evaluateScalar<\/a>"],[0,3,"<a href=\"yaml\/Inline.php.html#631\">Inline::evaluateBinaryScalar<\/a>"],[0,2,"<a href=\"yaml\/Inline.php.html#646\">Inline::isBinaryString<\/a>"],[0,1,"<a href=\"yaml\/Inline.php.html#658\">Inline::getTimestampRegex<\/a>"],[0,1,"<a href=\"yaml\/Inline.php.html#681\">Inline::getHexRegex<\/a>"],[0,1,"<a href=\"yaml\/Parser.php.html#42\">Parser::__construct<\/a>"],[0,80,"<a href=\"yaml\/Parser.php.html#59\">Parser::parse<\/a>"],[0,3,"<a href=\"yaml\/Parser.php.html#329\">Parser::parseBlock<\/a>"],[0,3,"<a href=\"yaml\/Parser.php.html#352\">Parser::getRealCurrentLineNb<\/a>"],[0,1,"<a href=\"yaml\/Parser.php.html#372\">Parser::getCurrentLineIndentation<\/a>"],[0,31,"<a href=\"yaml\/Parser.php.html#387\">Parser::getNextEmbedBlock<\/a>"],[0,2,"<a href=\"yaml\/Parser.php.html#497\">Parser::moveToNextLine<\/a>"],[0,2,"<a href=\"yaml\/Parser.php.html#513\">Parser::moveToPreviousLine<\/a>"],[0,17,"<a href=\"yaml\/Parser.php.html#535\">Parser::parseValue<\/a>"],[0,28,"<a href=\"yaml\/Parser.php.html#588\">Parser::parseBlockScalar<\/a>"],[0,5,"<a href=\"yaml\/Parser.php.html#695\">Parser::isNextLineIndented<\/a>"],[0,2,"<a href=\"yaml\/Parser.php.html#723\">Parser::isCurrentLineEmpty<\/a>"],[0,1,"<a href=\"yaml\/Parser.php.html#733\">Parser::isCurrentLineBlank<\/a>"],[0,2,"<a href=\"yaml\/Parser.php.html#743\">Parser::isCurrentLineComment<\/a>"],[0,1,"<a href=\"yaml\/Parser.php.html#751\">Parser::isCurrentLineLastLineInDocument<\/a>"],[0,3,"<a href=\"yaml\/Parser.php.html#763\">Parser::cleanup<\/a>"],[0,6,"<a href=\"yaml\/Parser.php.html#799\">Parser::isNextLineUnIndentedCollection<\/a>"],[0,2,"<a href=\"yaml\/Parser.php.html#831\">Parser::isStringUnIndentedCollectionItem<\/a>"],[0,1,"<a href=\"yaml\/Parser.php.html#841\">Parser::isBlockScalarHeader<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#39\">DumperTest::setUp<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#46\">DumperTest::tearDown<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#54\">DumperTest::testIndentationInConstructor<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#82\">DumperTest::testSetIndentation<\/a>"],[0,8,"<a href=\"yaml\/Tests\/DumperTest.php.html#108\">DumperTest::testSpecifications<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#133\">DumperTest::testInlineLevel<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#208\">DumperTest::testObjectSupportEnabled<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#218\">DumperTest::testObjectSupportEnabledPassingTrue<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#225\">DumperTest::testObjectSupportDisabledButNoExceptions<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#235\">DumperTest::testObjectSupportDisabledWithExceptions<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#244\">DumperTest::testObjectSupportDisabledWithExceptionsPassingTrue<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#252\">DumperTest::testEscapedEscapeSequencesInQuotedScalar<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#257\">DumperTest::getEscapeSequences<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#280\">DumperTest::testBinaryDataIsDumpedBase64Encoded<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#288\">DumperTest::testNonUtf8DataIsDumpedBase64Encoded<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#297\">DumperTest::testDumpObjectAsMap<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#304\">DumperTest::objectAsMapProvider<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#333\">DumperTest::testDumpMultiLineStringAsScalarBlock<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#352\">DumperTest::testZeroIndentationThrowsException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/DumperTest.php.html#361\">DumperTest::testNegativeIndentationThrowsException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#23\">InlineTest::testParse<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#31\">InlineTest::testParseWithMapObjects<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#42\">InlineTest::testParseWithMapObjectsPassingTrue<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#52\">InlineTest::testDump<\/a>"],[0,3,"<a href=\"yaml\/Tests\/InlineTest.php.html#59\">InlineTest::testDumpNumericValueWithLocale<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#79\">InlineTest::testHashStringsResemblingExponentialNumericsShouldNotBeChangedToINF<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#90\">InlineTest::testParseScalarWithNonEscapedBlackslashShouldThrowException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#98\">InlineTest::testParseScalarWithNonEscapedBlackslashAtTheEndShouldThrowException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#106\">InlineTest::testParseScalarWithIncorrectlyQuotedStringShouldThrowException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#115\">InlineTest::testParseScalarWithIncorrectlyDoubleQuotedStringShouldThrowException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#124\">InlineTest::testParseInvalidMappingKeyShouldThrowException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#133\">InlineTest::testParseInvalidMappingShouldThrowException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#141\">InlineTest::testParseInvalidSequenceShouldThrowException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#146\">InlineTest::testParseScalarWithCorrectlyQuotedStringShouldReturnString<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#157\">InlineTest::testParseReferences<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#166\">InlineTest::testParseReferencesAsFifthArgument<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#171\">InlineTest::getDataForParseReferences<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#185\">InlineTest::testParseMapReferenceInSequence<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#198\">InlineTest::testParseMapReferenceInSequenceAsFifthArgument<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#212\">InlineTest::testParseUnquotedAsterisk<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#221\">InlineTest::testParseUnquotedAsteriskFollowedByAComment<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#231\">InlineTest::testParseUnquotedScalarStartingWithReservedIndicator<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#236\">InlineTest::getReservedIndicators<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#246\">InlineTest::testParseUnquotedScalarStartingWithScalarIndicator<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#251\">InlineTest::getScalarIndicators<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#261\">InlineTest::testParseUnquotedScalarStartingWithPercentCharacter<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#263\">InlineTest::anonymous function<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#271\">InlineTest::testIsHash<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#276\">InlineTest::getDataForIsHash<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#286\">InlineTest::getTestsForParse<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#361\">InlineTest::getTestsForParseWithMapObjects<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#440\">InlineTest::getTestsForDump<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#500\">InlineTest::testParseTimestampAsUnixTimestampByDefault<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#508\">InlineTest::testParseTimestampAsDateTimeObject<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#518\">InlineTest::getTimestampTests<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#531\">InlineTest::testParseNestedTimestampListAsDateTimeObject<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#547\">InlineTest::testDumpDateTime<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#552\">InlineTest::getDateTimeDumpTests<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#568\">InlineTest::testParseBinaryData<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#573\">InlineTest::getBinaryData<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#585\">InlineTest::testParseInvalidBinaryData<\/a>"],[0,1,"<a href=\"yaml\/Tests\/InlineTest.php.html#592\">InlineTest::getInvalidBinaryData<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParseExceptionTest.php.html#18\">ParseExceptionTest::testGetMessage<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParseExceptionTest.php.html#26\">ParseExceptionTest::testGetMessageWithUnicodeInFilename<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#21\">ParserTest::setUp<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#26\">ParserTest::tearDown<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#34\">ParserTest::testSpecifications<\/a>"],[0,6,"<a href=\"yaml\/Tests\/ParserTest.php.html#39\">ParserTest::getDataFormSpecifications<\/a>"],[0,3,"<a href=\"yaml\/Tests\/ParserTest.php.html#69\">ParserTest::testTabsInYaml<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#91\">ParserTest::testEndOfTheDocumentMarker<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#102\">ParserTest::getBlockChompingTests<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#396\">ParserTest::testBlockChomping<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#406\">ParserTest::testBlockLiteralWithLeadingNewlines<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#422\">ParserTest::testObjectSupportEnabled<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#434\">ParserTest::testObjectSupportEnabledPassingTrue<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#446\">ParserTest::testObjectSupportEnabledWithDeprecatedTag<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#458\">ParserTest::testObjectSupportDisabledButNoExceptions<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#466\">ParserTest::testObjectForMap<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#475\">ParserTest::testObjectForMapEnabledWithMappingUsingBooleanToggles<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#480\">ParserTest::getObjectForMapTests<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#547\">ParserTest::testObjectsSupportDisabledWithExceptions<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#557\">ParserTest::testObjectsSupportDisabledWithExceptionsUsingBooleanToggles<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#562\">ParserTest::invalidDumpedObjectProvider<\/a>"],[0,3,"<a href=\"yaml\/Tests\/ParserTest.php.html#582\">ParserTest::testNonUtf8Exception<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#604\">ParserTest::testUnindentedCollectionException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#621\">ParserTest::testShortcutKeyUnindentedCollectionException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#638\">ParserTest::testMultipleDocumentsNotSupportedException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#658\">ParserTest::testSequenceInAMapping<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#668\">ParserTest::testSequenceInMappingStartedBySingleDashLine<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#696\">ParserTest::testSequenceFollowedByCommentEmbeddedInMapping<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#718\">ParserTest::testMappingInASequence<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#732\">ParserTest::testScalarInSequence<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#753\">ParserTest::testMappingDuplicateKeyBlock<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#771\">ParserTest::testMappingDuplicateKeyFlow<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#785\">ParserTest::testEmptyValue<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#794\">ParserTest::testCommentAtTheRootIndent<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#820\">ParserTest::testStringBlockWithComments<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#848\">ParserTest::testFoldedStringBlockWithComments<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#877\">ParserTest::testNestedFoldedStringBlockWithComments<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#909\">ParserTest::testReferenceResolvingInInlineStrings<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#935\">ParserTest::testYamlDirective<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#946\">ParserTest::testFloatKeys<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#968\">ParserTest::testColonInMappingValueException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#977\">ParserTest::testColonInMappingValueExceptionNotTriggeredByColonInComment<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#990\">ParserTest::testCommentLikeStringsAreNotStrippedInBlockScalars<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#995\">ParserTest::getCommentLikeStringInScalarBlockData<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#1121\">ParserTest::testBlankLinesAreParsedAsNewLinesInFoldedBlocks<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#1145\">ParserTest::testAdditionallyIndentedLinesAreParsedAsNewLinesInFoldedBlocks<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#1175\">ParserTest::testParseBinaryData<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#1180\">ParserTest::getBinaryData<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#1204\">ParserTest::testParseInvalidBinaryData<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#1211\">ParserTest::getInvalidBinaryData<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#1253\">ParserTest::testParseDateAsMappingValue<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#1271\">ParserTest::testParserThrowsExceptionWithCorrectLineNumber<\/a>"],[0,1,"<a href=\"yaml\/Tests\/ParserTest.php.html#1281\">ParserTest::parserThrowsExceptionWithCorrectLineNumberProvider<\/a>"],[0,1,"<a href=\"yaml\/Tests\/YamlTest.php.html#18\">YamlTest::testParseAndDump<\/a>"],[0,1,"<a href=\"yaml\/Tests\/YamlTest.php.html#30\">YamlTest::testZeroIndentationThrowsException<\/a>"],[0,1,"<a href=\"yaml\/Tests\/YamlTest.php.html#39\">YamlTest::testNegativeIndentationThrowsException<\/a>"],[0,1,"<a href=\"yaml\/Unescaper.php.html#38\">Unescaper::unescapeSingleQuotedString<\/a>"],[0,1,"<a href=\"yaml\/Unescaper.php.html#50\">Unescaper::unescapeDoubleQuotedString<\/a>"],[0,1,"<a href=\"yaml\/Unescaper.php.html#52\">Unescaper::anonymous function<\/a>"],[0,22,"<a href=\"yaml\/Unescaper.php.html#67\">Unescaper::unescapeCharacter<\/a>"],[0,4,"<a href=\"yaml\/Unescaper.php.html#128\">Unescaper::utf8chr<\/a>"],[0,7,"<a href=\"yaml\/Yaml.php.html#48\">Yaml::parse<\/a>"],[0,5,"<a href=\"yaml\/Yaml.php.html#94\">Yaml::dump<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

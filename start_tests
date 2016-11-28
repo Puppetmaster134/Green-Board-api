@@ -1,2 +1,3 @@
-./vendor/bin/phpunit --verbose ./tests
+#./vendor/bin/phpunit --verbose ./tests
+./vendor/bin/phpunit ./tests --coverage-html coverage.html --whitelist ./tests
 

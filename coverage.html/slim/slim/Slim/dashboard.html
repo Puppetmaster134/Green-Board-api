@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/rest/public/vendor/slim/slim/Slim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../../../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../../../js/html5shiv.min.js"></script>
+  <script src="../../../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../../../index.html">/var/www/html/rest/public/vendor</a></li>
+        <li><a href="../../index.html">slim</a></li>
+        <li><a href="../index.html">slim</a></li>
+        <li><a href="index.html">Slim</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Http/RequestBody.php.html#14">RequestBody</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#27">Response</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#20">Stream</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#32">Request</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#25">Message</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Environment.php.html#21">Environment</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#27">Headers</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#24">UploadedFile</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#35">Uri</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CallableResolverAwareTrait.php.html#24">CallableResolverAwareTrait</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#25">MiddlewareAwareTrait</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#30">Router</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteGroup.php.html#19">RouteGroup</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Routable.php.html#19">Routable</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#22">Route</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#17">Cookies</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Strategies/RequestResponseArgs.php.html#18">RequestResponseArgs</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DeferredCallable.php.html#15">DeferredCallable</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exception/MethodNotAllowedException.php.html#14">MethodNotAllowedException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DefaultServicesProvider.php.html#30">DefaultServicesProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Container.php.html#45">Container</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CallableResolver.php.html#19">CallableResolver</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#21">Collection</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exception/SlimException.php.html#21">SlimException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/AbstractError.php.html#14">AbstractError</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#22">PhpError</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Strategies/RequestResponse.php.html#18">RequestResponse</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotFound.php.html#22">NotFound</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotAllowed.php.html#22">NotAllowed</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/AbstractHandler.php.html#16">AbstractHandler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#22">Error</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#49">App</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Http/Request.php.html#32">Request</a></td><td class="text-right">10920</td></tr>
+       <tr><td><a href="Http/Uri.php.html#35">Uri</a></td><td class="text-right">7140</td></tr>
+       <tr><td><a href="App.php.html#49">App</a></td><td class="text-right">4830</td></tr>
+       <tr><td><a href="Http/Stream.php.html#20">Stream</a></td><td class="text-right">3540</td></tr>
+       <tr><td><a href="Router.php.html#30">Router</a></td><td class="text-right">1980</td></tr>
+       <tr><td><a href="Http/Response.php.html#27">Response</a></td><td class="text-right">1892</td></tr>
+       <tr><td><a href="Route.php.html#22">Route</a></td><td class="text-right">1260</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#24">UploadedFile</a></td><td class="text-right">1056</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#17">Cookies</a></td><td class="text-right">756</td></tr>
+       <tr><td><a href="Http/Headers.php.html#27">Headers</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#22">PhpError</a></td><td class="text-right">462</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#22">Error</a></td><td class="text-right">462</td></tr>
+       <tr><td><a href="Collection.php.html#21">Collection</a></td><td class="text-right">306</td></tr>
+       <tr><td><a href="Http/Message.php.html#25">Message</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="DefaultServicesProvider.php.html#30">DefaultServicesProvider</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Container.php.html#45">Container</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="CallableResolver.php.html#19">CallableResolver</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="Handlers/AbstractError.php.html#14">AbstractError</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#25">MiddlewareAwareTrait</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Handlers/NotAllowed.php.html#22">NotAllowed</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Handlers/NotFound.php.html#22">NotFound</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="RouteGroup.php.html#19">RouteGroup</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Handlers/AbstractHandler.php.html#16">AbstractHandler</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="DeferredCallable.php.html#15">DeferredCallable</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Handlers/Strategies/RequestResponse.php.html#18">RequestResponse</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CallableResolverAwareTrait.php.html#24">CallableResolverAwareTrait</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Http/Stream.php.html#260"><abbr title="Stream::eof">eof</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#246"><abbr title="Stream::tell">tell</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#229"><abbr title="Stream::getSize">getSize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#270"><abbr title="Stream::isReadable">isReadable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#297"><abbr title="Stream::isWritable">isWritable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#347"><abbr title="Stream::seek">seek</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#320"><abbr title="Stream::isSeekable">isSeekable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#211"><abbr title="Stream::close">close</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#194"><abbr title="Stream::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#96"><abbr title="Stream::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#453"><abbr title="Response::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#441"><abbr title="Response::isServerError">isServerError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#115"><abbr title="Stream::getMetadata">getMetadata</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#132"><abbr title="Stream::isAttached">isAttached</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#166"><abbr title="Stream::detach">detach</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#146"><abbr title="Stream::attach">attach</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#367"><abbr title="Stream::rewind">rewind</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#386"><abbr title="Stream::read">read</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#323"><abbr title="UploadedFile::getSize">getSize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#309"><abbr title="UploadedFile::getClientMediaType">getClientMediaType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#291"><abbr title="UploadedFile::getClientFilename">getClientFilename</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#112"><abbr title="Uri::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#140"><abbr title="Uri::createFromString">createFromString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#255"><abbr title="Uri::getScheme">getScheme</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#166"><abbr title="Uri::createFromEnvironment">createFromEnvironment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#273"><abbr title="UploadedFile::getError">getError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#223"><abbr title="UploadedFile::moveTo">moveTo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#438"><abbr title="Stream::isPipe">isPipe</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#424"><abbr title="Stream::getContents">getContents</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Stream.php.html#404"><abbr title="Stream::write">write</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#84"><abbr title="UploadedFile::createFromEnvironment">createFromEnvironment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#102"><abbr title="UploadedFile::parseUploadedFiles">parseUploadedFiles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#177"><abbr title="UploadedFile::getStream">getStream</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#151"><abbr title="UploadedFile::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#429"><abbr title="Response::isClientError">isClientError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#417"><abbr title="Response::isNotFound">isNotFound</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#1061"><abbr title="Request::reparseBody">reparseBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#1042"><abbr title="Request::withParsedBody">withParsedBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#980"><abbr title="Request::getParsedBody">getParsedBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#1078"><abbr title="Request::registerMediaTypeParser">registerMediaTypeParser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#1100"><abbr title="Request::getParam">getParam</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#1149"><abbr title="Request::getQueryParam">getQueryParam</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#1126"><abbr title="Request::getParsedBodyParam">getParsedBodyParam</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#952"><abbr title="Request::withoutAttribute">withoutAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#930"><abbr title="Request::withAttributes">withAttributes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#826"><abbr title="Request::withUploadedFiles">withUploadedFiles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#810"><abbr title="Request::getUploadedFiles">getUploadedFiles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#786"><abbr title="Request::withQueryParams">withQueryParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#847"><abbr title="Request::getServerParams">getServerParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#867"><abbr title="Request::getAttributes">getAttributes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#907"><abbr title="Request::withAttribute">withAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#887"><abbr title="Request::getAttribute">getAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#1167"><abbr title="Request::getParams">getParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/RequestBody.php.html#19"><abbr title="RequestBody::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#356"><abbr title="Response::isOk">isOk</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#344"><abbr title="Response::isInformational">isInformational</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#332"><abbr title="Response::isEmpty">isEmpty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#368"><abbr title="Response::isSuccessful">isSuccessful</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#380"><abbr title="Response::isRedirect">isRedirect</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#405"><abbr title="Response::isForbidden">isForbidden</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#392"><abbr title="Response::isRedirection">isRedirection</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#307"><abbr title="Response::withJson">withJson</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#278"><abbr title="Response::withRedirect">withRedirect</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#153"><abbr title="Response::getStatusCode">getStatusCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#136"><abbr title="Response::__clone">__clone</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#123"><abbr title="Response::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#178"><abbr title="Response::withStatus">withStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#208"><abbr title="Response::filterStatus">filterStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#255"><abbr title="Response::write">write</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Response.php.html#230"><abbr title="Response::getReasonPhrase">getReasonPhrase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#275"><abbr title="Uri::withScheme">withScheme</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#293"><abbr title="Uri::filterScheme">filterScheme</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#95"><abbr title="Router::setBasePath">setBasePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#83"><abbr title="Router::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteGroup.php.html#38"><abbr title="RouteGroup::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#113"><abbr title="Router::setCacheFile">setCacheFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#140"><abbr title="Router::map">map</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#190"><abbr title="Router::createRoute">createRoute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#171"><abbr title="Router::dispatch">dispatch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteGroup.php.html#27"><abbr title="RouteGroup::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#312"><abbr title="Route::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#229"><abbr title="Route::setArguments">setArguments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#216"><abbr title="Route::setArgument">setArgument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#199"><abbr title="Route::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#240"><abbr title="Route::getArguments">getArguments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#253"><abbr title="Route::getArgument">getArgument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#291"><abbr title="Route::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#271"><abbr title="Route::prepare">prepare</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#198"><abbr title="Router::createDispatcher">createDispatcher</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#204"><abbr title="Router::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CallableResolverAwareTrait.php.html#36"><abbr title="CallableResolverAwareTrait::resolveCallable">resolveCallable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#429"><abbr title="Router::urlFor">urlFor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#404"><abbr title="Router::pathFor">pathFor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#56"><abbr title="MiddlewareAwareTrait::addMiddleware">addMiddleware</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#66"><abbr title="MiddlewareAwareTrait::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#108"><abbr title="MiddlewareAwareTrait::callMiddlewareStack">callMiddlewareStack</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#87"><abbr title="MiddlewareAwareTrait::seedMiddlewareStack">seedMiddlewareStack</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#340"><abbr title="Router::relativePathFor">relativePathFor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#320"><abbr title="Router::lookupRoute">lookupRoute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#251"><abbr title="Router::getNamedRoute">getNamedRoute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#237"><abbr title="Router::getRoutes">getRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#227"><abbr title="Router::setDispatcher">setDispatcher</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#268"><abbr title="Router::removeNamedRoute">removeNamedRoute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#281"><abbr title="Router::processGroups">processGroups</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#310"><abbr title="Router::popGroup">popGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Router.php.html#298"><abbr title="Router::pushGroup">pushGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#182"><abbr title="Route::setOutputBuffering">setOutputBuffering</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#168"><abbr title="Route::getOutputBuffering">getOutputBuffering</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#579"><abbr title="Uri::getBasePath">getBasePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#552"><abbr title="Uri::withPath">withPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#525"><abbr title="Uri::getPath">getPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#592"><abbr title="Uri::withBasePath">withBasePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#621"><abbr title="Uri::filterPath">filterPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#656"><abbr title="Uri::getQuery">getQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#698"><abbr title="Uri::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#487"><abbr title="Uri::filterPort">filterPort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#474"><abbr title="Uri::hasStandardPort">hasStandardPort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#378"><abbr title="Uri::withUserInfo">withUserInfo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#359"><abbr title="Uri::getUserInfo">getUserInfo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#335"><abbr title="Uri::getAuthority">getAuthority</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#398"><abbr title="Uri::getHost">getHost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#415"><abbr title="Uri::withHost">withHost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#460"><abbr title="Uri::withPort">withPort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#438"><abbr title="Uri::getPort">getPort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#676"><abbr title="Uri::withQuery">withQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#694"><abbr title="Uri::filterQuery">filterQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#118"><abbr title="Route::getCallable">getCallable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#93"><abbr title="Route::finalize">finalize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#81"><abbr title="Route::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#128"><abbr title="Route::getMethods">getMethods</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#138"><abbr title="Route::getGroups">getGroups</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#158"><abbr title="Route::getIdentifier">getIdentifier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Route.php.html#148"><abbr title="Route::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Routable.php.html#102"><abbr title="Routable::setPattern">setPattern</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Routable.php.html#91"><abbr title="Routable::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#783"><abbr title="Uri::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#744"><abbr title="Uri::withFragment">withFragment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#725"><abbr title="Uri::getFragment">getFragment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Uri.php.html#810"><abbr title="Uri::getBaseUrl">getBaseUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Routable.php.html#56"><abbr title="Routable::getMiddleware">getMiddleware</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Routable.php.html#78"><abbr title="Routable::setContainer">setContainer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Routable.php.html#66"><abbr title="Routable::getPattern">getPattern</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#749"><abbr title="Request::getQueryParams">getQueryParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#725"><abbr title="Request::withCookieParams">withCookieParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DefaultServicesProvider.php.html#37"><abbr title="DefaultServicesProvider::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Container.php.html#175"><abbr title="Container::__isset">__isset</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Container.php.html#170"><abbr title="Container::__get">__get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DefaultServicesProvider.php.html#198"><abbr title="DefaultServicesProvider::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DeferredCallable.php.html#28"><abbr title="DeferredCallable::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exception/MethodNotAllowedException.php.html#30"><abbr title="MethodNotAllowedException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DeferredCallable.php.html#34"><abbr title="DeferredCallable::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Container.php.html#160"><abbr title="Container::has">has</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Container.php.html#145"><abbr title="Container::exceptionThrownByContainer">exceptionThrownByContainer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#198"><abbr title="Collection::getIterator">getIterator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#184"><abbr title="Collection::count">count</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#174"><abbr title="Collection::offsetUnset">offsetUnset</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Container.php.html#67"><abbr title="Container::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Container.php.html#85"><abbr title="Container::registerDefaultServices">registerDefaultServices</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Container.php.html#117"><abbr title="Container::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Container.php.html#95"><abbr title="Container::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exception/MethodNotAllowedException.php.html#41"><abbr title="MethodNotAllowedException::getAllowedMethods">getAllowedMethods</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exception/SlimException.php.html#43"><abbr title="SlimException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#176"><abbr title="Error::renderXmlErrorMessage">renderXmlErrorMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#145"><abbr title="Error::renderJsonErrorMessage">renderJsonErrorMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#110"><abbr title="Error::renderHtmlException">renderHtmlException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#202"><abbr title="Error::createCdataSection">createCdataSection</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotAllowed.php.html#34"><abbr title="NotAllowed::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotAllowed.php.html#91"><abbr title="NotAllowed::renderJsonNotAllowedMessage">renderJsonNotAllowedMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotAllowed.php.html#78"><abbr title="NotAllowed::renderPlainNotAllowedMessage">renderPlainNotAllowedMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#73"><abbr title="Error::renderHtmlErrorMessage">renderHtmlErrorMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#34"><abbr title="Error::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/AbstractError.php.html#26"><abbr title="AbstractError::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exception/SlimException.php.html#65"><abbr title="SlimException::getResponse">getResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exception/SlimException.php.html#55"><abbr title="SlimException::getRequest">getRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/AbstractError.php.html#38"><abbr title="AbstractError::writeToErrorLog">writeToErrorLog</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/AbstractError.php.html#63"><abbr title="AbstractError::renderThrowableAsText">renderThrowableAsText</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/AbstractHandler.php.html#40"><abbr title="AbstractHandler::determineContentType">determineContentType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/AbstractError.php.html#95"><abbr title="AbstractError::logError">logError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#164"><abbr title="Collection::offsetSet">offsetSet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#153"><abbr title="Collection::offsetGet">offsetGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#266"><abbr title="App::group">group</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#236"><abbr title="App::map">map</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#222"><abbr title="App::any">any</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#293"><abbr title="App::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#321"><abbr title="App::process">process</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#427"><abbr title="App::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#354"><abbr title="App::respond">respond</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#209"><abbr title="App::options">options</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#196"><abbr title="App::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#120"><abbr title="App::__call">__call</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#107"><abbr title="App::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#93"><abbr title="App::getContainer">getContainer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#144"><abbr title="App::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#157"><abbr title="App::post">post</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#183"><abbr title="App::patch">patch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#170"><abbr title="App::put">put</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#479"><abbr title="App::subRequest">subRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#511"><abbr title="App::dispatchRouterAndPrepareRoute">dispatchRouterAndPrepareRoute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#95"><abbr title="Collection::keys">keys</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#85"><abbr title="Collection::all">all</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#73"><abbr title="Collection::replace">replace</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#107"><abbr title="Collection::has">has</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#117"><abbr title="Collection::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#141"><abbr title="Collection::offsetExists">offsetExists</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#125"><abbr title="Collection::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#63"><abbr title="Collection::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#50"><abbr title="Collection::set">set</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#593"><abbr title="App::handleException">handleException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#573"><abbr title="App::isEmptyResponse">isEmptyResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#539"><abbr title="App::finalize">finalize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#630"><abbr title="App::handlePhpError">handlePhpError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CallableResolver.php.html#29"><abbr title="CallableResolver::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Collection.php.html#35"><abbr title="Collection::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CallableResolver.php.html#47"><abbr title="CallableResolver::resolve">resolve</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotAllowed.php.html#104"><abbr title="NotAllowed::renderXmlNotAllowedMessage">renderXmlNotAllowedMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotAllowed.php.html#117"><abbr title="NotAllowed::renderHtmlNotAllowedMessage">renderHtmlNotAllowedMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#275"><abbr title="Request::getOriginalMethod">getOriginalMethod</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#242"><abbr title="Request::getMethod">getMethod</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#226"><abbr title="Request::__clone">__clone</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#295"><abbr title="Request::withMethod">withMethod</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#312"><abbr title="Request::filterMethod">filterMethod</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#356"><abbr title="Request::isGet">isGet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#344"><abbr title="Request::isMethod">isMethod</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#214"><abbr title="Request::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#170"><abbr title="Request::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#241"><abbr title="Message::withAddedHeader">withAddedHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#217"><abbr title="Message::withHeader">withHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#197"><abbr title="Message::getHeaderLine">getHeaderLine</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#261"><abbr title="Message::withoutHeader">withoutHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#278"><abbr title="Message::getBody">getBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#136"><abbr title="Request::createFromEnvironment">createFromEnvironment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#296"><abbr title="Message::withBody">withBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#368"><abbr title="Request::isPost">isPost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#380"><abbr title="Request::isPut">isPut</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#621"><abbr title="Request::getMediaTypeParams">getMediaTypeParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#602"><abbr title="Request::getMediaType">getMediaType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#588"><abbr title="Request::getContentType">getContentType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#644"><abbr title="Request::getContentCharset">getContentCharset</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#661"><abbr title="Request::getContentLength">getContentLength</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#697"><abbr title="Request::getCookieParam">getCookieParam</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#682"><abbr title="Request::getCookieParams">getCookieParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#563"><abbr title="Request::withUri">withUri</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#528"><abbr title="Request::getUri">getUri</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#416"><abbr title="Request::isHead">isHead</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#404"><abbr title="Request::isDelete">isDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#392"><abbr title="Request::isPatch">isPatch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#428"><abbr title="Request::isOptions">isOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#440"><abbr title="Request::isXhr">isXhr</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#506"><abbr title="Request::withRequestTarget">withRequestTarget</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Request.php.html#465"><abbr title="Request::getRequestTarget">getRequestTarget</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#173"><abbr title="Message::getHeader">getHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#154"><abbr title="Message::hasHeader">hasHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Strategies/RequestResponseArgs.php.html#32"><abbr title="RequestResponseArgs::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/Strategies/RequestResponse.php.html#31"><abbr title="RequestResponse::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#201"><abbr title="PhpError::createCdataSection">createCdataSection</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#53"><abbr title="Cookies::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#63"><abbr title="Cookies::setDefaults">setDefaults</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#87"><abbr title="Cookies::set">set</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#76"><abbr title="Cookies::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#175"><abbr title="PhpError::renderXmlErrorMessage">renderXmlErrorMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#144"><abbr title="PhpError::renderJsonErrorMessage">renderJsonErrorMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotFound.php.html#77"><abbr title="NotFound::renderXmlNotFoundOutput">renderXmlNotFoundOutput</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotFound.php.html#67"><abbr title="NotFound::renderJsonNotFoundOutput">renderJsonNotFoundOutput</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotFound.php.html#33"><abbr title="NotFound::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/NotFound.php.html#89"><abbr title="NotFound::renderHtmlNotFoundOutput">renderHtmlNotFoundOutput</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#34"><abbr title="PhpError::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#109"><abbr title="PhpError::renderHtmlError">renderHtmlError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#72"><abbr title="PhpError::renderHtmlErrorMessage">renderHtmlErrorMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#100"><abbr title="Cookies::toHeaders">toHeaders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#118"><abbr title="Cookies::toHeader">toHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#213"><abbr title="Headers::normalizeKey">normalizeKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#197"><abbr title="Headers::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#187"><abbr title="Headers::has">has</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#63"><abbr title="Message::__set">__set</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#79"><abbr title="Message::getProtocolVersion">getProtocolVersion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#141"><abbr title="Message::getHeaders">getHeaders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Message.php.html#98"><abbr title="Message::withProtocolVersion">withProtocolVersion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#173"><abbr title="Headers::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#154"><abbr title="Headers::getOriginalKey">getOriginalKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#51"><abbr title="Headers::createFromEnvironment">createFromEnvironment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Environment.php.html#30"><abbr title="Environment::mock">mock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#166"><abbr title="Cookies::parseHeader">parseHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#76"><abbr title="Headers::determineAuthorization">determineAuthorization</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#98"><abbr title="Headers::all">all</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#137"><abbr title="Headers::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Headers.php.html#118"><abbr title="Headers::set">set</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="App.php.html#77"><abbr title="App::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="App.php.html#354"><abbr title="App::respond">respond</abbr></a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Http/Uri.php.html#166"><abbr title="Uri::createFromEnvironment">createFromEnvironment</abbr></a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="DefaultServicesProvider.php.html#37"><abbr title="DefaultServicesProvider::register">register</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#118"><abbr title="Cookies::toHeader">toHeader</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="CallableResolver.php.html#47"><abbr title="CallableResolver::resolve">resolve</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Http/Uri.php.html#140"><abbr title="Uri::createFromString">createFromString</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Route.php.html#312"><abbr title="Route::__invoke">__invoke</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#223"><abbr title="UploadedFile::moveTo">moveTo</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#102"><abbr title="UploadedFile::parseUploadedFiles">parseUploadedFiles</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Http/Request.php.html#242"><abbr title="Request::getMethod">getMethod</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Router.php.html#340"><abbr title="Router::relativePathFor">relativePathFor</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Http/Request.php.html#980"><abbr title="Request::getParsedBody">getParsedBody</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="App.php.html#539"><abbr title="App::finalize">finalize</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="App.php.html#427"><abbr title="App::__invoke">__invoke</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#166"><abbr title="Cookies::parseHeader">parseHeader</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Http/Stream.php.html#270"><abbr title="Stream::isReadable">isReadable</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#110"><abbr title="Error::renderHtmlException">renderHtmlException</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#109"><abbr title="PhpError::renderHtmlError">renderHtmlError</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Http/Request.php.html#563"><abbr title="Request::withUri">withUri</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Handlers/AbstractError.php.html#63"><abbr title="AbstractError::renderThrowableAsText">renderThrowableAsText</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Http/Request.php.html#1100"><abbr title="Request::getParam">getParam</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Handlers/NotAllowed.php.html#34"><abbr title="NotAllowed::__invoke">__invoke</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Http/Response.php.html#178"><abbr title="Response::withStatus">withStatus</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="App.php.html#321"><abbr title="App::process">process</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Http/Stream.php.html#297"><abbr title="Stream::isWritable">isWritable</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Uri.php.html#783"><abbr title="Uri::__toString">__toString</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Uri.php.html#487"><abbr title="Uri::filterPort">filterPort</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Headers.php.html#51"><abbr title="Headers::createFromEnvironment">createFromEnvironment</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="App.php.html#593"><abbr title="App::handleException">handleException</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Stream.php.html#229"><abbr title="Stream::getSize">getSize</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Request.php.html#1126"><abbr title="Request::getParsedBodyParam">getParsedBodyParam</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Request.php.html#312"><abbr title="Request::filterMethod">filterMethod</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Router.php.html#113"><abbr title="Router::setCacheFile">setCacheFile</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Uri.php.html#810"><abbr title="Uri::getBaseUrl">getBaseUrl</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Handlers/NotFound.php.html#33"><abbr title="NotFound::__invoke">__invoke</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#34"><abbr title="Error::__invoke">__invoke</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#34"><abbr title="PhpError::__invoke">__invoke</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#84"><abbr title="UploadedFile::createFromEnvironment">createFromEnvironment</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Route.php.html#93"><abbr title="Route::finalize">finalize</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Request.php.html#1042"><abbr title="Request::withParsedBody">withParsedBody</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Response.php.html#208"><abbr title="Response::filterStatus">filterStatus</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="App.php.html#236"><abbr title="App::map">map</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#56"><abbr title="MiddlewareAwareTrait::addMiddleware">addMiddleware</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Request.php.html#170"><abbr title="Request::__construct">__construct</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Router.php.html#198"><abbr title="Router::createDispatcher">createDispatcher</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Headers.php.html#76"><abbr title="Headers::determineAuthorization">determineAuthorization</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Response.php.html#278"><abbr title="Response::withRedirect">withRedirect</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Container.php.html#117"><abbr title="Container::get">get</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Uri.php.html#474"><abbr title="Uri::hasStandardPort">hasStandardPort</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Uri.php.html#293"><abbr title="Uri::filterScheme">filterScheme</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Handlers/AbstractHandler.php.html#40"><abbr title="AbstractHandler::determineContentType">determineContentType</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Request.php.html#465"><abbr title="Request::getRequestTarget">getRequestTarget</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Uri.php.html#592"><abbr title="Uri::withBasePath">withBasePath</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Stream.php.html#320"><abbr title="Stream::isSeekable">isSeekable</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Stream.php.html#246"><abbr title="Stream::tell">tell</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Response.php.html#307"><abbr title="Response::withJson">withJson</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#211"><abbr title="Stream::close">close</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#115"><abbr title="Stream::getMetadata">getMetadata</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#194"><abbr title="Stream::__toString">__toString</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#146"><abbr title="Stream::attach">attach</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Uri.php.html#335"><abbr title="Uri::getAuthority">getAuthority</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Uri.php.html#744"><abbr title="Uri::withFragment">withFragment</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Uri.php.html#676"><abbr title="Uri::withQuery">withQuery</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="RouteGroup.php.html#38"><abbr title="RouteGroup::__invoke">__invoke</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Router.php.html#140"><abbr title="Router::map">map</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#87"><abbr title="MiddlewareAwareTrait::seedMiddlewareStack">seedMiddlewareStack</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Router.php.html#251"><abbr title="Router::getNamedRoute">getNamedRoute</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Uri.php.html#552"><abbr title="Uri::withPath">withPath</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Uri.php.html#438"><abbr title="Uri::getPort">getPort</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#386"><abbr title="Stream::read">read</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#367"><abbr title="Stream::rewind">rewind</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#404"><abbr title="Stream::write">write</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#424"><abbr title="Stream::getContents">getContents</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/UploadedFile.php.html#177"><abbr title="UploadedFile::getStream">getStream</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#438"><abbr title="Stream::isPipe">isPipe</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Stream.php.html#347"><abbr title="Stream::seek">seek</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Response.php.html#123"><abbr title="Response::__construct">__construct</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Request.php.html#749"><abbr title="Request::getQueryParams">getQueryParams</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Handlers/AbstractError.php.html#38"><abbr title="AbstractError::writeToErrorLog">writeToErrorLog</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Request.php.html#136"><abbr title="Request::createFromEnvironment">createFromEnvironment</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="App.php.html#511"><abbr title="App::dispatchRouterAndPrepareRoute">dispatchRouterAndPrepareRoute</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Request.php.html#621"><abbr title="Request::getMediaTypeParams">getMediaTypeParams</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#176"><abbr title="Error::renderXmlErrorMessage">renderXmlErrorMessage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="App.php.html#77"><abbr title="App::__construct">__construct</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#73"><abbr title="Error::renderHtmlErrorMessage">renderHtmlErrorMessage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="App.php.html#120"><abbr title="App::__call">__call</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#72"><abbr title="PhpError::renderHtmlErrorMessage">renderHtmlErrorMessage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#144"><abbr title="PhpError::renderJsonErrorMessage">renderJsonErrorMessage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Handlers/PhpError.php.html#175"><abbr title="PhpError::renderXmlErrorMessage">renderXmlErrorMessage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Response.php.html#230"><abbr title="Response::getReasonPhrase">getReasonPhrase</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Handlers/Error.php.html#145"><abbr title="Error::renderJsonErrorMessage">renderJsonErrorMessage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Route.php.html#271"><abbr title="Route::prepare">prepare</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Route.php.html#253"><abbr title="Route::getArgument">getArgument</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Route.php.html#199"><abbr title="Route::setName">setName</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="DeferredCallable.php.html#34"><abbr title="DeferredCallable::__invoke">__invoke</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Container.php.html#67"><abbr title="Container::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Route.php.html#81"><abbr title="Route::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Container.php.html#145"><abbr title="Container::exceptionThrownByContainer">exceptionThrownByContainer</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Route.php.html#182"><abbr title="Route::setOutputBuffering">setOutputBuffering</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Collection.php.html#63"><abbr title="Collection::get">get</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#404"><abbr title="Router::pathFor">pathFor</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="App.php.html#479"><abbr title="App::subRequest">subRequest</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CallableResolverAwareTrait.php.html#36"><abbr title="CallableResolverAwareTrait::resolveCallable">resolveCallable</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="App.php.html#293"><abbr title="App::run">run</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#108"><abbr title="MiddlewareAwareTrait::callMiddlewareStack">callMiddlewareStack</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MiddlewareAwareTrait.php.html#66"><abbr title="MiddlewareAwareTrait::anonymous function">anonymous function</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#320"><abbr title="Router::lookupRoute">lookupRoute</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#310"><abbr title="Router::popGroup">popGroup</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#95"><abbr title="Router::setBasePath">setBasePath</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#83"><abbr title="Router::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="App.php.html#630"><abbr title="App::handlePhpError">handlePhpError</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="App.php.html#573"><abbr title="App::isEmptyResponse">isEmptyResponse</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#281"><abbr title="Router::processGroups">processGroups</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Router.php.html#204"><abbr title="Router::anonymous function">anonymous function</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Collection.php.html#73"><abbr title="Collection::replace">replace</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Uri.php.html#378"><abbr title="Uri::withUserInfo">withUserInfo</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#1078"><abbr title="Request::registerMediaTypeParser">registerMediaTypeParser</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#1149"><abbr title="Request::getQueryParam">getQueryParam</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#697"><abbr title="Request::getCookieParam">getCookieParam</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Stream.php.html#260"><abbr title="Stream::eof">eof</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#644"><abbr title="Request::getContentCharset">getContentCharset</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#661"><abbr title="Request::getContentLength">getContentLength</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#1167"><abbr title="Request::getParams">getParams</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Response.php.html#453"><abbr title="Response::__toString">__toString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Response.php.html#368"><abbr title="Response::isSuccessful">isSuccessful</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Response.php.html#344"><abbr title="Response::isInformational">isInformational</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Response.php.html#392"><abbr title="Response::isRedirection">isRedirection</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Response.php.html#429"><abbr title="Response::isClientError">isClientError</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Response.php.html#441"><abbr title="Response::isServerError">isServerError</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#602"><abbr title="Request::getMediaType">getMediaType</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#588"><abbr title="Request::getContentType">getContentType</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Headers.php.html#98"><abbr title="Headers::all">all</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Uri.php.html#112"><abbr title="Uri::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#100"><abbr title="Cookies::toHeaders">toHeaders</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#87"><abbr title="Cookies::set">set</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Uri.php.html#359"><abbr title="Uri::getUserInfo">getUserInfo</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Cookies.php.html#76"><abbr title="Cookies::get">get</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Headers.php.html#118"><abbr title="Headers::set">set</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Headers.php.html#137"><abbr title="Headers::get">get</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Message.php.html#98"><abbr title="Message::withProtocolVersion">withProtocolVersion</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Request.php.html#506"><abbr title="Request::withRequestTarget">withRequestTarget</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Headers.php.html#213"><abbr title="Headers::normalizeKey">normalizeKey</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Headers.php.html#173"><abbr title="Headers::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Headers.php.html#154"><abbr title="Headers::getOriginalKey">getOriginalKey</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Handlers/Strategies/RequestResponse.php.html#31"><abbr title="RequestResponse::__invoke">__invoke</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 4.0.1</a> using <a href="https://secure.php.net/" target="_top">PHP 5.6.28-1+deb.sury.org~trusty+1</a> with <a href="https://xdebug.org/">Xdebug 2.4.1</a> and <a href="https://phpunit.de/">PHPUnit 5.5.4</a> at Mon Nov 28 1:38:25 UTC 2016.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../../js/holder.min.js" type="text/javascript"></script>
+  <script src="../../../js/d3.min.js" type="text/javascript"></script>
+  <script src="../../../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([32,0,0,0,0,0,0,0,0,0,0,4], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([287,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,69,"<a href=\"App.php.html#49\">App<\/a>"],[0,12,"<a href=\"CallableResolver.php.html#19\">CallableResolver<\/a>"],[0,17,"<a href=\"Collection.php.html#21\">Collection<\/a>"],[0,13,"<a href=\"Container.php.html#45\">Container<\/a>"],[0,13,"<a href=\"DefaultServicesProvider.php.html#30\">DefaultServicesProvider<\/a>"],[0,3,"<a href=\"DeferredCallable.php.html#15\">DeferredCallable<\/a>"],[100,0,"<a href=\"Exception\/ContainerException.php.html#17\">ContainerException<\/a>"],[100,0,"<a href=\"Exception\/ContainerValueNotFoundException.php.html#17\">ContainerValueNotFoundException<\/a>"],[0,2,"<a href=\"Exception\/MethodNotAllowedException.php.html#14\">MethodNotAllowedException<\/a>"],[100,0,"<a href=\"Exception\/NotFoundException.php.html#11\">NotFoundException<\/a>"],[0,3,"<a href=\"Exception\/SlimException.php.html#21\">SlimException<\/a>"],[0,11,"<a href=\"Handlers\/AbstractError.php.html#14\">AbstractError<\/a>"],[0,4,"<a href=\"Handlers\/AbstractHandler.php.html#16\">AbstractHandler<\/a>"],[0,21,"<a href=\"Handlers\/Error.php.html#22\">Error<\/a>"],[0,10,"<a href=\"Handlers\/NotAllowed.php.html#22\">NotAllowed<\/a>"],[0,8,"<a href=\"Handlers\/NotFound.php.html#22\">NotFound<\/a>"],[0,21,"<a href=\"Handlers\/PhpError.php.html#22\">PhpError<\/a>"],[0,2,"<a href=\"Handlers\/Strategies\/RequestResponse.php.html#18\">RequestResponse<\/a>"],[0,1,"<a href=\"Handlers\/Strategies\/RequestResponseArgs.php.html#18\">RequestResponseArgs<\/a>"],[100,0,"<a href=\"Http\/Body.php.html#19\">Body<\/a>"],[0,27,"<a href=\"Http\/Cookies.php.html#17\">Cookies<\/a>"],[0,1,"<a href=\"Http\/Environment.php.html#21\">Environment<\/a>"],[0,23,"<a href=\"Http\/Headers.php.html#27\">Headers<\/a>"],[0,13,"<a href=\"Http\/Message.php.html#25\">Message<\/a>"],[0,104,"<a href=\"Http\/Request.php.html#32\">Request<\/a>"],[0,1,"<a href=\"Http\/RequestBody.php.html#14\">RequestBody<\/a>"],[0,43,"<a href=\"Http\/Response.php.html#27\">Response<\/a>"],[0,59,"<a href=\"Http\/Stream.php.html#20\">Stream<\/a>"],[0,32,"<a href=\"Http\/UploadedFile.php.html#24\">UploadedFile<\/a>"],[0,84,"<a href=\"Http\/Uri.php.html#35\">Uri<\/a>"],[0,5,"<a href=\"Routable.php.html#19\">Routable<\/a>"],[0,35,"<a href=\"Route.php.html#22\">Route<\/a>"],[0,4,"<a href=\"RouteGroup.php.html#19\">RouteGroup<\/a>"],[0,44,"<a href=\"Router.php.html#30\">Router<\/a>"],[0,2,"<a href=\"CallableResolverAwareTrait.php.html#24\">CallableResolverAwareTrait<\/a>"],[0,11,"<a href=\"MiddlewareAwareTrait.php.html#25\">MiddlewareAwareTrait<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,3,"<a href=\"App.php.html#77\">App::__construct<\/a>"],[0,1,"<a href=\"App.php.html#93\">App::getContainer<\/a>"],[0,1,"<a href=\"App.php.html#107\">App::add<\/a>"],[0,3,"<a href=\"App.php.html#120\">App::__call<\/a>"],[0,1,"<a href=\"App.php.html#144\">App::get<\/a>"],[0,1,"<a href=\"App.php.html#157\">App::post<\/a>"],[0,1,"<a href=\"App.php.html#170\">App::put<\/a>"],[0,1,"<a href=\"App.php.html#183\">App::patch<\/a>"],[0,1,"<a href=\"App.php.html#196\">App::delete<\/a>"],[0,1,"<a href=\"App.php.html#209\">App::options<\/a>"],[0,1,"<a href=\"App.php.html#222\">App::any<\/a>"],[0,4,"<a href=\"App.php.html#236\">App::map<\/a>"],[0,1,"<a href=\"App.php.html#266\">App::group<\/a>"],[0,2,"<a href=\"App.php.html#293\">App::run<\/a>"],[0,6,"<a href=\"App.php.html#321\">App::process<\/a>"],[0,13,"<a href=\"App.php.html#354\">App::respond<\/a>"],[0,7,"<a href=\"App.php.html#427\">App::__invoke<\/a>"],[0,2,"<a href=\"App.php.html#479\">App::subRequest<\/a>"],[0,3,"<a href=\"App.php.html#511\">App::dispatchRouterAndPrepareRoute<\/a>"],[0,7,"<a href=\"App.php.html#539\">App::finalize<\/a>"],[0,2,"<a href=\"App.php.html#573\">App::isEmptyResponse<\/a>"],[0,5,"<a href=\"App.php.html#593\">App::handleException<\/a>"],[0,2,"<a href=\"App.php.html#630\">App::handlePhpError<\/a>"],[0,1,"<a href=\"CallableResolver.php.html#29\">CallableResolver::__construct<\/a>"],[0,11,"<a href=\"CallableResolver.php.html#47\">CallableResolver::resolve<\/a>"],[0,1,"<a href=\"Collection.php.html#35\">Collection::__construct<\/a>"],[0,1,"<a href=\"Collection.php.html#50\">Collection::set<\/a>"],[0,2,"<a href=\"Collection.php.html#63\">Collection::get<\/a>"],[0,2,"<a href=\"Collection.php.html#73\">Collection::replace<\/a>"],[0,1,"<a href=\"Collection.php.html#85\">Collection::all<\/a>"],[0,1,"<a href=\"Collection.php.html#95\">Collection::keys<\/a>"],[0,1,"<a href=\"Collection.php.html#107\">Collection::has<\/a>"],[0,1,"<a href=\"Collection.php.html#117\">Collection::remove<\/a>"],[0,1,"<a href=\"Collection.php.html#125\">Collection::clear<\/a>"],[0,1,"<a href=\"Collection.php.html#141\">Collection::offsetExists<\/a>"],[0,1,"<a href=\"Collection.php.html#153\">Collection::offsetGet<\/a>"],[0,1,"<a href=\"Collection.php.html#164\">Collection::offsetSet<\/a>"],[0,1,"<a href=\"Collection.php.html#174\">Collection::offsetUnset<\/a>"],[0,1,"<a href=\"Collection.php.html#184\">Collection::count<\/a>"],[0,1,"<a href=\"Collection.php.html#198\">Collection::getIterator<\/a>"],[0,2,"<a href=\"Container.php.html#67\">Container::__construct<\/a>"],[0,1,"<a href=\"Container.php.html#85\">Container::registerDefaultServices<\/a>"],[0,1,"<a href=\"Container.php.html#95\">Container::anonymous function<\/a>"],[0,4,"<a href=\"Container.php.html#117\">Container::get<\/a>"],[0,2,"<a href=\"Container.php.html#145\">Container::exceptionThrownByContainer<\/a>"],[0,1,"<a href=\"Container.php.html#160\">Container::has<\/a>"],[0,1,"<a href=\"Container.php.html#170\">Container::__get<\/a>"],[0,1,"<a href=\"Container.php.html#175\">Container::__isset<\/a>"],[0,12,"<a href=\"DefaultServicesProvider.php.html#37\">DefaultServicesProvider::register<\/a>"],[0,1,"<a href=\"DefaultServicesProvider.php.html#198\">DefaultServicesProvider::anonymous function<\/a>"],[0,1,"<a href=\"DeferredCallable.php.html#28\">DeferredCallable::__construct<\/a>"],[0,2,"<a href=\"DeferredCallable.php.html#34\">DeferredCallable::__invoke<\/a>"],[0,1,"<a href=\"Exception\/MethodNotAllowedException.php.html#30\">MethodNotAllowedException::__construct<\/a>"],[0,1,"<a href=\"Exception\/MethodNotAllowedException.php.html#41\">MethodNotAllowedException::getAllowedMethods<\/a>"],[0,1,"<a href=\"Exception\/SlimException.php.html#43\">SlimException::__construct<\/a>"],[0,1,"<a href=\"Exception\/SlimException.php.html#55\">SlimException::getRequest<\/a>"],[0,1,"<a href=\"Exception\/SlimException.php.html#65\">SlimException::getResponse<\/a>"],[0,1,"<a href=\"Handlers\/AbstractError.php.html#26\">AbstractError::__construct<\/a>"],[0,3,"<a href=\"Handlers\/AbstractError.php.html#38\">AbstractError::writeToErrorLog<\/a>"],[0,6,"<a href=\"Handlers\/AbstractError.php.html#63\">AbstractError::renderThrowableAsText<\/a>"],[0,1,"<a href=\"Handlers\/AbstractError.php.html#95\">AbstractError::logError<\/a>"],[0,4,"<a href=\"Handlers\/AbstractHandler.php.html#40\">AbstractHandler::determineContentType<\/a>"],[0,5,"<a href=\"Handlers\/Error.php.html#34\">Error::__invoke<\/a>"],[0,3,"<a href=\"Handlers\/Error.php.html#73\">Error::renderHtmlErrorMessage<\/a>"],[0,6,"<a href=\"Handlers\/Error.php.html#110\">Error::renderHtmlException<\/a>"],[0,3,"<a href=\"Handlers\/Error.php.html#145\">Error::renderJsonErrorMessage<\/a>"],[0,3,"<a href=\"Handlers\/Error.php.html#176\">Error::renderXmlErrorMessage<\/a>"],[0,1,"<a href=\"Handlers\/Error.php.html#202\">Error::createCdataSection<\/a>"],[0,6,"<a href=\"Handlers\/NotAllowed.php.html#34\">NotAllowed::__invoke<\/a>"],[0,1,"<a href=\"Handlers\/NotAllowed.php.html#78\">NotAllowed::renderPlainNotAllowedMessage<\/a>"],[0,1,"<a href=\"Handlers\/NotAllowed.php.html#91\">NotAllowed::renderJsonNotAllowedMessage<\/a>"],[0,1,"<a href=\"Handlers\/NotAllowed.php.html#104\">NotAllowed::renderXmlNotAllowedMessage<\/a>"],[0,1,"<a href=\"Handlers\/NotAllowed.php.html#117\">NotAllowed::renderHtmlNotAllowedMessage<\/a>"],[0,5,"<a href=\"Handlers\/NotFound.php.html#33\">NotFound::__invoke<\/a>"],[0,1,"<a href=\"Handlers\/NotFound.php.html#67\">NotFound::renderJsonNotFoundOutput<\/a>"],[0,1,"<a href=\"Handlers\/NotFound.php.html#77\">NotFound::renderXmlNotFoundOutput<\/a>"],[0,1,"<a href=\"Handlers\/NotFound.php.html#89\">NotFound::renderHtmlNotFoundOutput<\/a>"],[0,5,"<a href=\"Handlers\/PhpError.php.html#34\">PhpError::__invoke<\/a>"],[0,3,"<a href=\"Handlers\/PhpError.php.html#72\">PhpError::renderHtmlErrorMessage<\/a>"],[0,6,"<a href=\"Handlers\/PhpError.php.html#109\">PhpError::renderHtmlError<\/a>"],[0,3,"<a href=\"Handlers\/PhpError.php.html#144\">PhpError::renderJsonErrorMessage<\/a>"],[0,3,"<a href=\"Handlers\/PhpError.php.html#175\">PhpError::renderXmlErrorMessage<\/a>"],[0,1,"<a href=\"Handlers\/PhpError.php.html#201\">PhpError::createCdataSection<\/a>"],[0,2,"<a href=\"Handlers\/Strategies\/RequestResponse.php.html#31\">RequestResponse::__invoke<\/a>"],[0,1,"<a href=\"Handlers\/Strategies\/RequestResponseArgs.php.html#32\">RequestResponseArgs::__invoke<\/a>"],[0,1,"<a href=\"Http\/Cookies.php.html#53\">Cookies::__construct<\/a>"],[0,1,"<a href=\"Http\/Cookies.php.html#63\">Cookies::setDefaults<\/a>"],[0,2,"<a href=\"Http\/Cookies.php.html#76\">Cookies::get<\/a>"],[0,2,"<a href=\"Http\/Cookies.php.html#87\">Cookies::set<\/a>"],[0,2,"<a href=\"Http\/Cookies.php.html#100\">Cookies::toHeaders<\/a>"],[0,12,"<a href=\"Http\/Cookies.php.html#118\">Cookies::toHeader<\/a>"],[0,7,"<a href=\"Http\/Cookies.php.html#166\">Cookies::parseHeader<\/a>"],[0,1,"<a href=\"Http\/Environment.php.html#30\">Environment::mock<\/a>"],[0,5,"<a href=\"Http\/Headers.php.html#51\">Headers::createFromEnvironment<\/a>"],[0,4,"<a href=\"Http\/Headers.php.html#76\">Headers::determineAuthorization<\/a>"],[0,2,"<a href=\"Http\/Headers.php.html#98\">Headers::all<\/a>"],[0,2,"<a href=\"Http\/Headers.php.html#118\">Headers::set<\/a>"],[0,2,"<a href=\"Http\/Headers.php.html#137\">Headers::get<\/a>"],[0,2,"<a href=\"Http\/Headers.php.html#154\">Headers::getOriginalKey<\/a>"],[0,2,"<a href=\"Http\/Headers.php.html#173\">Headers::add<\/a>"],[0,1,"<a href=\"Http\/Headers.php.html#187\">Headers::has<\/a>"],[0,1,"<a href=\"Http\/Headers.php.html#197\">Headers::remove<\/a>"],[0,2,"<a href=\"Http\/Headers.php.html#213\">Headers::normalizeKey<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#63\">Message::__set<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#79\">Message::getProtocolVersion<\/a>"],[0,2,"<a href=\"Http\/Message.php.html#98\">Message::withProtocolVersion<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#141\">Message::getHeaders<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#154\">Message::hasHeader<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#173\">Message::getHeader<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#197\">Message::getHeaderLine<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#217\">Message::withHeader<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#241\">Message::withAddedHeader<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#261\">Message::withoutHeader<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#278\">Message::getBody<\/a>"],[0,1,"<a href=\"Http\/Message.php.html#296\">Message::withBody<\/a>"],[0,3,"<a href=\"Http\/Request.php.html#136\">Request::createFromEnvironment<\/a>"],[0,4,"<a href=\"Http\/Request.php.html#170\">Request::__construct<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#214\">Request::anonymous function<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#226\">Request::__clone<\/a>"],[0,9,"<a href=\"Http\/Request.php.html#242\">Request::getMethod<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#275\">Request::getOriginalMethod<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#295\">Request::withMethod<\/a>"],[0,5,"<a href=\"Http\/Request.php.html#312\">Request::filterMethod<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#344\">Request::isMethod<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#356\">Request::isGet<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#368\">Request::isPost<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#380\">Request::isPut<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#392\">Request::isPatch<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#404\">Request::isDelete<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#416\">Request::isHead<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#428\">Request::isOptions<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#440\">Request::isXhr<\/a>"],[0,4,"<a href=\"Http\/Request.php.html#465\">Request::getRequestTarget<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#506\">Request::withRequestTarget<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#528\">Request::getUri<\/a>"],[0,6,"<a href=\"Http\/Request.php.html#563\">Request::withUri<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#588\">Request::getContentType<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#602\">Request::getMediaType<\/a>"],[0,3,"<a href=\"Http\/Request.php.html#621\">Request::getMediaTypeParams<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#644\">Request::getContentCharset<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#661\">Request::getContentLength<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#682\">Request::getCookieParams<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#697\">Request::getCookieParam<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#725\">Request::withCookieParams<\/a>"],[0,3,"<a href=\"Http\/Request.php.html#749\">Request::getQueryParams<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#786\">Request::withQueryParams<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#810\">Request::getUploadedFiles<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#826\">Request::withUploadedFiles<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#847\">Request::getServerParams<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#867\">Request::getAttributes<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#887\">Request::getAttribute<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#907\">Request::withAttribute<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#930\">Request::withAttributes<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#952\">Request::withoutAttribute<\/a>"],[0,8,"<a href=\"Http\/Request.php.html#980\">Request::getParsedBody<\/a>"],[0,4,"<a href=\"Http\/Request.php.html#1042\">Request::withParsedBody<\/a>"],[0,1,"<a href=\"Http\/Request.php.html#1061\">Request::reparseBody<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#1078\">Request::registerMediaTypeParser<\/a>"],[0,6,"<a href=\"Http\/Request.php.html#1100\">Request::getParam<\/a>"],[0,5,"<a href=\"Http\/Request.php.html#1126\">Request::getParsedBodyParam<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#1149\">Request::getQueryParam<\/a>"],[0,2,"<a href=\"Http\/Request.php.html#1167\">Request::getParams<\/a>"],[0,1,"<a href=\"Http\/RequestBody.php.html#19\">RequestBody::__construct<\/a>"],[0,3,"<a href=\"Http\/Response.php.html#123\">Response::__construct<\/a>"],[0,1,"<a href=\"Http\/Response.php.html#136\">Response::__clone<\/a>"],[0,1,"<a href=\"Http\/Response.php.html#153\">Response::getStatusCode<\/a>"],[0,6,"<a href=\"Http\/Response.php.html#178\">Response::withStatus<\/a>"],[0,4,"<a href=\"Http\/Response.php.html#208\">Response::filterStatus<\/a>"],[0,3,"<a href=\"Http\/Response.php.html#230\">Response::getReasonPhrase<\/a>"],[0,1,"<a href=\"Http\/Response.php.html#255\">Response::write<\/a>"],[0,4,"<a href=\"Http\/Response.php.html#278\">Response::withRedirect<\/a>"],[0,3,"<a href=\"Http\/Response.php.html#307\">Response::withJson<\/a>"],[0,1,"<a href=\"Http\/Response.php.html#332\">Response::isEmpty<\/a>"],[0,2,"<a href=\"Http\/Response.php.html#344\">Response::isInformational<\/a>"],[0,1,"<a href=\"Http\/Response.php.html#356\">Response::isOk<\/a>"],[0,2,"<a href=\"Http\/Response.php.html#368\">Response::isSuccessful<\/a>"],[0,1,"<a href=\"Http\/Response.php.html#380\">Response::isRedirect<\/a>"],[0,2,"<a href=\"Http\/Response.php.html#392\">Response::isRedirection<\/a>"],[0,1,"<a href=\"Http\/Response.php.html#405\">Response::isForbidden<\/a>"],[0,1,"<a href=\"Http\/Response.php.html#417\">Response::isNotFound<\/a>"],[0,2,"<a href=\"Http\/Response.php.html#429\">Response::isClientError<\/a>"],[0,2,"<a href=\"Http\/Response.php.html#441\">Response::isServerError<\/a>"],[0,2,"<a href=\"Http\/Response.php.html#453\">Response::__toString<\/a>"],[0,1,"<a href=\"Http\/Stream.php.html#96\">Stream::__construct<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#115\">Stream::getMetadata<\/a>"],[0,1,"<a href=\"Http\/Stream.php.html#132\">Stream::isAttached<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#146\">Stream::attach<\/a>"],[0,1,"<a href=\"Http\/Stream.php.html#166\">Stream::detach<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#194\">Stream::__toString<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#211\">Stream::close<\/a>"],[0,5,"<a href=\"Http\/Stream.php.html#229\">Stream::getSize<\/a>"],[0,4,"<a href=\"Http\/Stream.php.html#246\">Stream::tell<\/a>"],[0,2,"<a href=\"Http\/Stream.php.html#260\">Stream::eof<\/a>"],[0,6,"<a href=\"Http\/Stream.php.html#270\">Stream::isReadable<\/a>"],[0,5,"<a href=\"Http\/Stream.php.html#297\">Stream::isWritable<\/a>"],[0,4,"<a href=\"Http\/Stream.php.html#320\">Stream::isSeekable<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#347\">Stream::seek<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#367\">Stream::rewind<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#386\">Stream::read<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#404\">Stream::write<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#424\">Stream::getContents<\/a>"],[0,3,"<a href=\"Http\/Stream.php.html#438\">Stream::isPipe<\/a>"],[0,4,"<a href=\"Http\/UploadedFile.php.html#84\">UploadedFile::createFromEnvironment<\/a>"],[0,9,"<a href=\"Http\/UploadedFile.php.html#102\">UploadedFile::parseUploadedFiles<\/a>"],[0,1,"<a href=\"Http\/UploadedFile.php.html#151\">UploadedFile::__construct<\/a>"],[0,3,"<a href=\"Http\/UploadedFile.php.html#177\">UploadedFile::getStream<\/a>"],[0,11,"<a href=\"Http\/UploadedFile.php.html#223\">UploadedFile::moveTo<\/a>"],[0,1,"<a href=\"Http\/UploadedFile.php.html#273\">UploadedFile::getError<\/a>"],[0,1,"<a href=\"Http\/UploadedFile.php.html#291\">UploadedFile::getClientFilename<\/a>"],[0,1,"<a href=\"Http\/UploadedFile.php.html#309\">UploadedFile::getClientMediaType<\/a>"],[0,1,"<a href=\"Http\/UploadedFile.php.html#323\">UploadedFile::getSize<\/a>"],[0,2,"<a href=\"Http\/Uri.php.html#112\">Uri::__construct<\/a>"],[0,11,"<a href=\"Http\/Uri.php.html#140\">Uri::createFromString<\/a>"],[0,13,"<a href=\"Http\/Uri.php.html#166\">Uri::createFromEnvironment<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#255\">Uri::getScheme<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#275\">Uri::withScheme<\/a>"],[0,4,"<a href=\"Http\/Uri.php.html#293\">Uri::filterScheme<\/a>"],[0,3,"<a href=\"Http\/Uri.php.html#335\">Uri::getAuthority<\/a>"],[0,2,"<a href=\"Http\/Uri.php.html#359\">Uri::getUserInfo<\/a>"],[0,2,"<a href=\"Http\/Uri.php.html#378\">Uri::withUserInfo<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#398\">Uri::getHost<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#415\">Uri::withHost<\/a>"],[0,3,"<a href=\"Http\/Uri.php.html#438\">Uri::getPort<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#460\">Uri::withPort<\/a>"],[0,4,"<a href=\"Http\/Uri.php.html#474\">Uri::hasStandardPort<\/a>"],[0,5,"<a href=\"Http\/Uri.php.html#487\">Uri::filterPort<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#525\">Uri::getPath<\/a>"],[0,3,"<a href=\"Http\/Uri.php.html#552\">Uri::withPath<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#579\">Uri::getBasePath<\/a>"],[0,4,"<a href=\"Http\/Uri.php.html#592\">Uri::withBasePath<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#621\">Uri::filterPath<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#698\">Uri::anonymous function<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#656\">Uri::getQuery<\/a>"],[0,3,"<a href=\"Http\/Uri.php.html#676\">Uri::withQuery<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#694\">Uri::filterQuery<\/a>"],[0,1,"<a href=\"Http\/Uri.php.html#725\">Uri::getFragment<\/a>"],[0,3,"<a href=\"Http\/Uri.php.html#744\">Uri::withFragment<\/a>"],[0,5,"<a href=\"Http\/Uri.php.html#783\">Uri::__toString<\/a>"],[0,5,"<a href=\"Http\/Uri.php.html#810\">Uri::getBaseUrl<\/a>"],[0,1,"<a href=\"Routable.php.html#56\">Routable::getMiddleware<\/a>"],[0,1,"<a href=\"Routable.php.html#66\">Routable::getPattern<\/a>"],[0,1,"<a href=\"Routable.php.html#78\">Routable::setContainer<\/a>"],[0,1,"<a href=\"Routable.php.html#91\">Routable::add<\/a>"],[0,1,"<a href=\"Routable.php.html#102\">Routable::setPattern<\/a>"],[0,2,"<a href=\"Route.php.html#81\">Route::__construct<\/a>"],[0,4,"<a href=\"Route.php.html#93\">Route::finalize<\/a>"],[0,1,"<a href=\"Route.php.html#118\">Route::getCallable<\/a>"],[0,1,"<a href=\"Route.php.html#128\">Route::getMethods<\/a>"],[0,1,"<a href=\"Route.php.html#138\">Route::getGroups<\/a>"],[0,1,"<a href=\"Route.php.html#148\">Route::getName<\/a>"],[0,1,"<a href=\"Route.php.html#158\">Route::getIdentifier<\/a>"],[0,1,"<a href=\"Route.php.html#168\">Route::getOutputBuffering<\/a>"],[0,2,"<a href=\"Route.php.html#182\">Route::setOutputBuffering<\/a>"],[0,2,"<a href=\"Route.php.html#199\">Route::setName<\/a>"],[0,1,"<a href=\"Route.php.html#216\">Route::setArgument<\/a>"],[0,1,"<a href=\"Route.php.html#229\">Route::setArguments<\/a>"],[0,1,"<a href=\"Route.php.html#240\">Route::getArguments<\/a>"],[0,2,"<a href=\"Route.php.html#253\">Route::getArgument<\/a>"],[0,2,"<a href=\"Route.php.html#271\">Route::prepare<\/a>"],[0,1,"<a href=\"Route.php.html#291\">Route::run<\/a>"],[0,11,"<a href=\"Route.php.html#312\">Route::__invoke<\/a>"],[0,1,"<a href=\"RouteGroup.php.html#27\">RouteGroup::__construct<\/a>"],[0,3,"<a href=\"RouteGroup.php.html#38\">RouteGroup::__invoke<\/a>"],[0,2,"<a href=\"Router.php.html#83\">Router::__construct<\/a>"],[0,2,"<a href=\"Router.php.html#95\">Router::setBasePath<\/a>"],[0,5,"<a href=\"Router.php.html#113\">Router::setCacheFile<\/a>"],[0,3,"<a href=\"Router.php.html#140\">Router::map<\/a>"],[0,1,"<a href=\"Router.php.html#171\">Router::dispatch<\/a>"],[0,1,"<a href=\"Router.php.html#190\">Router::createRoute<\/a>"],[0,4,"<a href=\"Router.php.html#198\">Router::createDispatcher<\/a>"],[0,2,"<a href=\"Router.php.html#204\">Router::anonymous function<\/a>"],[0,1,"<a href=\"Router.php.html#227\">Router::setDispatcher<\/a>"],[0,1,"<a href=\"Router.php.html#237\">Router::getRoutes<\/a>"],[0,3,"<a href=\"Router.php.html#251\">Router::getNamedRoute<\/a>"],[0,1,"<a href=\"Router.php.html#268\">Router::removeNamedRoute<\/a>"],[0,2,"<a href=\"Router.php.html#281\">Router::processGroups<\/a>"],[0,1,"<a href=\"Router.php.html#298\">Router::pushGroup<\/a>"],[0,2,"<a href=\"Router.php.html#310\">Router::popGroup<\/a>"],[0,2,"<a href=\"Router.php.html#320\">Router::lookupRoute<\/a>"],[0,8,"<a href=\"Router.php.html#340\">Router::relativePathFor<\/a>"],[0,2,"<a href=\"Router.php.html#404\">Router::pathFor<\/a>"],[0,1,"<a href=\"Router.php.html#429\">Router::urlFor<\/a>"],[0,2,"<a href=\"CallableResolverAwareTrait.php.html#36\">CallableResolverAwareTrait::resolveCallable<\/a>"],[0,4,"<a href=\"MiddlewareAwareTrait.php.html#56\">MiddlewareAwareTrait::addMiddleware<\/a>"],[0,2,"<a href=\"MiddlewareAwareTrait.php.html#66\">MiddlewareAwareTrait::anonymous function<\/a>"],[0,3,"<a href=\"MiddlewareAwareTrait.php.html#87\">MiddlewareAwareTrait::seedMiddlewareStack<\/a>"],[0,2,"<a href=\"MiddlewareAwareTrait.php.html#108\">MiddlewareAwareTrait::callMiddlewareStack<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

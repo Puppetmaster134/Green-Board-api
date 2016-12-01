@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1480367435">
-  <project timestamp="1480367435">
+<coverage generated="1480588285">
+  <project timestamp="1480588285">
     <file name="/var/www/html/rest/public/tests/APITest.php">
       <class name="APITest" namespace="global">
-        <metrics complexity="14" methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="128" coveredstatements="128" elements="142" coveredelements="142"/>
+        <metrics complexity="17" methods="17" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="153" coveredstatements="153" elements="170" coveredelements="170"/>
       </class>
-      <line num="9" type="method" name="setUp" visibility="protected" complexity="1" crap="1" count="13"/>
-      <line num="11" type="stmt" count="13"/>
-      <line num="13" type="stmt" count="13"/>
-      <line num="14" type="stmt" count="13"/>
+      <line num="9" type="method" name="setUp" visibility="protected" complexity="1" crap="1" count="16"/>
+      <line num="11" type="stmt" count="16"/>
+      <line num="13" type="stmt" count="16"/>
+      <line num="14" type="stmt" count="16"/>
       <line num="19" type="method" name="Get_SuccessfullyRegisterUser" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="21" type="stmt" count="1"/>
       <line num="22" type="stmt" count="1"/>
@@ -147,8 +147,36 @@
       <line num="266" type="stmt" count="1"/>
       <line num="267" type="stmt" count="1"/>
       <line num="270" type="stmt" count="1"/>
-      <metrics loc="271" ncloc="232" classes="1" methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="128" coveredstatements="128" elements="142" coveredelements="142"/>
+      <line num="275" type="method" name="Get_SuccessfullyPostComment" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="277" type="stmt" count="1"/>
+      <line num="279" type="stmt" count="1"/>
+      <line num="280" type="stmt" count="1"/>
+      <line num="282" type="stmt" count="1"/>
+      <line num="283" type="stmt" count="1"/>
+      <line num="285" type="stmt" count="1"/>
+      <line num="286" type="stmt" count="1"/>
+      <line num="287" type="stmt" count="1"/>
+      <line num="288" type="stmt" count="1"/>
+      <line num="293" type="method" name="Get_SuccessfullyRetrieveCommentsByTrailId" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="295" type="stmt" count="1"/>
+      <line num="297" type="stmt" count="1"/>
+      <line num="299" type="stmt" count="1"/>
+      <line num="300" type="stmt" count="1"/>
+      <line num="302" type="stmt" count="1"/>
+      <line num="303" type="stmt" count="1"/>
+      <line num="304" type="stmt" count="1"/>
+      <line num="305" type="stmt" count="1"/>
+      <line num="310" type="method" name="Get_SuccessfullyRetrieveCommentsByTrailName" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="312" type="stmt" count="1"/>
+      <line num="314" type="stmt" count="1"/>
+      <line num="316" type="stmt" count="1"/>
+      <line num="317" type="stmt" count="1"/>
+      <line num="319" type="stmt" count="1"/>
+      <line num="320" type="stmt" count="1"/>
+      <line num="321" type="stmt" count="1"/>
+      <line num="322" type="stmt" count="1"/>
+      <metrics loc="323" ncloc="275" classes="1" methods="17" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="153" coveredstatements="153" elements="170" coveredelements="170"/>
     </file>
-    <metrics files="1" loc="271" ncloc="232" classes="1" methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="128" coveredstatements="128" elements="142" coveredelements="142"/>
+    <metrics files="1" loc="323" ncloc="275" classes="1" methods="17" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="153" coveredstatements="153" elements="170" coveredelements="170"/>
   </project>
 </coverage>

@@ -299,6 +299,109 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
     return $response;
 });
 
+$app->get('/PostComment/', function (Request $request, Response $response)
+{
+    $params = $request->getQueryParams();
+	$responseObj = array();
+	
+	if(isKeyValid($this->db,$params['key']))
+    {
+		$namedParameters = array(":key"=>$params['key']);
+		$sql = "SELECT id FROM user WHERE api_key=:key LIMIT 1";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute($namedParameters);
+		$result = $stmt->fetch();
+		
+		if(isset($params['trailId']) && isset($params['commentBody']))
+		{
+			
+			$namedParameters = array(":userId"=>$result['id'],":trailId"=>$params['trailId'],":body"=>$params['commentBody'],":lat"=>$params['lat'],":lng"=>$params['lng']);
+			$sql = "INSERT INTO comment (userId,trailId,body,lat,lng) VALUES(:userId,:trailId,:body,:lat,:lng)";
+			$stmt = $this->db->prepare($sql);
+			$stmt->execute($namedParameters);
+			
+			$responseObj['args'] = array("success"=>"Comment added successfully.");
+		}
+		else
+		{
+			$responseObj['args'] = array("error"=>"Invalid parameters.");
+		}
+		
+	}
+	else
+	{
+		$responseObj['args'] = array("error"=>"Invalid API key.");
+	}
+	
+	$response->getBody()->write(json_encode($responseObj));
+    return $response;
+	
+	
+});
+
+$app->get('/RetrieveCommentsByTrailId/', function (Request $request, Response $response)
+{
+    $params = $request->getQueryParams();
+	$responseObj = array();
+	
+	if(isKeyValid($this->db,$params['key']))
+    {
+		
+		if(isset($params['trailId']))
+		{
+			$sql = "SELECT body, username, lat, lng FROM comment LEFT JOIN user on comment.userId = user.id WHERE trailId=:trailId";
+			$stmt = $this->db->prepare($sql);
+			$stmt->execute(array(":trailId"=>$params["trailId"]));
+			$result = $stmt->fetchAll();
+			$responseObj['args'] = array("success"=>"Comments retrieved successfully.");
+			$responseObj['result'] = $result;
+		}
+		else
+		{
+			$responseObj['args'] = array("error"=>"Invalid parameters.");
+		}
+		
+	}
+	else
+	{
+		$responseObj['args'] = array("error"=>"Invalid API key.");
+	}
+	
+	$response->getBody()->write(json_encode($responseObj));
+    return $response;
+});
+
+$app->get('/RetrieveCommentsByTrailName/', function (Request $request, Response $response)
+{
+    $params = $request->getQueryParams();
+	$responseObj = array();
+	
+	if(isKeyValid($this->db,$params['key']))
+    {
+		
+		if(isset($params['trailName']))
+		{
+			$sql = "SELECT body, username, comment.lat, comment.lng FROM trail INNER JOIN comment ON trail.id = comment.trailId  LEFT JOIN user ON comment.userId=user.id WHERE trailName=:trailName";
+			$stmt = $this->db->prepare($sql);
+			$stmt->execute(array(":trailName"=>$params["trailName"]));
+			$result = $stmt->fetchAll();
+			$responseObj['args'] = array("success"=>"Comments retrieved successfully.");
+			$responseObj['result'] = $result;
+		}
+		else
+		{
+			$responseObj['args'] = array("error"=>"Invalid parameters.");
+		}
+		
+	}
+	else
+	{
+		$responseObj['args'] = array("error"=>"Invalid API key.");
+	}
+	
+	$response->getBody()->write(json_encode($responseObj));
+    return $response;
+});
 
 $app->run();
 

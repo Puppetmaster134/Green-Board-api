@@ -9,7 +9,7 @@ class APITest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->client = new GuzzleHttp\Client([
-            'base_uri' => 'http://localhost'
+            'base_uri' => 'http://bzimmerman.me'
         ]);
     }
 
@@ -19,7 +19,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	public function Get_SuccessfullyRegisterUser()
 	{
 		$uniqueId = "test_" . rand(0,9999999);
-		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
+		$response = $this->client->get('rest/public/api.php/RegisterUser/', [
             'query' => [
                 'username' => $uniqueId,
 				'password' => 'securepassword',
@@ -39,7 +39,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_SuccessfullyRegisterUserWithExistingEmail()
 	{
-		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
+		$response = $this->client->get('rest/public/api.php/RegisterUser/', [
             'query' => [
                 'username' => 'NeverGoingToRegister',
 				'password' => 'securepassword',
@@ -60,7 +60,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_FailToRegisterExistingUsername()
 	{
-		$response = $this->client->get('/rest/public/api.php/RegisterUser/', [
+		$response = $this->client->get('rest/public/api.php/RegisterUser/', [
 				'query' => [
 					'username' => 'Brian',
 					'password' => 'dddddddd',
@@ -80,7 +80,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_SuccessfullyLogin()
 	{
-		$response = $this->client->get('/rest/public/api.php/Login/', [
+		$response = $this->client->get('rest/public/api.php/Login/', [
 				'query' => [
 					'username' => 'Brian',
 					'password' => 'securepass',
@@ -97,7 +97,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_FailToLoginWithEmptyPassword()
 	{
-		$response = $this->client->get('/rest/public/api.php/Login/', [
+		$response = $this->client->get('rest/public/api.php/Login/', [
 				'query' => [
 					'username' => 'testerr',
 					'password' => '',
@@ -114,7 +114,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_FailToLoginWithEmptyUsername()
 	{
-		$response = $this->client->get('/rest/public/api.php/Login/', [
+		$response = $this->client->get('rest/public/api.php/Login/', [
 				'query' => [
 					'username' => '',
 					'password' => 'dddddddd',
@@ -133,7 +133,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	public function Get_SuccessfullyRegisterWithFB()
 	{
 		$uniqueId = "test_" . rand(0,9999999);
-		$response = $this->client->get('/rest/public/api.php/RegisterUserWithFB/', [
+		$response = $this->client->get('rest/public/api.php/RegisterUserWithFB/', [
             'query' => [
                 'username' => $uniqueId,
 				'email' => $uniqueId . '@greenboard.com',
@@ -154,7 +154,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_SuccessfullyLoginWithFB()
 	{
-		$response = $this->client->get('/rest/public/api.php/LoginWithFB/', [
+		$response = $this->client->get('rest/public/api.php/LoginWithFB/', [
             'query' => [
                 'fbid' => '1234567890'
             ]
@@ -171,7 +171,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
     public function Get_SuccessfullyCreateTrail()
     {
-        $response = $this->client->get('/rest/public/api.php/WriteTrailToDB/', [
+        $response = $this->client->get('rest/public/api.php/WriteTrailToDB/', [
             'query' => [
 				'key' => 'abc123',
 				'trailName' => 'MadeUp Trail',
@@ -192,7 +192,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
     public function Get_SuccessfullyGetTrailById()
     {
-        $response = $this->client->get('/rest/public/api.php/GetTrailById/', [
+        $response = $this->client->get('rest/public/api.php/GetTrailById/', [
             'query' => [
                 'key' => 'abc123',
 				'id' => 25
@@ -211,7 +211,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
     public function Get_FailToGetTrailById()
     {
-        $response = $this->client->get('/rest/public/api.php/GetTrailById/', [
+        $response = $this->client->get('rest/public/api.php/GetTrailById/', [
             'query' => [
                 'key' => 'abc123',
 				'id' => 0
@@ -230,7 +230,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_SuccessfullyGetTrailInArea()
 	{
-		$response = $this->client->get('/rest/public/api.php/GetTrailInArea/', [
+		$response = $this->client->get('rest/public/api.php/GetTrailInArea/', [
             'query' => [
                 'key' => 'abc123',
 				'minLat' => 0,
@@ -252,7 +252,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_FailToFindTrailsInArea()
 	{
-		$response = $this->client->get('/rest/public/api.php/GetTrailInArea/', [
+		$response = $this->client->get('rest/public/api.php/GetTrailInArea/', [
             'query' => [
                 'key' => 'abc123',
 				'minLat' => 0,
@@ -274,7 +274,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_SuccessfullyPostComment()
 	{
-		$response = $this->client->get('/rest/public/api.php/PostComment/', [
+		$response = $this->client->get('rest/public/api.php/PostComment/', [
             'query' => [
                 'key' => 'abc123',
 				'trailId'=>25,
@@ -292,7 +292,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_SuccessfullyRetrieveCommentsByTrailId()
 	{
-		$response = $this->client->get('/rest/public/api.php/RetrieveCommentsByTrailId/', [
+		$response = $this->client->get('rest/public/api.php/RetrieveCommentsByTrailId/', [
             'query' => [
                 'key' => 'abc123',
 				'trailId'=>25
@@ -309,7 +309,7 @@ class APITest extends PHPUnit_Framework_TestCase
 	*/
 	public function Get_SuccessfullyRetrieveCommentsByTrailName()
 	{
-		$response = $this->client->get('/rest/public/api.php/RetrieveCommentsByTrailName/', [
+		$response = $this->client->get('rest/public/api.php/RetrieveCommentsByTrailName/', [
             'query' => [
                 'key' => 'abc123',
 				'trailName'=>'CommentedTrail'

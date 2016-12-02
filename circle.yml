@@ -7,8 +7,6 @@ dependencies:
     - sudo apt-get install python-dev
     - sudo pip install awsebcli
 test:
-  pre:
-    - php -S localhost:80
   override:
     - vendor/bin/phpunit ./tests --coverage-clover coverage.xml --whitelist ./tests
   post:

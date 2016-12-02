@@ -9,7 +9,7 @@ class APITest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->client = new GuzzleHttp\Client([
-            'base_uri' => 'http://bzimmerman.me'
+            'base_uri' => 'http://localhost'
         ]);
     }
 

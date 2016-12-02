@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Twig_Extensions_' => array($vendorDir . '/slim/extras/Views/Extension'),
+    'Slim\\Extras' => array($vendorDir . '/slim/extras'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
 );

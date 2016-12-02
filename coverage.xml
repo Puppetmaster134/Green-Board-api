@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1480589655">
-  <project timestamp="1480589655">
+<coverage generated="1480659036">
+  <project timestamp="1480659036">
     <file name="/var/www/html/rest/public/tests/APITest.php">
       <class name="APITest" namespace="global">
         <metrics complexity="17" methods="17" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="153" coveredstatements="153" elements="170" coveredelements="170"/>

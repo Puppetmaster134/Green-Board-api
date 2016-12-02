@@ -1,8 +1,15 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require './vendor/autoload.php';
+require './vendor/slim/extras/Slim/Extras/Log/DateTimeFileWriter.php';
+
 
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
@@ -15,18 +22,33 @@ $config['db']['dbname'] = getenv("RDS_DB_NAME");
 
 //start a new slim application
 $app = new \Slim\App(["settings" => $config]);
+	
 $container = $app->getContainer();
 
 //setup the PDO
 $container['db'] = function ($c)
 {
     $db = $c['settings']['db'];
-    $pdo = new PDO("mysql:host=" . $db['host'] . ";dbname=" . $db['dbname'],
-        $db['user'], $db['pass']);
+    $pdo = new PDO("mysql:host=" . $db['host'] . ";dbname=" . $db['dbname'], $db['user'], $db['pass']);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $pdo;
 };
+
+$container['logger'] = function($c) 
+{
+    $logger = new \Monolog\Logger('[REQUEST]');
+    $file_handler = new \Monolog\Handler\StreamHandler("../logs/requests.log");
+    $logger->pushHandler($file_handler);
+    return $logger;
+};
+
+$checkProxyHeaders = true; // Note: Never trust the IP address for security processes!
+$trustedProxies = ['10.0.0.1', '10.0.0.2']; // Note: Never trust the IP address for security processes!
+$app->add(new RKA\Middleware\IpAddress($checkProxyHeaders, $trustedProxies));
+
+
+
 
 
 function isKeyValid($pdo,$key)
@@ -114,6 +136,8 @@ $app->get('/RegisterUser/', function (Request $request, Response $response)
 		$responseObj = array("args"=>array("success"=>"Registered Successfully"));
 		$response->getBody()->write(json_encode($responseObj));
 	}
+	
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] Registration(GB) request - Response: " . $response->getBody());
 	return $response;
 });
 
@@ -131,14 +155,17 @@ $app->get('/RegisterUserWithFB/', function (Request $request, Response $response
 		$response->getBody()->write(json_encode($responseObj));
 	}
 
+	
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] Registration(FB) request - Response: " . $response->getBody());
 	return $response;
 
 });
 
 $app->get('/Login/', function(Request $request, Response $response)
 {
+	
 	$params = $request->getQueryParams();
-	 
+	$log;
 	$sql = "SELECT username,api_key FROM user WHERE username=:username AND password=:password LIMIT 1";
 	$stmt = $this->db->prepare($sql);
 	$stmt->execute(array(':username'=>$params['username'],':password'=>$params['password']));
@@ -155,6 +182,8 @@ $app->get('/Login/', function(Request $request, Response $response)
 		$responseObj['result'] = $result;
 	}
 
+	
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] GetTrailById endpoint request - Parameters:" . json_encode($params) . ", Response: " . json_encode($responseObj['args']));
 	$response->getBody()->write(json_encode($responseObj));
 	return $response;
 
@@ -181,6 +210,7 @@ $app->get('/LoginWithFB/', function(Request $request, Response $response)
 		$responseObj['result'] = $result;
 	}
 
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] LoginWithFB endpoint request - Parameters:" . json_encode($params) . ", Response: " . json_encode($responseObj['args']));
 	$response->getBody()->write(json_encode($responseObj));
 	return $response;
 });
@@ -193,26 +223,34 @@ $app->get('/GetTrailById/', function (Request $request, Response $response)
 	
 	if(isKeyValid($this->db,$params['key']))
 	{
-		$sql = "SELECT * FROM trail WHERE id=:id LIMIT 1";
-		$stmt = $this->db->prepare($sql);
-		$stmt->execute(array(':id'=>$params['id']));
-		$result = $stmt->fetch();
-
-		if(!empty($result))
+		if(isset($params['id']))
 		{
-			$responseObj['args'] = array("success"=>"Trail retrieved successfully.");
-			$responseObj['result'] = $result;
+			$sql = "SELECT * FROM trail WHERE id=:id LIMIT 1";
+			$stmt = $this->db->prepare($sql);
+			$stmt->execute(array(':id'=> $params['id']));
+			$result = $stmt->fetch();
+
+			if(!empty($result))
+			{
+				$responseObj['args'] = array("success"=>"Trail retrieved successfully.");
+				$responseObj['result'] = $result;
+			}
+			else
+			{
+				$responseObj['args'] = array("error"=>"Trail " . $params['id'] . " does not exist.");
+			}
 		}
 		else
 		{
-			$responseObj['args'] = array("error"=>"Trail " . $id . " does not exist.");
+			$responseObj['args'] = array("error"=>"No trail id specified.");
 		}
 	}
 	else
 	{
 		$responseObj['args'] = array("error"=>"Invalid API key.");
 	}
-	
+
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] GetTrailById endpoint request - Parameters:" . json_encode($params) . ", Response: " . json_encode($responseObj['args']));
 	$response->getBody()->write(json_encode($responseObj));
     return $response;
 
@@ -252,6 +290,7 @@ $app->get('/WriteTrailToDB/', function (Request $request, Response $response)
 		$responseObj['args'] = array("error"=>"Invalid API key.");
 	}
 
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] WriteTrailToDB endpoint request - Parameters:" . json_encode($params) . ", Response: " . json_encode($responseObj['args']));
 	$response->getBody()->write(json_encode($responseObj));
     return $response;
 });
@@ -295,6 +334,7 @@ $app->get('/GetTrailInArea/', function (Request $request, Response $response)
 		$responseObj['args'] = array("error"=>"Invalid API key");
 	}
 
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] GetTrailInArea endpoint request - Parameters:" . json_encode($params) . ", Response: " . json_encode($responseObj['args']));
 	$response->getBody()->write(json_encode($responseObj));
     return $response;
 });
@@ -311,11 +351,19 @@ $app->get('/PostComment/', function (Request $request, Response $response)
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute($namedParameters);
 		$result = $stmt->fetch();
+		$lat = 0.0;
+		$lng = 0.0;
+		
+		if(isset($params['lat']))
+			$lat = $params['lat'];
+		
+		if(isset($params['lng']))
+			$lat = $params['lng'];
 		
 		if(isset($params['trailId']) && isset($params['commentBody']))
 		{
 			
-			$namedParameters = array(":userId"=>$result['id'],":trailId"=>$params['trailId'],":body"=>$params['commentBody'],":lat"=>$params['lat'],":lng"=>$params['lng']);
+			$namedParameters = array(":userId"=>$result['id'],":trailId"=>$params['trailId'],":body"=>$params['commentBody'],":lat"=>0,":lng"=>0);
 			$sql = "INSERT INTO comment (userId,trailId,body,lat,lng) VALUES(:userId,:trailId,:body,:lat,:lng)";
 			$stmt = $this->db->prepare($sql);
 			$stmt->execute($namedParameters);
@@ -333,6 +381,7 @@ $app->get('/PostComment/', function (Request $request, Response $response)
 		$responseObj['args'] = array("error"=>"Invalid API key.");
 	}
 	
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] PostComment endpoint request - Parameters:" . json_encode($params) . ", Response: " . json_encode($responseObj['args']));
 	$response->getBody()->write(json_encode($responseObj));
     return $response;
 	
@@ -367,6 +416,7 @@ $app->get('/RetrieveCommentsByTrailId/', function (Request $request, Response $r
 		$responseObj['args'] = array("error"=>"Invalid API key.");
 	}
 	
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] RetrieveCommentsByTrailId endpoint request - Parameters:" . json_encode($params) . ", Response: " . json_encode($responseObj['args']));
 	$response->getBody()->write(json_encode($responseObj));
     return $response;
 });
@@ -399,9 +449,12 @@ $app->get('/RetrieveCommentsByTrailName/', function (Request $request, Response 
 		$responseObj['args'] = array("error"=>"Invalid API key.");
 	}
 	
+	$this->logger->addInfo("[" . $request->getAttribute('ip_address') . "] RetrieveCommentsByTrailName endpoint request - Parameters:" . json_encode($params) . ", Response: " . json_encode($responseObj['args']));
 	$response->getBody()->write(json_encode($responseObj));
     return $response;
 });
+
+
 
 $app->run();
 

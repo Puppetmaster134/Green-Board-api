@@ -1,7 +1,7 @@
 # Green-Board-api
 ## Repository for the GreenBoard API
 
-Endpoints containing {api_key} must have a valid api key appended to the url as a GET parameter
+Endpoints containing {api_key} must have a valid api key appended to the url as a GET parameter (Try abc123 for an api key)
 
 example: `http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/{endpoint}/?{endpoint-params}`
 

@@ -37,8 +37,9 @@ $container['db'] = function ($c)
 
 $container['logger'] = function($c) 
 {
+	$logDir = getenv("LOG_DIR");
     $logger = new \Monolog\Logger('[REQUEST]');
-    $file_handler = new \Monolog\Handler\StreamHandler("/var/logs/requests.log");
+    $file_handler = new \Monolog\Handler\StreamHandler($logDir);
     $logger->pushHandler($file_handler);
     return $logger;
 };

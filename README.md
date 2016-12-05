@@ -54,7 +54,7 @@ This returns a list of trails in a square-shaped region between (minLng,minLat) 
 
 `http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/PostComment/?body={comment}&trailId={trailId}&key={api_key}`
 
-Example: http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/PostComment/?body=This%20is%20a%20comment&trailId=25&key=abc123
+Example: http://greenboard-env.us-west-2.elasticbeanstalk.com/api.php/PostComment/?commentBody=This%20is%20a%20comment&trailId=25&key=abc123
 
 **RetrieveCommentsByTrailId**
 
